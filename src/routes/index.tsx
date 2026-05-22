@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Continuum — Build lasting habits, one day at a time" },
+      { title: "Continuum — The Future of Healing and Rejuvenation in Tbilisi, Georgia" },
       { name: "description", content: "A calm, focused habit tracker. Track streaks, visualize progress, and build your daily ritual. Free, ad-free, distraction-free." },
     ],
   }),
@@ -91,7 +91,7 @@ function Hero() {
           <div className="max-w-xl">
             <ScrollReveal delay={80}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left" style={{ lineHeight: "1.08" }}>
-                Build lasting habits,<br />one day at a time
+                The Future of Healing and Rejuvenation in Tbilisi, Georgia
               </h1>
             </ScrollReveal>
 
