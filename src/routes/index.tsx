@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
+import logo from "@/assets/logo.svg";
 
 
 export const Route = createFileRoute("/")({
@@ -67,8 +68,7 @@ function Hero() {
         {/* Navbar */}
         <nav className="relative z-20 max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <InfinityIcon className="w-7 h-7 text-white" strokeWidth={2.5} />
-            <span className="text-xl font-semibold text-white/90 tracking-tight">Continuum</span>
+            <img src={logo} alt="Continuum" className="h-8 w-auto" />
           </Link>
 
           <div className="hidden sm:flex items-center gap-8 text-sm text-white">
@@ -355,8 +355,7 @@ function Footer() {
       <div className="max-w-5xl mx-auto px-5">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <InfinityIcon className="w-6 h-6 text-foreground" strokeWidth={2.5} />
-            <span className="font-semibold text-foreground text-sm">Continuum</span>
+            <img src={logo} alt="Continuum" className="h-7 w-auto" />
           </div>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
