@@ -68,7 +68,7 @@ function Hero() {
         {/* Navbar */}
         <nav className="relative z-20 max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Continuum" className="h-8 w-auto" />
+            <img src={logo} alt="Continuum" className="h-32 w-auto" />
           </Link>
 
           <div className="hidden sm:flex items-center gap-8 text-sm text-white">
