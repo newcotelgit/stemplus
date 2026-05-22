@@ -97,7 +97,7 @@ function Hero() {
 
             <ScrollReveal delay={160}>
               <p className="mt-6 text-lg text-white text-left" style={{ textWrap: "pretty", lineHeight: "1.6" }}>
-                Continuum is a calm, focused habit tracker that helps you build consistency through streaks, visual progress, and zero distractions.
+                Book Your Consultation
               </p>
             </ScrollReveal>
 
