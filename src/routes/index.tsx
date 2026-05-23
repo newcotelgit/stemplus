@@ -93,26 +93,8 @@ function Hero() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(to right, rgba(5,13,10,0.5), rgba(5,13,10,0.13), transparent)` }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.26), transparent, rgba(5,13,10,0))` }} />
 
-        {/* Navbar */}
-        <nav className="relative z-20 max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Continuum" className="h-20 w-auto object-fill" />
-          </Link>
 
-          <div className="hidden sm:flex items-center gap-8 text-sm text-white">
-            <a href="#features" className="hover:text-white/70 transition-colors">Features</a>
-            <a href="#how-it-works" className="hover:text-white/70 transition-colors">How it works</a>
-            <a href="#reviews" className="hover:text-white/70 transition-colors">Reviews</a>
-          </div>
 
-          <Link
-            to="/login"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-white/30 bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 backdrop-blur-sm transition-all duration-200 active:scale-[0.97]"
-          >
-            Get started
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </nav>
 
         {/* Hero content — left aligned */}
         <div className="relative z-10 max-w-5xl mx-auto px-5 pt-24 pb-12">
