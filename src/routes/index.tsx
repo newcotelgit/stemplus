@@ -205,7 +205,7 @@ function Features() {
               <div className="mb-10">
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Features</p>
                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
-                  Everything you need,<br />nothing you don't
+                  What We Treat
                 </h2>
               </div>
             </ScrollReveal>
