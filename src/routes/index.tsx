@@ -48,6 +48,7 @@ function LandingPage() {
       <Reviews />
       <HowItWorks />
       <FinalCTA />
+      <BookingSection />
       <Footer />
     </div>
   );
