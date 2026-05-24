@@ -116,7 +116,7 @@ function Hero() {
           alt=""
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-[180%] max-w-none -translate-x-[10%] object-cover object-right sm:w-full sm:translate-x-0 sm:object-right pointer-events-none select-none"
+          className="absolute inset-0 h-full w-[170%] max-w-none object-cover object-left sm:w-full sm:object-right pointer-events-none select-none"
           aria-hidden="true"
         />
         {/* Left-side gradient for text legibility */}
