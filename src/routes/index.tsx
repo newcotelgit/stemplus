@@ -7,6 +7,8 @@ import {
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
+import testimonialPoster from "@/assets/testimonial-poster.jpg";
+import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
 
 
 export const Route = createFileRoute("/")({
