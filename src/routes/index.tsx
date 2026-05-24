@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 
 export const Route = createFileRoute("/")({
