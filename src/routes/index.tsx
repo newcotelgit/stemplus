@@ -44,8 +44,8 @@ function LandingPage() {
       <Hero />
       <VideoTestimonial />
       <Features />
-      <HowItWorks />
       <Reviews />
+      <HowItWorks />
       <FinalCTA />
       <Footer />
     </div>
