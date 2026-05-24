@@ -10,6 +10,7 @@ import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
 import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
+import BookingSection from "@/components/BookingSection";
 
 
 export const Route = createFileRoute("/")({
@@ -47,6 +48,7 @@ function LandingPage() {
       <Reviews />
       <HowItWorks />
       <FinalCTA />
+      <BookingSection />
       <Footer />
     </div>
   );
