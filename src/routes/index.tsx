@@ -54,7 +54,7 @@ function Header() {
     <header className="sticky top-0 z-50 w-full bg-[#050d0a]/90 backdrop-blur-md border-b border-white/10">
       <nav className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logo} alt="Continuum" className="h-20 w-auto object-fill" />
+          <img src={logo} alt="Continuum" className="h-14 w-auto object-contain" />
         </Link>
 
         <div className="hidden sm:flex items-center gap-8 text-sm text-white">
