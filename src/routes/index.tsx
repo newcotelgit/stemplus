@@ -192,11 +192,6 @@ function Features() {
 
                 {/* Mock app content — light mode */}
                 <div className="p-6 space-y-4">
-                  <div>
-                    <p className="text-xs text-black/40">Good morning</p>
-                    <p className="text-lg font-semibold text-black/90 mt-0.5">Your daily ritual</p>
-                    <p className="text-xs text-black/40 mt-1">Tuesday, March 25 · 2 of 4 minted</p>
-                  </div>
 
                   {/* Mock progress ring */}
                   <div className="flex justify-center py-3">
