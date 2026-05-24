@@ -51,6 +51,32 @@ function LandingPage() {
   );
 }
 
+/* ─── Video Testimonial ─── */
+function VideoTestimonial() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="text-center mb-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Testimonial</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
+            Hear it from our patients
+          </h2>
+        </div>
+        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-black/[0.06] bg-black aspect-video">
+          <video
+            className="w-full h-full object-cover"
+            src={testimonialVideo.url}
+            poster={testimonialPoster}
+            controls
+            playsInline
+            preload="metadata"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Sticky Header ─── */
 function Header() {
   return (
