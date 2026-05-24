@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Infinity as InfinityIcon, Flame, CalendarDays, Moon, Bell, BarChart3, CloudUpload,
   CheckCircle2, TrendingUp, Sparkles, ArrowRight, Star, Quote,
+  ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
