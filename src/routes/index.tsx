@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Infinity as InfinityIcon, Flame, CalendarDays, Moon, Bell, BarChart3, CloudUpload,
   CheckCircle2, TrendingUp, Sparkles, ArrowRight, Star, Quote,
+  ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
@@ -207,38 +208,128 @@ function Features() {
   );
 }
 
-/* ─── How it works ─── */
-const steps = [
-  { num: "1", icon: CheckCircle2, title: "Create your habits", desc: "Add the habits you want to build — daily, specific days, or a weekly goal." },
-  { num: "2", icon: Sparkles, title: "Tap to complete", desc: "One tap each day to log your progress. Quick, satisfying, done." },
-  { num: "3", icon: TrendingUp, title: "Watch your growth", desc: "See streaks grow, heatmaps fill in, and your consistency compound over time." },
+
+/* ─── 5-Day Treatment Process Timeline ─── */
+const treatmentDays = [
+  {
+    day: "Day 1",
+    icon: ClipboardList,
+    title: "Comprehensive Diagnostics & Intake",
+    points: [
+      "Multi-specialty clinical physician consultation and detailed medical history mapping",
+      "Baseline clinical diagnostic blood draw and targeted ultrasound mapping",
+      "Individualized cellular therapeutic plan formulation matching patient metrics",
+    ],
+  },
+  {
+    day: "Day 2",
+    icon: Syringe,
+    title: "Primary Laboratory Infusion Phase",
+    points: [
+      "Initiation of primary laboratory-certified embryonic stem cell and exosome infusion (3-4 hour duration)",
+      "Administration of specialized regulatory peptides to target and optimize metabolic function",
+      "Implementation of baseline bioidentical protocols",
+    ],
+  },
+  {
+    day: "Day 3",
+    icon: Sparkles,
+    title: "Secondary Administration & Targeted Aesthetics",
+    points: [
+      "Secondary targeted cell and exosome booster infusion procedures",
+      "Optional integration of localized cosmetic cell injectables or tissue therapies",
+      "Optional medical massage therapy to maximize global circulatory uptake",
+    ],
+  },
+  {
+    day: "Day 4",
+    icon: Activity,
+    title: "Dynamic Evaluation & Sensitivity Mapping",
+    points: [
+      "Comprehensive assessment of early dynamic changes in nervous system signaling",
+      "Precise pallesthesiometry testing to map changes in nerve conduction and localized sensitivity",
+      "Precision clinical data capture to cross-reference baseline metrics",
+    ],
+  },
+  {
+    day: "Day 5",
+    icon: ShieldCheck,
+    title: "Discharge Summary & Follow-Up Milestone Layout",
+    points: [
+      "Final multi-specialty clinical team panel evaluation and recovery summary",
+      "Prescription formulation for long-term supportive home care, peptides, or bioidentical tools",
+      "Structured layout of post-discharge remote monitoring checkpoints and follow-up milestones",
+    ],
+  },
 ];
 
 function HowItWorks() {
   return (
     <section id="how-it-works" className="py-28 bg-white border-y border-border/30">
-      <div className="max-w-4xl mx-auto px-5">
+      <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">How it works</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
-              Three steps to a better routine
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">Treatment Process</p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900" style={{ lineHeight: "1.15" }}>
+              Five Steps to Your Recovery
             </h2>
+            <p className="mt-4 text-base text-slate-600 max-w-2xl mx-auto">
+              A precision-guided 5-day clinical protocol — engineered for measurable regeneration and lasting recovery.
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="relative grid md:grid-cols-3 gap-8">
-          {/* Connecting line between steps (desktop only) */}
-          <div className="hidden md:block absolute top-7 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-px border-t-2 border-dashed border-primary/20" />
-
-          {steps.map((s, i) => (
-            <ScrollReveal key={s.num} delay={i * 100}>
-              <div className="text-center relative">
-                <div className="w-14 h-14 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-5 text-lg font-bold shadow-lg shadow-primary/15">
-                  {s.num}
+        {/* Desktop: horizontal pipeline */}
+        <div className="hidden lg:block relative">
+          {/* Connector line */}
+          <div className="absolute top-7 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#FDAA3E]/30 via-[#FDAA3E] to-[#FDAA3E]/30" />
+          <div className="grid grid-cols-5 gap-5 relative">
+            {treatmentDays.map((d, i) => (
+              <ScrollReveal key={d.day} delay={i * 90}>
+                <div className="flex flex-col items-center">
+                  {/* Day marker */}
+                  <div className="relative z-10 w-14 h-14 rounded-full bg-[#FDAA3E] text-white flex items-center justify-center shadow-lg shadow-[#FDAA3E]/30 ring-4 ring-white mb-5">
+                    <d.icon className="w-6 h-6" strokeWidth={2.25} />
+                  </div>
+                  <div className="w-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-[#FDAA3E]/40 transition-all duration-300 h-full">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-[#FDAA3E] mb-1.5">{d.day}</p>
+                    <h3 className="font-semibold text-slate-900 text-base mb-3 leading-snug">{d.title}</h3>
+                    <ul className="space-y-2">
+                      {d.points.map((p, j) => (
+                        <li key={j} className="flex gap-2 text-[13px] text-slate-600 leading-relaxed">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[#FDAA3E] shrink-0" />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-foreground text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{s.desc}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile/Tablet: vertical timeline */}
+        <div className="lg:hidden relative space-y-6">
+          <div className="absolute left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#FDAA3E]/30 via-[#FDAA3E] to-[#FDAA3E]/30" />
+          {treatmentDays.map((d, i) => (
+            <ScrollReveal key={d.day} delay={i * 70}>
+              <div className="relative flex gap-5 items-start">
+                <div className="relative z-10 w-14 h-14 rounded-full bg-[#FDAA3E] text-white flex items-center justify-center shadow-lg shadow-[#FDAA3E]/30 ring-4 ring-white shrink-0">
+                  <d.icon className="w-6 h-6" strokeWidth={2.25} />
+                </div>
+                <div className="flex-1 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#FDAA3E] mb-1.5">{d.day}</p>
+                  <h3 className="font-semibold text-slate-900 text-base mb-3 leading-snug">{d.title}</h3>
+                  <ul className="space-y-2">
+                    {d.points.map((p, j) => (
+                      <li key={j} className="flex gap-2 text-[13px] text-slate-600 leading-relaxed">
+                        <span className="mt-1.5 w-1 h-1 rounded-full bg-[#FDAA3E] shrink-0" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
           ))}
