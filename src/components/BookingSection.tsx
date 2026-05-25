@@ -4,8 +4,8 @@ import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calen
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
 
-// Swap this for your real Calendly / Cal.com event link.
-const CALENDAR_URL = "https://calendly.com/your-placeholder-url";
+// Calendly event link, themed with brand colors.
+const CALENDAR_URL = "https://calendly.com/admin-newcotel/30min?text_color=03045e&primary_color=02c39a";
 
 const CONCERNS = [
   "Erectile Dysfunction & Urological Recovery",
