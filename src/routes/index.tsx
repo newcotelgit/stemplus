@@ -367,7 +367,7 @@ const treatCards = [
 
 function Features() {
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="treatments" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         <ScrollReveal>
           <div className="mb-14 max-w-3xl">
@@ -458,7 +458,7 @@ const treatmentDays = [
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-28 bg-white border-y border-border/30">
+    <section id="process" className="py-28 bg-white border-y border-border/30">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -583,7 +583,7 @@ function Reviews() {
   const story = successStories[index];
 
   return (
-    <section id="reviews" className="py-20 sm:py-28 bg-white">
+    <section id="testimonials" className="py-20 sm:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-16">
@@ -723,7 +723,7 @@ const TEAM = [
 
 function MedicalTeam() {
   return (
-    <section id="team" className="py-24 bg-secondary/30">
+    <section id="medical-team" className="py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-5">
         <div className="text-center mb-14 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">

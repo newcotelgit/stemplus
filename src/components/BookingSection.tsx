@@ -132,7 +132,7 @@ export default function BookingSection() {
   const label = "block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2";
 
   return (
-    <section id="booking" className="py-28 bg-white border-t border-slate-100">
+    <section id="admissions" className="py-28 bg-white border-t border-slate-100">
       <div className="max-w-5xl mx-auto px-5">
         <div className="text-center mb-12">
           
