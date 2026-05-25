@@ -614,6 +614,61 @@ function Reviews() {
   );
 }
 
+/* ─── Medical Team ─── */
+const TEAM = [
+  { img: doctor1, name: "Dr. Yaroslav Myroshnykov, MD", role: "CHIEF MEDICAL OFFICER & REGENERATIVE CELL THERAPIST", bio: "Pioneer in clinical cell transplantation, directing advanced embryonic cell protocols and customized bio-therapeutic pathways for complex international cases." },
+  { img: doctor2, name: "Dr. Nini Kandelaki, PhD", role: "DERMATOLOGIST & SPECIALIST IN COSMETOLOGY", bio: "Leading advanced cellular skin rejuvenation treatments, aesthetic exosome therapies, and custom anti-aging dermal protocols." },
+  { img: doctor3, name: "Dr. Mikhail Tsverava", role: "DIAGNOSTIC ULTRASOUND SPECIALIST", bio: "Providing precision high-resolution sonographic diagnostics and targeted ultrasound-guided localization for localized tissue infusions." },
+  { img: doctor4, name: "Dr. Eleonora Fiodorova", role: "ENDOCRINOLOGIST & NUTRITIONIST", bio: "Specializing in comprehensive metabolic stabilization, weight optimization tracking, and advanced endocrine system compensation plans." },
+  { img: doctor5, name: "Lili Martashvili", role: "HEAD NURSE", bio: "Directing the clinical nursing department, patient intake procedures, and ensuring flawless medical compliance safety across all departments." },
+  { img: doctor6, name: "Mako Khachidze", role: "CLINICAL INFUSION NURSE", bio: "Managing therapeutic patient care monitoring, daily coordinate tracking, and professional execution of advanced cellular intravenous protocols." },
+  { img: doctor7, name: "Dr. Natia Alania", role: "NEUROLOGIST", bio: "Specializing in neurodevelopmental tracking, localized cellular applications, and targeted recovery protocols for Autism and neurological cases." },
+  { img: doctor8, name: "Dr. Giorgi Archaia", role: "NEUROSURGEON, NEUROLOGIST & VERTEBROLOGIST", bio: "Directing advanced clinical neuro-recovery pathways, complex spinal system diagnostics, and targeted neural regeneration protocols." },
+];
+
+function MedicalTeam() {
+  return (
+    <section id="team" className="py-24 bg-secondary/30">
+      <div className="max-w-7xl mx-auto px-5">
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            The Minds Behind the Medicine
+          </h2>
+          <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Meet the elite clinical faculty and cellular bio-therapeutic pioneers directing your recovery protocols at StemPlus Tbilisi.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {TEAM.map((m) => (
+            <article
+              key={m.name}
+              className="group bg-white rounded-2xl border border-border/60 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col"
+            >
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <span className="inline-block self-start text-[10px] font-semibold tracking-wider text-accent-foreground bg-accent/60 px-2.5 py-1 rounded-full uppercase leading-tight">
+                  {m.role}
+                </span>
+                <h3 className="text-lg font-bold text-foreground leading-snug">{m.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Final CTA ─── */
 function FinalCTA() {
   return (
