@@ -4,6 +4,9 @@ import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calen
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
 
+// Swap this for your real Calendly / Cal.com event link.
+const CALENDAR_URL = "https://calendly.com/your-placeholder-url";
+
 const CONCERNS = [
   "Erectile Dysfunction & Urological Recovery",
   "Neurology & Stroke Rehabilitation",
@@ -140,6 +143,7 @@ export default function BookingSection() {
 
   // Page 3
   const [userTz, setUserTz] = useState<string>("Asia/Tbilisi");
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
   const [viewMonth, setViewMonth] = useState(() => {
     const n = new Date(); return { y: n.getFullYear(), m: n.getMonth() };
   });
@@ -431,91 +435,29 @@ export default function BookingSection() {
               <div className="flex items-start justify-between gap-4 mb-6 flex-wrap">
                 <div>
                   <h3 className="text-xl font-semibold mb-1" style={{ color: INDIGO }}>Choose Your Date & Time</h3>
-                  <p className="text-sm text-slate-500">Clinic hours: 09:00–18:00 (Tbilisi). Slots auto-convert to your local time.</p>
+                  <p className="text-sm text-slate-500">Pick a 30-minute slot. Availability is synced live with our medical team's calendar.</p>
                 </div>
               </div>
 
-              <div className="mb-6">
-                <label className={label} style={labelStyle}>Your Local Time Zone</label>
-                <select className={`${input} ${focusRing}`} style={inputStyle} value={userTz} onChange={(e) => { setUserTz(e.target.value); setSelectedSlot(null); }}>
-                  {(TIMEZONES.includes(userTz) ? TIMEZONES : [userTz, ...TIMEZONES]).map((tz) => (
-                    <option key={tz} value={tz}>{formatTzLabel(tz)}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-8">
-                <div className="rounded-2xl border border-slate-200 p-5">
-                  <div className="flex items-center justify-between mb-4">
-                    <button
-                      onClick={() => setViewMonth((v) => ({ y: v.m === 0 ? v.y - 1 : v.y, m: v.m === 0 ? 11 : v.m - 1 }))}
-                      className="w-9 h-9 rounded-lg hover:bg-slate-100 flex items-center justify-center text-slate-600"
-                    ><ChevronLeft className="w-4 h-4" /></button>
-                    <div className="flex items-center gap-2 font-semibold" style={{ color: INDIGO }}>
-                      <CalendarIcon className="w-4 h-4" style={{ color: TEAL }} /> {monthLabel}
-                    </div>
-                    <button
-                      onClick={() => setViewMonth((v) => ({ y: v.m === 11 ? v.y + 1 : v.y, m: v.m === 11 ? 0 : v.m + 1 }))}
-                      className="w-9 h-9 rounded-lg hover:bg-slate-100 flex items-center justify-center text-slate-600"
-                    ><ChevronRight className="w-4 h-4" /></button>
+              <div className="relative rounded-2xl border border-slate-200 overflow-hidden bg-white">
+                {!calendarLoaded && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white z-10">
+                    <div
+                      className="w-10 h-10 rounded-full border-2 border-slate-200 animate-spin"
+                      style={{ borderTopColor: "#64748b" }}
+                      aria-label="Loading calendar"
+                    />
+                    <p className="text-sm text-slate-500">Loading availability…</p>
                   </div>
-                  <div className="grid grid-cols-7 gap-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2 text-center">
-                    {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map((d) => <div key={d}>{d}</div>)}
-                  </div>
-                  <div className="grid grid-cols-7 gap-1">
-                    {calendar.map((d, i) => {
-                      if (!d) return <div key={i} />;
-                      const past = d < today;
-                      const isSelected = selectedDate && d.toDateString() === selectedDate.toDateString();
-                      const isToday = d.toDateString() === new Date().toDateString();
-                      return (
-                        <button
-                          key={i}
-                          disabled={past}
-                          onClick={() => { setSelectedDate(d); setSelectedSlot(null); }}
-                          className="aspect-square rounded-lg text-sm font-medium transition-all"
-                          style={
-                            isSelected
-                              ? { background: TEAL, color: "#fff", boxShadow: `0 8px 20px -8px ${TEAL}` }
-                              : past
-                              ? { color: "#cbd5e1", cursor: "not-allowed" }
-                              : isToday
-                              ? { background: "#f1f5f9", color: INDIGO }
-                              : { color: "#334155" }
-                          }
-                        >{d.getDate()}</button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 p-5">
-                  <div className="flex items-center gap-2 mb-4 font-semibold" style={{ color: INDIGO }}>
-                    <Clock className="w-4 h-4" style={{ color: TEAL }} />
-                    {selectedDate ? formatDateLong(selectedDate) : "Pick a date"}
-                  </div>
-                  {!selectedDate && <p className="text-sm text-slate-500">Select a date on the calendar to view available 30-minute slots.</p>}
-                  {selectedDate && slots.length === 0 && <p className="text-sm text-slate-500">No remaining slots on this date. Please choose another day.</p>}
-                  {selectedDate && slots.length > 0 && (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
-                      {slots.map((s) => {
-                        const isSel = selectedSlot?.getTime() === s.getTime();
-                        return (
-                          <button
-                            key={s.toISOString()}
-                            onClick={() => setSelectedSlot(s)}
-                            className="rounded-xl px-3 py-2.5 text-sm font-medium border transition-all"
-                            style={
-                              isSel
-                                ? { background: TEAL, color: "#fff", borderColor: TEAL, boxShadow: `0 8px 20px -8px ${TEAL}` }
-                                : { background: "#fff", color: "#334155", borderColor: "#e2e8f0" }
-                            }
-                          >{formatInTz(s, userTz)}</button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
+                )}
+                <iframe
+                  src={CALENDAR_URL}
+                  title="Schedule your consultation"
+                  className="w-full h-[650px] min-h-[600px] block"
+                  style={{ border: 0 }}
+                  scrolling="auto"
+                  onLoad={() => setCalendarLoaded(true)}
+                />
               </div>
 
               <div className="mt-10 flex items-center justify-between">
@@ -523,12 +465,11 @@ export default function BookingSection() {
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>
                 <button
-                  disabled={!selectedSlot}
                   onClick={() => goNext(4)}
-                  className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white hover:opacity-90 transition-all duration-200 active:scale-[0.97] shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
+                  className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white hover:opacity-90 transition-all duration-200 active:scale-[0.97] shadow-lg"
                   style={{ background: TEAL, boxShadow: `0 10px 25px -10px ${TEAL}` }}
                 >
-                  Confirm Consultation Booking
+                  I've Booked My Slot
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -536,21 +477,19 @@ export default function BookingSection() {
           )}
 
           {/* STEP 4 — confirmation */}
-          {step === 4 && selectedSlot && (
+          {step === 4 && (
             <div key="s4" className={`${slideClass} text-center py-6`}>
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: `${TEAL}1f` }}>
                 <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg" style={{ background: TEAL, boxShadow: `0 10px 25px -10px ${TEAL}` }}>
                   <Check className="w-7 h-7 text-white" strokeWidth={3} />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2" style={{ color: INDIGO }}>Consultation Confirmed</h3>
+              <h3 className="text-2xl font-bold mb-2" style={{ color: INDIGO }}>Consultation Request Received</h3>
               <p className="text-slate-600 max-w-md mx-auto">
-                Thank you, {fullName.split(" ")[0]}. Your 30-minute consultation is booked for{" "}
-                <span className="font-semibold" style={{ color: INDIGO }}>{formatDateLong(selectedSlot)}</span> at{" "}
-                <span className="font-semibold" style={{ color: INDIGO }}>{formatInTz(selectedSlot, userTz)}</span>{" "}
-                ({userTz.replace(/_/g, " ")}).
+                Thank you{fullName ? `, ${fullName.split(" ")[0]}` : ""}. Your clinical intake has been submitted and your scheduled time is locked in our medical team's calendar.
               </p>
-              <p className="text-sm text-slate-500 mt-3">A confirmation email has been sent to {email}.</p>
+              <p className="text-sm text-slate-500 mt-3">A confirmation email with your meeting link has been sent to {email}.</p>
+
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <button onClick={() => setShowEmail(true)} className="inline-flex items-center gap-2 rounded-xl text-white px-6 py-3 text-sm font-semibold hover:opacity-90 transition active:scale-[0.97]" style={{ background: INDIGO }}>
@@ -574,7 +513,7 @@ export default function BookingSection() {
       </div>
 
       {/* Email preview modal */}
-      {showEmail && selectedSlot && (
+      {showEmail && (
         <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onClick={() => setShowEmail(false)}>
           <div className="bg-white rounded-2xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100 bg-slate-50">
@@ -592,9 +531,8 @@ export default function BookingSection() {
               </div>
               <p className="mb-3">Dear {fullName.split(" ")[0]},</p>
               <p className="mb-3">Thank you for requesting a consultation with StemPlus Clinic in Tbilisi, Georgia. We have successfully received your clinical details and look forward to discussing your personalized regenerative treatment plan.</p>
-              <p className="mb-1">Your 30-minute medical consultation is officially confirmed for:</p>
-              <p className="mb-3"><span className="font-semibold" style={{ color: INDIGO }}>Date:</span> {formatDateLong(selectedSlot)}<br />
-                <span className="font-semibold" style={{ color: INDIGO }}>Time:</span> {formatInTz(selectedSlot, userTz)} ({userTz.replace(/_/g, " ")})</p>
+              <p className="mb-3">Your 30-minute medical consultation is confirmed at the time you selected in our scheduling calendar. You will receive a separate calendar invitation with the exact date, time, and meeting link.</p>
+
               <p className="mb-3">Please join your clinical consultant at the scheduled time using our secure Google Meets link:<br />
                 <a href="https://meet.google.com/stemplus-clinic-consultation" className="font-medium underline break-all" style={{ color: TEAL }}>https://meet.google.com/stemplus-clinic-consultation</a></p>
               <p className="mb-3">In the meantime, if you need to submit any medical records or laboratory diagnostics ahead of our call, please reply directly to this email at <a className="underline" style={{ color: TEAL }} href="mailto:stemplusclinic@gmail.com">stemplusclinic@gmail.com</a>.</p>
