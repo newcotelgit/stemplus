@@ -648,16 +648,11 @@ export default function BookingSection() {
                 <div className="sm:col-span-2">
                   <label className={label} style={labelStyle}>Phone Number</label>
                   <div className="flex gap-2">
-                    <select
-                      className={`rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm ${dialCode ? "text-slate-900" : "text-slate-400"} focus:outline-none focus:ring-2 ${focusRing} transition w-36 shrink-0`}
+                    <CountryCodeCombobox
                       value={dialCode}
-                      onChange={(e) => setDialCode(e.target.value)}
-                    >
-                      <option value="" disabled>🌐 Select Country Code</option>
-                      {DIAL_CODES.map((c) => (
-                        <option key={c.code} value={c.dial}>{c.dial} {c.code}</option>
-                      ))}
-                    </select>
+                      onChange={setDialCode}
+                      focusRing={focusRing}
+                    />
                     <input
                       type="tel"
                       className={`${input} ${focusRing} flex-1`}
