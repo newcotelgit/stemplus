@@ -12,16 +12,16 @@ import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
 import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
-import patient2 from "@/assets/patient-2.png";
-import patient3 from "@/assets/patient-3.png";
-import patient4 from "@/assets/patient-4.png";
-import patient5 from "@/assets/patient-5.png";
-import patient6 from "@/assets/patient-6.png";
-import patient7 from "@/assets/patient-7.png";
-import patient8 from "@/assets/patient-8.png";
-import patient9 from "@/assets/patient-9.png";
-import patient10 from "@/assets/patient-10.png";
-import patient13 from "@/assets/patient-13.png";
+import patient2 from "@/assets/patient-2.jpg";
+import patient3 from "@/assets/patient-3.jpg";
+import patient4 from "@/assets/patient-4.jpg";
+import patient5 from "@/assets/patient-5.jpg";
+import patient6 from "@/assets/patient-6.jpg";
+import patient7 from "@/assets/patient-7.jpg";
+import patient8 from "@/assets/patient-8.jpg";
+import patient9 from "@/assets/patient-9.jpg";
+import patient10 from "@/assets/patient-10.jpg";
+import patient13 from "@/assets/patient-13.jpg";
 import BookingSection from "@/components/BookingSection";
 
 
