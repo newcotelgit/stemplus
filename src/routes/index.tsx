@@ -43,6 +43,7 @@ function LandingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
+      <Heritage />
       <VideoTestimonial />
       <Features />
       <Reviews />
@@ -80,7 +81,80 @@ function VideoTestimonial() {
   );
 }
 
-/* ─── Sticky Header ─── */
+/* ─── Heritage / About ─── */
+const milestones = [
+  {
+    year: "1972",
+    title: "The Foundation of Cellular Therapy",
+    body: "Our scientific heritage begins in Kharkiv, Ukraine, with the establishment of the historic Institute for Problems of Cryobiology and Cryomedicine under the leadership of Academician V.I. Gryshchenko, pioneering global research into the safety and application of stem cells.",
+  },
+  {
+    year: "2006",
+    title: "Clinical Expansion & Leadership",
+    body: "Building upon these foundational academic breakthroughs, Dr. Yaroslav Myroshnykov serves as the founder and head of the prominent Kyiv branch network, later transitioning to serve as a leading researcher at the Transplant Coordination Center of the Ministry of Health of Ukraine.",
+  },
+  {
+    year: "2022–2024",
+    title: "European Relocation & Adaptation",
+    body: "Due to military actions in Ukraine, our elite medical team successfully relocated clinical operations internationally—deploying specialized cellular therapy projects across premium medical clinics in Batumi, Georgia and Plovdiv, Bulgaria.",
+  },
+  {
+    year: "Present Day",
+    title: "The Launch of StemPlus Tbilisi",
+    body: "Today, this fruitful Georgian-Ukrainian cooperation comes together permanently in the heart of Georgia. Led by Dr. Myroshnykov, our staff operates exclusively out of the modern, multidisciplinary Leadermed Hospital in Tbilisi, utilizing the newest diagnostic and therapeutic equipment available in modern regenerative medicine.",
+  },
+];
+
+function Heritage() {
+  return (
+    <section id="heritage" className="py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-5">
+        <div className="text-center lg:text-left mb-14">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">Our Heritage</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 max-w-3xl" style={{ lineHeight: "1.1" }}>
+            The StemPlus Legacy: Bridging Decades of Cellular Science
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left: Credo */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24">
+            <div className="relative">
+              <span className="absolute -left-3 top-0 h-full w-[3px] bg-[#FDAA3E] rounded-full hidden lg:block" />
+              <p className="text-xl sm:text-2xl font-medium text-slate-900 leading-relaxed lg:pl-6" style={{ textWrap: "pretty" }}>
+                StemPlus is not just a modern treatment center; it is the culmination of over{" "}
+                <span className="text-[#FDAA3E] font-semibold">50 years of pioneering research</span>{" "}
+                in cryobiology and cellular medicine.
+              </p>
+              <p className="mt-5 text-base text-slate-600 leading-relaxed lg:pl-6">
+                By combining historic Ukrainian scientific breakthroughs with a state-of-the-art multidisciplinary hospital environment in Tbilisi, Georgia, we provide patients with an unmatched gateway to elite, evidence-based regenerative recovery.
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Timeline */}
+          <div className="lg:col-span-7 relative">
+            <div className="absolute left-[11px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-[#FDAA3E]/40 via-[#FDAA3E]/60 to-[#FDAA3E]/20" />
+            <ol className="space-y-10">
+              {milestones.map((m) => (
+                <li key={m.year} className="relative pl-10">
+                  <span className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-[#FDAA3E] ring-4 ring-white shadow-md shadow-[#FDAA3E]/30 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                  </span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#FDAA3E] mb-1">{m.year}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2 leading-snug">{m.title}</h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed">{m.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#050d0a]/90 backdrop-blur-md border-b border-white/10">
