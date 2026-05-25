@@ -507,9 +507,9 @@ export default function BookingSection() {
                   </div>
                 )}
                 <div
-                  className="calendly-inline-widget w-full"
-                  data-url={CALENDAR_URL}
-                  style={{ minWidth: "320px", height: "700px" }}
+                  id="inline-container"
+                  className="w-full"
+                  style={{ minWidth: "320px", minHeight: "650px" }}
                 />
               </div>
 
