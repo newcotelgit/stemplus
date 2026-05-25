@@ -465,13 +465,6 @@ export default function BookingSection() {
                     <p className="text-sm text-slate-500">Loading availability…</p>
                   </div>
                 )}
-                <iframe
-                  src={CALENDAR_URL}
-                  title="Schedule your consultation"
-                  className="hidden"
-                  aria-hidden="true"
-                  onLoad={() => setCalendarLoaded(true)}
-                />
                 <div
                   className="calendly-inline-widget w-full"
                   data-url={CALENDAR_URL}
