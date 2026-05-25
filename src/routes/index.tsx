@@ -267,39 +267,46 @@ const features = [
   { icon: CloudUpload, title: "Cloud sync", desc: "Sign in to sync your habits across devices. Your data, always safe." },
 ];
 
+const treatCards = [
+  { title: "Erectile Dysfunction & Urological Recovery", desc: "Advanced cellular therapies targeted at restoring vascular integrity, improving blood flow, and optimizing sexual health function.", Icon: ShieldCheck, color: "#03045E" },
+  { title: "Neurology & Stroke Recovery", desc: "Cellular protocols designed for structural neurological support, cognitive optimization, and post-stroke rehabilitation.", Icon: Brain, color: "#03045E" },
+  { title: "Autism Spectrum Protocols", desc: "Specialized bio-therapeutic routing focused on pediatric neuro-developmental support and childhood cellular optimization.", Icon: Activity, color: "#02C39A" },
+  { title: "Autoimmune & Systemic Renewal Protocols", desc: "Targeted immune-modulation and post-traumatic recovery therapies addressing complex inflammation, Crohn's disease, and full-body tissue repair.", Icon: ShieldAlert, color: "#00A896" },
+  { title: "Cellular Rejuvenation & Longevity", desc: "Advanced tissue renewal and systemic anti-aging protocols engineered for international health tourists.", Icon: Heart, color: "#02C39A" },
+  { title: "Diabetes & Metabolic Repair", desc: "Comprehensive metabolic routing focused on advanced glucose regulation and systematic endocrine support.", Icon: RefreshCw, color: "#03045E" },
+  { title: "Orthopedic Spine & Joint Regeneration", desc: "Advanced biomaterial targeting aimed at restoring joint mobility and supporting complex spinal recovery.", Icon: Flame, color: "#00A896" },
+];
+
 function Features() {
   return (
-    <section id="features" className="py-28 relative bg-white">
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(${shadowBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.75 }} />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="features" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-5">
+        <ScrollReveal>
+          <div className="mb-14 max-w-3xl">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#03045E]" style={{ lineHeight: "1.15" }}>
+              What we treat
+            </h2>
+            <p className="mt-4 text-lg text-slate-500">
+              Targeted regenerative therapies for cellular optimization, chronic recovery, and functional vitality.
+            </p>
+          </div>
+        </ScrollReveal>
 
-      <div className="max-w-6xl mx-auto px-5 relative">
-        <div className="flex flex-col items-start gap-12">
-          {/* Right: Features content */}
-          <div className="flex-1">
-            <ScrollReveal>
-              <div className="mb-10">
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Features</p>
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
-                  What We Treat
-                </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {treatCards.map((c, i) => (
+            <ScrollReveal key={c.title} delay={i * 60}>
+              <div className="group relative h-full rounded-2xl border border-slate-200/80 bg-white p-7 pb-14 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-100/50">
+                <div className="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center mb-5">
+                  <c.Icon className="w-5 h-5" style={{ color: c.color }} />
+                </div>
+                <h3 className="text-lg font-semibold text-[#03045E] tracking-tight mb-2">{c.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{c.desc}</p>
+                <span className="absolute bottom-5 right-6 text-xs font-medium text-slate-400 transition-all duration-300 group-hover:text-[#02C39A] group-hover:translate-x-1">
+                  Learn more →
+                </span>
               </div>
             </ScrollReveal>
-
-            <div className="grid sm:grid-cols-2 gap-5">
-              {features.map((f, i) => (
-                <ScrollReveal key={f.title} delay={i * 70}>
-                  <div className="group rounded-2xl border border-black/[0.04] bg-black/[0.03] p-5 hover:bg-black/[0.05] hover:border-black/[0.08] transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
-                      <f.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-1">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
