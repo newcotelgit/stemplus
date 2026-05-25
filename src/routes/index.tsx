@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Infinity as InfinityIcon, Flame, CalendarDays, Moon, Bell, BarChart3, CloudUpload,
   CheckCircle2, TrendingUp, Sparkles, ArrowRight, Star, Quote,
-  ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck,
+  ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck, ShieldPlus,
   Brain, Heart, ShieldAlert, Baby, Bone, Droplet, Zap, Sparkle, Dna, Pill, HeartPulse, Leaf,
   ChevronLeft, ChevronRight,
 } from "lucide-react";
@@ -12,7 +12,18 @@ import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
 import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
+import patient2 from "@/assets/patient-2.png";
+import patient3 from "@/assets/patient-3.png";
+import patient4 from "@/assets/patient-4.png";
+import patient5 from "@/assets/patient-5.png";
+import patient6 from "@/assets/patient-6.png";
+import patient7 from "@/assets/patient-7.png";
+import patient8 from "@/assets/patient-8.png";
+import patient9 from "@/assets/patient-9.png";
+import patient10 from "@/assets/patient-10.png";
+import patient13 from "@/assets/patient-13.png";
 import BookingSection from "@/components/BookingSection";
+
 
 
 export const Route = createFileRoute("/")({
