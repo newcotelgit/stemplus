@@ -477,21 +477,19 @@ export default function BookingSection() {
           )}
 
           {/* STEP 4 — confirmation */}
-          {step === 4 && selectedSlot && (
+          {step === 4 && (
             <div key="s4" className={`${slideClass} text-center py-6`}>
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: `${TEAL}1f` }}>
                 <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg" style={{ background: TEAL, boxShadow: `0 10px 25px -10px ${TEAL}` }}>
                   <Check className="w-7 h-7 text-white" strokeWidth={3} />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2" style={{ color: INDIGO }}>Consultation Confirmed</h3>
+              <h3 className="text-2xl font-bold mb-2" style={{ color: INDIGO }}>Consultation Request Received</h3>
               <p className="text-slate-600 max-w-md mx-auto">
-                Thank you, {fullName.split(" ")[0]}. Your 30-minute consultation is booked for{" "}
-                <span className="font-semibold" style={{ color: INDIGO }}>{formatDateLong(selectedSlot)}</span> at{" "}
-                <span className="font-semibold" style={{ color: INDIGO }}>{formatInTz(selectedSlot, userTz)}</span>{" "}
-                ({userTz.replace(/_/g, " ")}).
+                Thank you{fullName ? `, ${fullName.split(" ")[0]}` : ""}. Your clinical intake has been submitted and your scheduled time is locked in our medical team's calendar.
               </p>
-              <p className="text-sm text-slate-500 mt-3">A confirmation email has been sent to {email}.</p>
+              <p className="text-sm text-slate-500 mt-3">A confirmation email with your meeting link has been sent to {email}.</p>
+
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <button onClick={() => setShowEmail(true)} className="inline-flex items-center gap-2 rounded-xl text-white px-6 py-3 text-sm font-semibold hover:opacity-90 transition active:scale-[0.97]" style={{ background: INDIGO }}>
