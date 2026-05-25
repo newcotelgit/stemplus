@@ -4,6 +4,9 @@ import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calen
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
 
+// Swap this for your real Calendly / Cal.com event link.
+const CALENDAR_URL = "https://calendly.com/your-placeholder-url";
+
 const CONCERNS = [
   "Erectile Dysfunction & Urological Recovery",
   "Neurology & Stroke Rehabilitation",
