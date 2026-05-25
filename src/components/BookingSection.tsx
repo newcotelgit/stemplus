@@ -513,7 +513,7 @@ export default function BookingSection() {
       </div>
 
       {/* Email preview modal */}
-      {showEmail && selectedSlot && (
+      {showEmail && (
         <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onClick={() => setShowEmail(false)}>
           <div className="bg-white rounded-2xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100 bg-slate-50">
@@ -531,9 +531,8 @@ export default function BookingSection() {
               </div>
               <p className="mb-3">Dear {fullName.split(" ")[0]},</p>
               <p className="mb-3">Thank you for requesting a consultation with StemPlus Clinic in Tbilisi, Georgia. We have successfully received your clinical details and look forward to discussing your personalized regenerative treatment plan.</p>
-              <p className="mb-1">Your 30-minute medical consultation is officially confirmed for:</p>
-              <p className="mb-3"><span className="font-semibold" style={{ color: INDIGO }}>Date:</span> {formatDateLong(selectedSlot)}<br />
-                <span className="font-semibold" style={{ color: INDIGO }}>Time:</span> {formatInTz(selectedSlot, userTz)} ({userTz.replace(/_/g, " ")})</p>
+              <p className="mb-3">Your 30-minute medical consultation is confirmed at the time you selected in our scheduling calendar. You will receive a separate calendar invitation with the exact date, time, and meeting link.</p>
+
               <p className="mb-3">Please join your clinical consultant at the scheduled time using our secure Google Meets link:<br />
                 <a href="https://meet.google.com/stemplus-clinic-consultation" className="font-medium underline break-all" style={{ color: TEAL }}>https://meet.google.com/stemplus-clinic-consultation</a></p>
               <p className="mb-3">In the meantime, if you need to submit any medical records or laboratory diagnostics ahead of our call, please reply directly to this email at <a className="underline" style={{ color: TEAL }} href="mailto:stemplusclinic@gmail.com">stemplusclinic@gmail.com</a>.</p>
