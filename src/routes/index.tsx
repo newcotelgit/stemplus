@@ -497,7 +497,7 @@ function Reviews() {
           <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
             {/* Left: image OR typographic data graphic */}
             <div
-              className="relative rounded-3xl overflow-hidden flex items-center justify-center min-h-[260px] md:min-h-[460px] transition-colors duration-500"
+              className="relative rounded-3xl overflow-hidden flex items-center justify-center h-[360px] md:h-[500px] transition-colors duration-500"
               style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
             >
               {/* Preload + stack all image slides so switching is instant (no re-fetch/decode) */}
