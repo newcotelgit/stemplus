@@ -209,7 +209,7 @@ export default function BookingSection() {
     };
   }, [step, fullName, email, dialCode, phone, concern, timeline, diagnosis, notes]);
 
-  const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && phone.trim().length >= 4 && country;
+  const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && dialCode && phone.trim().length >= 4 && country;
   const page2Valid = concern && timeline && diagnosis;
 
   const goNext = (to: Step) => { setDirection(1); setStep(to); };
