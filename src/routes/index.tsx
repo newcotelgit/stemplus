@@ -68,7 +68,6 @@ function LandingPage() {
       <Features />
       <Reviews />
       <MedicalTeam />
-      <PremiumCTA />
       <Heritage />
       <HowItWorks />
       <FinalCTA />
