@@ -548,7 +548,7 @@ function Reviews() {
 
 
             {/* Right: white quote card */}
-            <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col min-h-[220px] md:min-h-[460px]">
+            <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col h-[420px] md:h-[500px] overflow-y-auto">
               <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
 
               <span className="inline-block self-start rounded-full bg-[#FDAA3E]/10 text-[#B86A12] border border-[#FDAA3E]/30 text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1.5 mb-5 sm:mb-6 max-w-full">
