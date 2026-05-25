@@ -132,7 +132,7 @@ export default function BookingSection() {
   // Page 1
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [dialCode, setDialCode] = useState("+995");
+  const [dialCode, setDialCode] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
 
@@ -209,7 +209,7 @@ export default function BookingSection() {
     };
   }, [step, fullName, email, dialCode, phone, concern, timeline, diagnosis, notes]);
 
-  const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && phone.trim().length >= 4 && country;
+  const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && dialCode && phone.trim().length >= 4 && country;
   const page2Valid = concern && timeline && diagnosis;
 
   const goNext = (to: Step) => { setDirection(1); setStep(to); };
@@ -337,10 +337,11 @@ export default function BookingSection() {
                   <label className={label} style={labelStyle}>Phone Number</label>
                   <div className="flex gap-2">
                     <select
-                      className={`rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 ${focusRing} transition w-32 shrink-0`}
+                      className={`rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm ${dialCode ? "text-slate-900" : "text-slate-400"} focus:outline-none focus:ring-2 ${focusRing} transition w-36 shrink-0`}
                       value={dialCode}
                       onChange={(e) => setDialCode(e.target.value)}
                     >
+                      <option value="" disabled>🌐 Select Country Code</option>
                       {DIAL_CODES.map((c) => (
                         <option key={c.code} value={c.dial}>{c.dial} {c.code}</option>
                       ))}
