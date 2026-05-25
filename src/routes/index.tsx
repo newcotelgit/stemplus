@@ -430,20 +430,44 @@ function HowItWorks() {
 
 /* ─── Clinical Success Stories Carousel ─── */
 const successStories = [
-  { badge: "TYPE 2 DIABETES PROTOCOL", text: "I struggled to control my Type 2 Diabetes with high doses of insulin and pills for 14 years. Following an intensive 5-day custom embryonic stem cell and exosome program under Dr. Yaroslav, my blood glucose levels dropped by a remarkable 60% by Day 2. By Day 5, my leg numbness and severe sciatic nerve pain were reduced by nearly 90%.", author: "Fawaz", location: "Kuwait", Icon: Droplet, color: "#312E81" },
-  { badge: "PEDIATRIC AUTISM NEUROREHABILITATION", text: "We traveled from Al Ain for my son Muhammad's Autism care. The clinic handled everything seamlessly, from airport arrival to daily transport. Over a targeted 3-day cellular infusion program, we witnessed immediate behavioral breakthroughs—Muhammad's severe sleep irregularity has completely resolved, and he is now sleeping deeply and calmly.", author: "Muhammad's Father", location: "United Arab Emirates", Icon: Baby, color: "#1D4ED8" },
-  { badge: "POST-STROKE HEMIPLEGIA RECOVERY", text: "Three and a half years ago, a stroke left me with severe hemiplegia and motor paralysis across half of my body. After arriving at StemPlus Tbilisi, I received targeted intravenous, intrathecal, and endonasal embryonic stem cell and placental infusions. The clinical results have been profound—I am experiencing a step-by-step return of physical motor control and tactile sensation.", author: "Kamil Kamshad", location: "Iraq", Icon: Brain, color: "#0891B2" },
-  { badge: "CHRONIC CROHN'S DISEASE PROTOCOL", text: "As a Crohn's disease patient for over 20 years, I spent the last five years in absolute agony, undergoing two unsuccessful operations. After a friend recommended this team, I traveled to the clinic for specialized stem cell therapy. Within just the first five days of my personalized biological care, my localized pain began to drastically subside and my baseline physical energy levels surged.", author: "Mustafa", location: "Chronic Crohn's Patient", Icon: ShieldAlert, color: "#06B6D4" },
-  { badge: "MULTI-TARGET SYSTEMIC REJUVENATION", text: "I came to Tbilisi for a multi-target therapy focused on systematic anti-aging and rejuvenation. The medical staff explained every diagnostic action with total transparency, removing all my anxiety. Over a 5-day custom treatment plan covering my face, neck, and abdomen, my physical vitality skyrocketed, my skin looks noticeably regenerated, and my chronic back and waist soreness completely vanished.", author: "International Patient", location: "China", Icon: Sparkle, color: "#0D9488" },
-  { badge: "AUTISM SPECTRUM COGNITIVE DEVELOPMENT", text: "This is our second time trusting this elite medical team with my son Seif's neurorehabilitation for Autism. The custom cellular therapy, combined with the clinic's exceptionally organized, clean, and deeply supportive multidisciplinary hospital environment in Tbilisi, gives us immense confidence in his continuous cognitive progress.", author: "Seif's Father", location: "Saudi Arabia", Icon: Brain, color: "#312E81" },
-  { badge: "CHRONIC ORGAN REPAIR & METABOLIC SYSTEMS", text: "The clinic's medical coordination work is beautiful and highly authoritative. I have been following this specific medical team since their initial practice back in Ukraine, and now in Tbilisi, their execution is flawless. For anyone looking for cutting-edge solutions for complex internal organs or advanced metabolic conditions, I can verify their protocols are elite.", author: "Verified Clinic Reviewer", location: "Gulf Region", Icon: Dna, color: "#1D4ED8" },
-  { badge: "SYSTEMIC ANTI-AGING & CELL VITALIZATION", text: "I traveled from Mersin for a multi-day cellular anti-aging and total system vitalization plan. Within 6 to 7 days of precise cellular care under Dr. Yaroslav, I feel completely transformed. I am experiencing a massive surge in physical energy, youthful skin regeneration, and total systemic optimization. The clinical execution here is perfect.", author: "Anti-Aging Patient", location: "Turkey", Icon: Zap, color: "#0891B2" },
-  { badge: "AUTISM SPECTRUM COORDINATED RECOVERY", text: "The care and absolute clarity of the consultation process here is remarkable. From the moment we touched down at the airport, the coordination team handled every logistic with incredible support. This thorough care has given us immense hope and security regarding our young son's continuous cognitive and socialization tracking plans.", author: "Pediatric Care Parent", location: "United Arab Emirates", Icon: Baby, color: "#06B6D4" },
-  { badge: "NEUROLOGICAL STABILIZATION & RECOVERY", text: "I highly value the absolute therapeutic transparency and comprehensive approach provided by the medical staff. Every action, step, and diagnostic verification was detailed to me with total clarity. I felt notable structural benefits and an energetic surge within just 4 days of cellular care.", author: "Female Patient", location: "Eastern Europe", Icon: Activity, color: "#0D9488" },
-  { badge: "SPINAL DISC & NERVE MOBILE REHABILITATION", text: "I suffered from severe spinal disc herniation and localized radiating nerve pain that restricted my movement. The targeted cell and exosome therapy plan completely eliminated my localized joint inflammation and accelerated my recovery without any surgical risks. I have fully regained my physical mobility and comfort.", author: "Orthopedic Patient", location: "Gulf Region", Icon: Bone, color: "#312E81" },
-  { badge: "COMPLEX TISSUE & ORTHOPEDIC REPAIR", text: "The positive energy, attentiveness, and continuous support from the clinical coordinators made my treatment incredibly comforting. Every staff member is highly professional, ensuring a flawless therapeutic process that has completely revitalized my joint movement and general physical capacity.", author: "International Patient", location: "Middle East", Icon: Bone, color: "#1D4ED8" },
-  { badge: "METABOLIC COMPENSATION & VITALITY", text: "The dynamic bodily changes and energy optimization I experienced by Day 5 were incredible. This multi-potent embryonic cell protocol has completely restored my physical activity levels, balanced my metabolic metrics, and provided deep, restorative sleep quality that I haven't had in years.", author: "Healthcare Tourist", location: "Saudi Arabia", Icon: HeartPulse, color: "#0891B2" },
-  { badge: "POST-TRAUMATIC SYSTEMIC RENEWAL", text: "A highly sophisticated medical alliance. The combination of specialized embryonic Muse cells with target peptides completely eliminated my chronic pain, optimized my internal organ tracking metrics, and allowed me to transition toward a completely drug-independent lifestyle. I highly praise this team's work.", author: "Systemic Therapy Patient", location: "Iraq", Icon: Leaf, color: "#06B6D4" },
+  {
+    kind: "graphic" as const,
+    graphic: { bg: "#03045E", title: "-60%", subtitle: "Glucose Drop by Day 2", titleColor: "#FDAA3E" },
+    badge: "TYPE 2 DIABETES PROTOCOL",
+    text: "I struggled to control my Type 2 Diabetes with high doses of insulin and pills for 14 years. Following an intensive 5-day custom embryonic stem cell and exosome program under Dr. Yaroslav, my blood glucose levels dropped by a remarkable 60% by Day 2. By Day 5, my leg numbness and severe sciatic nerve pain were reduced by nearly 90%.",
+    author: "Fawaz", location: "Kuwait",
+  },
+  { kind: "image" as const, image: patient2, badge: "PEDIATRIC AUTISM NEUROREHABILITATION", text: "We traveled from Al Ain for my son Muhammad's Autism care. The clinic handled everything seamlessly, from airport arrival to daily transport. Over a targeted 3-day cellular infusion program, we witnessed immediate behavioral breakthroughs—Muhammad's severe sleep irregularity has completely resolved, and he is now sleeping deeply and calmly.", author: "Muhammad's Father", location: "United Arab Emirates" },
+  { kind: "image" as const, image: patient3, badge: "POST-STROKE HEMIPLEGIA RECOVERY", text: "Three and a half years ago, a stroke left me with severe hemiplegia and motor paralysis across half of my body. After arriving at StemPlus Tbilisi, I received targeted intravenous, intrathecal, and endonasal embryonic stem cell and placental infusions. The clinical results have been profound—I am experiencing a step-by-step return of physical motor control and tactile sensation.", author: "Kamil Kamshad", location: "Iraq" },
+  { kind: "image" as const, image: patient4, badge: "CHRONIC CROHN'S DISEASE PROTOCOL", text: "As a Crohn's disease patient for over 20 years, I spent the last five years in absolute agony, undergoing two unsuccessful operations. After a friend recommended this team, I traveled to the clinic for specialized stem cell therapy. Within just the first five days of my personalized biological care, my localized pain began to drastically subside and my baseline physical energy levels surged.", author: "Mustafa", location: "Chronic Crohn's Patient" },
+  { kind: "image" as const, image: patient5, badge: "MULTI-TARGET SYSTEMIC REJUVENATION", text: "I came to Tbilisi for a multi-target therapy focused on systematic anti-aging and rejuvenation. The medical staff explained every diagnostic action with total transparency, removing all my anxiety. Over a 5-day custom treatment plan covering my face, neck, and abdomen, my physical vitality skyrocketed, my skin looks noticeably regenerated, and my chronic back and waist soreness completely vanished.", author: "International Patient", location: "China" },
+  { kind: "image" as const, image: patient6, badge: "AUTISM SPECTRUM COGNITIVE DEVELOPMENT", text: "This is our second time trusting this elite medical team with my son Seif's neurorehabilitation for Autism. The custom cellular therapy, combined with the clinic's exceptionally organized, clean, and deeply supportive multidisciplinary hospital environment in Tbilisi, gives us immense confidence in his continuous cognitive progress.", author: "Seif's Father", location: "Saudi Arabia" },
+  { kind: "image" as const, image: patient7, badge: "CHRONIC ORGAN REPAIR & METABOLIC SYSTEMS", text: "The clinic's medical coordination work is beautiful and highly authoritative. I have been following this specific medical team since their initial practice back in Ukraine, and now in Tbilisi, their execution is flawless. For anyone looking for cutting-edge solutions for complex internal organs or advanced metabolic conditions, I can verify their protocols are elite.", author: "Verified Clinic Reviewer", location: "Gulf Region" },
+  { kind: "image" as const, image: patient8, badge: "SYSTEMIC ANTI-AGING & CELL VITALIZATION", text: "I traveled from Mersin for a multi-day cellular anti-aging and total system vitalization plan. Within 6 to 7 days of precise cellular care under Dr. Yaroslav, I feel completely transformed. I am experiencing a massive surge in physical energy, youthful skin regeneration, and total systemic optimization. The clinical execution here is perfect.", author: "Anti-Aging Patient", location: "Turkey" },
+  { kind: "image" as const, image: patient9, badge: "AUTISM SPECTRUM COORDINATED RECOVERY", text: "The care and absolute clarity of the consultation process here is remarkable. From the moment we touched down at the airport, the coordination team handled every logistic with incredible support. This thorough care has given us immense hope and security regarding our young son's continuous cognitive and socialization tracking plans.", author: "Pediatric Care Parent", location: "United Arab Emirates" },
+  { kind: "image" as const, image: patient10, badge: "NEUROLOGICAL STABILIZATION & RECOVERY", text: "I highly value the absolute therapeutic transparency and comprehensive approach provided by the medical staff. Every action, step, and diagnostic verification was detailed to me with total clarity. I felt notable structural benefits and an energetic surge within just 4 days of cellular care.", author: "Female Patient", location: "Eastern Europe" },
+  {
+    kind: "graphic" as const,
+    graphic: { bg: "#02C39A", icon: Bone, label: "Mobility Restored" },
+    badge: "SPINAL DISC & NERVE MOBILE REHABILITATION",
+    text: "I suffered from severe spinal disc herniation and localized radiating nerve pain that restricted my movement. The targeted cell and exosome therapy plan completely eliminated my localized joint inflammation and accelerated my recovery without any surgical risks. I have fully regained my physical mobility and comfort.",
+    author: "Orthopedic Patient", location: "Gulf Region",
+  },
+  {
+    kind: "graphic" as const,
+    graphic: { bg: "#03045E", icon: Dna, label: "Joint Regeneration" },
+    badge: "COMPLEX TISSUE & ORTHOPEDIC REPAIR",
+    text: "The positive energy, attentiveness, and continuous support from the clinical coordinators made my treatment incredibly comforting. Every staff member is highly professional, ensuring a flawless therapeutic process that has completely revitalized my joint movement and general physical capacity.",
+    author: "International Patient", location: "Middle East",
+  },
+  { kind: "image" as const, image: patient13, badge: "METABOLIC COMPENSATION & VITALITY", text: "The dynamic bodily changes and energy optimization I experienced by Day 5 were incredible. This multi-potent embryonic cell protocol has completely restored my physical activity levels, balanced my metabolic metrics, and provided deep, restorative sleep quality that I haven't had in years.", author: "Healthcare Tourist", location: "Saudi Arabia" },
+  {
+    kind: "graphic" as const,
+    graphic: { bg: "#00A896", icon: ShieldPlus, label: "Systemic Renewal" },
+    badge: "POST-TRAUMATIC SYSTEMIC RENEWAL",
+    text: "A highly sophisticated medical alliance. The combination of specialized embryonic Muse cells with target peptides completely eliminated my chronic pain, optimized my internal organ tracking metrics, and allowed me to transition toward a completely drug-independent lifestyle. I highly praise this team's work.",
+    author: "Systemic Therapy Patient", location: "Iraq",
+  },
 ];
 
 function Reviews() {
@@ -452,7 +476,6 @@ function Reviews() {
   const prev = () => setIndex((i) => (i - 1 + total) % total);
   const next = () => setIndex((i) => (i + 1) % total);
   const story = successStories[index];
-  const Icon = story.Icon;
 
   return (
     <section id="reviews" className="py-20 sm:py-28 bg-white">
@@ -471,18 +494,46 @@ function Reviews() {
 
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
-            {/* Left: color-block icon card */}
+            {/* Left: image OR typographic data graphic */}
             <div
-              className="relative rounded-3xl overflow-hidden flex items-center justify-center min-h-[220px] md:min-h-[460px] transition-colors duration-500"
-              style={{ backgroundColor: story.color }}
+              className="relative rounded-3xl overflow-hidden flex items-center justify-center min-h-[260px] md:min-h-[460px] transition-colors duration-500"
+              style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-              <Icon className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 text-white/95" strokeWidth={1.25} />
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white/80 text-xs font-medium">
+              {story.kind === "image" ? (
+                <img
+                  src={story.image}
+                  alt={story.author}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              ) : "title" in story.graphic ? (
+                <div className="relative px-8 text-center">
+                  <div
+                    className="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
+                    style={{ color: story.graphic.titleColor }}
+                  >
+                    {story.graphic.title}
+                  </div>
+                  <div className="mt-4 text-white text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
+                    {story.graphic.subtitle}
+                  </div>
+                </div>
+              ) : (
+                <div className="relative flex flex-col items-center text-center px-8">
+                  {(() => { const I = story.graphic.icon; return <I className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 text-white" strokeWidth={1.25} />; })()}
+                  <div className="mt-5 text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+                    {story.graphic.label}
+                  </div>
+                </div>
+              )}
+
+              {/* Bottom overlay strip — readable over both images and graphic blocks */}
+              <div className="absolute bottom-0 left-0 right-0 px-5 py-3 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-between text-white text-xs font-medium">
                 <span>StemPlus Tbilisi</span>
                 <span>{String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
               </div>
             </div>
+
 
             {/* Right: white quote card */}
             <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col min-h-[220px] md:min-h-[460px]">
