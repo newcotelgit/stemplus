@@ -31,6 +31,7 @@ import doctor6 from "@/assets/doctor-6.jpg";
 import doctor7 from "@/assets/doctor-7.jpg";
 import doctor8 from "@/assets/doctor-8.jpg";
 import BookingSection from "@/components/BookingSection";
+import WhatWeTreatSection from "@/components/WhatWeTreatSection";
 
 
 
@@ -65,7 +66,7 @@ function LandingPage() {
       <Header />
       <Hero />
       <VideoTestimonial />
-      <Features />
+      <WhatWeTreatSection />
       <Reviews />
       <MedicalTeam />
       <Heritage />
