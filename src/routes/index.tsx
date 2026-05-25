@@ -804,23 +804,75 @@ function FinalCTA() {
 
 /* ─── Footer ─── */
 function Footer() {
+  const mapSrc =
+    "https://www.google.com/maps?q=" +
+    encodeURIComponent("21 Nodar Bokhua I Ln, Tbilisi 0159, Georgia") +
+    "&output=embed";
   return (
-    <footer className="border-t border-border/40 py-12">
-      <div className="max-w-5xl mx-auto px-5">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="Continuum" className="h-28 w-auto" />
+    <footer className="bg-slate-950 border-t border-slate-800/60 text-slate-400">
+      <div className="max-w-6xl mx-auto px-5 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Column 1: HQ */}
+          <div>
+            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+              Corporate Headquarters
+            </span>
+            <address className="not-italic text-sm leading-relaxed tracking-wide">
+              <div className="font-semibold text-slate-100">Stem Plus LLC</div>
+              <div>21 Nodar Bokhua I Ln</div>
+              <div>Tbilisi, 0159</div>
+              <div>Georgia</div>
+            </address>
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-            <a href="#how-it-works" className="hover:text-foreground transition-colors">How it works</a>
-            <a href="#reviews" className="hover:text-foreground transition-colors">Reviews</a>
-            <Link to="/login" className="hover:text-foreground transition-colors">Sign in</Link>
-            <Link to="/login" className="hover:text-foreground transition-colors">Get started</Link>
+          {/* Column 2: Map */}
+          <div>
+            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+              Spatial Location
+            </span>
+            <div className="rounded-xl overflow-hidden border border-slate-800" style={{ height: 180 }}>
+              <iframe
+                title="Stem Plus LLC location"
+                src={mapSrc}
+                width="100%"
+                height="180"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{ border: 0, display: "block" }}
+              />
+            </div>
           </div>
 
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Continuum</p>
+          {/* Column 3: Contacts */}
+          <div>
+            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+              Clinical Contacts
+            </span>
+            <ul className="text-sm space-y-2">
+              <li><span className="text-slate-100 font-medium">GE:</span> +995 [Click to add number]</li>
+              <li><span className="text-slate-100 font-medium">US:</span> +1 [Click to add number]</li>
+              <li><span className="text-slate-100 font-medium">UK:</span> +44 [Click to add number]</li>
+              <li><span className="text-slate-100 font-medium">DE:</span> +49 [Click to add number]</li>
+              <li>
+                <span className="text-slate-100 font-medium">Email:</span>{" "}
+                <a
+                  href="mailto:stemcellplus@gmail.com"
+                  className="text-slate-300 transition-colors duration-200 hover:text-[#02C39A]"
+                >
+                  stemcellplus@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-6 border-t border-slate-900/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500">© 2026 Stem Plus LLC. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]">Privacy Policy</Link>
+            <Link to="/terms" className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]">Terms of Service</Link>
+            <Link to="/terms" className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]">Medical Disclaimer</Link>
+          </div>
         </div>
       </div>
     </footer>
