@@ -235,7 +235,7 @@ function Hero() {
 
             <ScrollReveal delay={160}>
               <p className="mt-6 text-lg text-white text-left" style={{ textWrap: "pretty", lineHeight: "1.6" }}>
-                Book Your Consultation
+                ​
               </p>
             </ScrollReveal>
 
