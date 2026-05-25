@@ -159,9 +159,9 @@ export default function BookingSection() {
     if (step !== 3) return;
 
     const params = new URLSearchParams({
-      Name: fullName,
-      Email: email,
-      Phone: `${dialCode} ${phone}`.trim(),
+      "Name": fullName,
+      "Email": email,
+      "Contact Number": `${dialCode} ${phone}`.trim(),
       "Primary Area of Concern": concern,
       "Timeline for Treatment": timeline,
       "Formal Clinical Diagnosis": diagnosis,
