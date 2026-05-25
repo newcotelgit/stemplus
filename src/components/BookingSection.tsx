@@ -154,20 +154,60 @@ export default function BookingSection() {
 
   useEffect(() => { setUserTz(detectTimezone()); }, []);
 
-  // Load Calendly inline-widget script once Step 3 is reached.
+  // Load Zoho Bookings embed script and mount the inline widget once Step 3 is reached.
   useEffect(() => {
     if (step !== 3) return;
-    const SRC = "https://assets.calendly.com/assets/external/widget.js";
-    if (document.querySelector(`script[src="${SRC}"]`)) {
-      setCalendarLoaded(true);
-      return;
+
+    const params = new URLSearchParams({
+      Name: fullName,
+      Email: email,
+      Phone: `${dialCode} ${phone}`.trim(),
+      "Primary Area of Concern": concern,
+      "Timeline for Treatment": timeline,
+      "Formal Clinical Diagnosis": diagnosis,
+      "Brief Case Notes": notes || "",
+    });
+    const dynamicZohoUrl = `${ZOHO_BASE_URL}?${params.toString()}`;
+
+    let cancelled = false;
+
+    const mountWidget = () => {
+      const Bookings = (window as any).Bookings;
+      const container = document.getElementById("inline-container");
+      if (cancelled || !Bookings || !container) return;
+      container.innerHTML = "";
+      try {
+        Bookings.inlineEmbed({
+          parent: container,
+          url: dynamicZohoUrl,
+          height: "650px",
+          width: "100%",
+        });
+        setCalendarLoaded(true);
+      } catch (e) {
+        console.error("Zoho Bookings inlineEmbed error:", e);
+      }
+    };
+
+    const existing = document.querySelector(`script[src="${ZOHO_EMBED_SCRIPT}"]`) as HTMLScriptElement | null;
+    if (existing && (window as any).Bookings) {
+      mountWidget();
+    } else if (existing) {
+      existing.addEventListener("load", mountWidget, { once: true });
+    } else {
+      const script = document.createElement("script");
+      script.src = ZOHO_EMBED_SCRIPT;
+      script.async = true;
+      script.onload = mountWidget;
+      document.body.appendChild(script);
     }
-    const script = document.createElement("script");
-    script.src = SRC;
-    script.async = true;
-    script.onload = () => setCalendarLoaded(true);
-    document.body.appendChild(script);
-  }, [step]);
+
+    return () => {
+      cancelled = true;
+      const container = document.getElementById("inline-container");
+      if (container) container.innerHTML = "";
+    };
+  }, [step, fullName, email, dialCode, phone, concern, timeline, diagnosis, notes]);
 
   const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && phone.trim().length >= 4 && country;
   const page2Valid = concern && timeline && diagnosis;
