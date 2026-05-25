@@ -199,11 +199,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800/40"
-          : "bg-transparent border-b border-transparent"
-      }`}
+      className="sticky top-0 left-0 right-0 z-50 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/40"
     >
       <nav className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
