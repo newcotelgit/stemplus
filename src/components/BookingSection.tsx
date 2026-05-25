@@ -135,7 +135,7 @@ export default function BookingSection() {
     <section id="booking" className="py-28 bg-white border-t border-slate-100">
       <div className="max-w-5xl mx-auto px-5">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">Book Your Consultation</p>
+          
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900" style={{ lineHeight: "1.15" }}>
             Schedule a 30-Minute Medical Consultation
           </h2>
