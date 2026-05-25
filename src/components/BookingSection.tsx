@@ -4,8 +4,9 @@ import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calen
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
 
-// Calendly event link, themed with brand colors.
-const CALENDAR_URL = "https://calendly.com/admin-newcotel/30min?text_color=03045e&primary_color=02c39a";
+// Zoho Bookings portal base URL — prefilled params are appended at runtime.
+const ZOHO_BASE_URL = "https://newcoteltradeltd.zohobookings.com/portal-embed#/4944664000000040045";
+const ZOHO_EMBED_SCRIPT = "https://bookings.nimbuspop.com/assets/embed.js";
 
 const CONCERNS = [
   "Erectile Dysfunction & Urological Recovery",
