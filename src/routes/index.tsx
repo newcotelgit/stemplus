@@ -503,7 +503,7 @@ function HowItWorks() {
         </div>
 
         {/* Mobile/Tablet: vertical timeline */}
-        <div className="md:hidden relative space-y-6">
+        <div className="lg:hidden relative space-y-6">
           <div className="absolute left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#FDAA3E]/30 via-[#FDAA3E] to-[#FDAA3E]/30" />
           {treatmentDays.map((d, i) => (
             <ScrollReveal key={d.day} delay={i * 70}>
