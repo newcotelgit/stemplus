@@ -473,7 +473,7 @@ export default function BookingSection() {
     const params = new URLSearchParams({
       "Name": fullName,
       "Email": email,
-      "Contact Number": `${dialCode} ${phone}`.trim(),
+      "Contact Number": `${(dialCode.split("|")[1] || "")} ${phone}`.trim(),
       "Primary Area of Concern": concern,
       "Timeline for Treatment": timeline,
       "Formal Clinical Diagnosis": diagnosis,
