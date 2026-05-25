@@ -153,6 +153,21 @@ export default function BookingSection() {
 
   useEffect(() => { setUserTz(detectTimezone()); }, []);
 
+  // Load Calendly inline-widget script once Step 3 is reached.
+  useEffect(() => {
+    if (step !== 3) return;
+    const SRC = "https://assets.calendly.com/assets/external/widget.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) {
+      setCalendarLoaded(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = SRC;
+    script.async = true;
+    script.onload = () => setCalendarLoaded(true);
+    document.body.appendChild(script);
+  }, [step]);
+
   const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && phone.trim().length >= 4 && country;
   const page2Valid = concern && timeline && diagnosis;
 
