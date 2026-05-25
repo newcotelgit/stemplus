@@ -500,14 +500,25 @@ function Reviews() {
               className="relative rounded-3xl overflow-hidden flex items-center justify-center min-h-[260px] md:min-h-[460px] transition-colors duration-500"
               style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
             >
-              {story.kind === "image" ? (
-                <img
-                  src={story.image}
-                  alt={story.author}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-              ) : "title" in story.graphic ? (
+              {/* Preload + stack all image slides so switching is instant (no re-fetch/decode) */}
+              {successStories.map((s, i) =>
+                s.kind === "image" ? (
+                  <img
+                    key={i}
+                    src={s.image}
+                    alt={s.author}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                      i === index ? "opacity-100" : "opacity-0"
+                    }`}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority={i === 0 ? "high" : "low"}
+                    aria-hidden={i !== index}
+                  />
+                ) : null
+              )}
+
+              {story.kind === "graphic" && ("title" in story.graphic ? (
                 <div className="relative px-8 text-center">
                   <div
                     className="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
@@ -526,7 +537,7 @@ function Reviews() {
                     {story.graphic.label}
                   </div>
                 </div>
-              )}
+              ))}
 
               {/* Bottom overlay strip — readable over both images and graphic blocks */}
               <div className="absolute bottom-0 left-0 right-0 px-5 py-3 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-between text-white text-xs font-medium">
