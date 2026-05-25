@@ -468,10 +468,14 @@ export default function BookingSection() {
                 <iframe
                   src={CALENDAR_URL}
                   title="Schedule your consultation"
-                  className="w-full h-[650px] min-h-[600px] block"
-                  style={{ border: 0 }}
-                  scrolling="auto"
+                  className="hidden"
+                  aria-hidden="true"
                   onLoad={() => setCalendarLoaded(true)}
+                />
+                <div
+                  className="calendly-inline-widget w-full"
+                  data-url={CALENDAR_URL}
+                  style={{ minWidth: "320px", height: "700px" }}
                 />
               </div>
 
