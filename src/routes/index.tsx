@@ -22,6 +22,14 @@ import patient8 from "@/assets/patient-8.jpg";
 import patient9 from "@/assets/patient-9.jpg";
 import patient10 from "@/assets/patient-10.jpg";
 import patient13 from "@/assets/patient-13.jpg";
+import doctor1 from "@/assets/doctor-1.jpg";
+import doctor2 from "@/assets/doctor-2.jpg";
+import doctor3 from "@/assets/doctor-3.jpg";
+import doctor4 from "@/assets/doctor-4.jpg";
+import doctor5 from "@/assets/doctor-5.jpg";
+import doctor6 from "@/assets/doctor-6.jpg";
+import doctor7 from "@/assets/doctor-7.jpg";
+import doctor8 from "@/assets/doctor-8.jpg";
 import BookingSection from "@/components/BookingSection";
 
 
@@ -59,6 +67,7 @@ function LandingPage() {
       <VideoTestimonial />
       <Features />
       <Reviews />
+      <MedicalTeam />
       <Heritage />
       <HowItWorks />
       <FinalCTA />
