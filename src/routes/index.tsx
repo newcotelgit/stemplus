@@ -417,51 +417,115 @@ function HowItWorks() {
   );
 }
 
-/* ─── Reviews ─── */
-const reviews = [
-  { name: "Daniel Cooper", role: "Product designer", avatar: "https://trovdwfeqyzlxzrtfbjv.supabase.co/storage/v1/object/public/assets/avatars/e20b66f6-e7e9-4c00-93d3-506c78cb66c2/avatar-19.jpg", quote: "Finally a habit app that doesn't try to be a social network. Just me and my habits.", rating: 5 },
-  { name: "Emma Lindström", role: "Software engineer", avatar: "https://trovdwfeqyzlxzrtfbjv.supabase.co/storage/v1/object/public/assets/avatars/307e7512-1637-4ea2-a5cd-875afeb1002b/avatar-21.jpg", quote: "The streak tracking is addictive in the best way. I've been consistent for 47 days now.", rating: 5 },
-  { name: "Ryan Mitchell", role: "Grad student", avatar: "https://trovdwfeqyzlxzrtfbjv.supabase.co/storage/v1/object/public/assets/avatars/6b77ccde-dbfd-4c23-8c9f-ce748683068a/avatar-16.jpg", quote: "Love the heatmap. Seeing my progress visually keeps me motivated more than any badge system.", rating: 5 },
-  { name: "Mei Lin", role: "Freelance writer", avatar: "https://trovdwfeqyzlxzrtfbjv.supabase.co/storage/v1/object/public/assets/avatars/b706d9a7-3a45-4fdd-ab47-c7023d4d0cfa/avatar-20.jpg", quote: "Simple, clean, no ads. This is what every habit tracker should be. Dark mode is gorgeous too.", rating: 5 },
+/* ─── Clinical Success Stories Carousel ─── */
+const successStories = [
+  { badge: "TYPE 2 DIABETES PROTOCOL", text: "I struggled to control my Type 2 Diabetes with high doses of insulin and pills for 14 years. Following an intensive 5-day custom embryonic stem cell and exosome program under Dr. Yaroslav, my blood glucose levels dropped by a remarkable 60% by Day 2. By Day 5, my leg numbness and severe sciatic nerve pain were reduced by nearly 90%.", author: "Fawaz", location: "Kuwait", Icon: Droplet, color: "#312E81" },
+  { badge: "PEDIATRIC AUTISM NEUROREHABILITATION", text: "We traveled from Al Ain for my son Muhammad's Autism care. The clinic handled everything seamlessly, from airport arrival to daily transport. Over a targeted 3-day cellular infusion program, we witnessed immediate behavioral breakthroughs—Muhammad's severe sleep irregularity has completely resolved, and he is now sleeping deeply and calmly.", author: "Muhammad's Father", location: "United Arab Emirates", Icon: Baby, color: "#1D4ED8" },
+  { badge: "POST-STROKE HEMIPLEGIA RECOVERY", text: "Three and a half years ago, a stroke left me with severe hemiplegia and motor paralysis across half of my body. After arriving at StemPlus Tbilisi, I received targeted intravenous, intrathecal, and endonasal embryonic stem cell and placental infusions. The clinical results have been profound—I am experiencing a step-by-step return of physical motor control and tactile sensation.", author: "Kamil Kamshad", location: "Iraq", Icon: Brain, color: "#0891B2" },
+  { badge: "CHRONIC CROHN'S DISEASE PROTOCOL", text: "As a Crohn's disease patient for over 20 years, I spent the last five years in absolute agony, undergoing two unsuccessful operations. After a friend recommended this team, I traveled to the clinic for specialized stem cell therapy. Within just the first five days of my personalized biological care, my localized pain began to drastically subside and my baseline physical energy levels surged.", author: "Mustafa", location: "Chronic Crohn's Patient", Icon: ShieldAlert, color: "#06B6D4" },
+  { badge: "MULTI-TARGET SYSTEMIC REJUVENATION", text: "I came to Tbilisi for a multi-target therapy focused on systematic anti-aging and rejuvenation. The medical staff explained every diagnostic action with total transparency, removing all my anxiety. Over a 5-day custom treatment plan covering my face, neck, and abdomen, my physical vitality skyrocketed, my skin looks noticeably regenerated, and my chronic back and waist soreness completely vanished.", author: "International Patient", location: "China", Icon: Sparkle, color: "#0D9488" },
+  { badge: "AUTISM SPECTRUM COGNITIVE DEVELOPMENT", text: "This is our second time trusting this elite medical team with my son Seif's neurorehabilitation for Autism. The custom cellular therapy, combined with the clinic's exceptionally organized, clean, and deeply supportive multidisciplinary hospital environment in Tbilisi, gives us immense confidence in his continuous cognitive progress.", author: "Seif's Father", location: "Saudi Arabia", Icon: Brain, color: "#312E81" },
+  { badge: "CHRONIC ORGAN REPAIR & METABOLIC SYSTEMS", text: "The clinic's medical coordination work is beautiful and highly authoritative. I have been following this specific medical team since their initial practice back in Ukraine, and now in Tbilisi, their execution is flawless. For anyone looking for cutting-edge solutions for complex internal organs or advanced metabolic conditions, I can verify their protocols are elite.", author: "Verified Clinic Reviewer", location: "Gulf Region", Icon: Dna, color: "#1D4ED8" },
+  { badge: "SYSTEMIC ANTI-AGING & CELL VITALIZATION", text: "I traveled from Mersin for a multi-day cellular anti-aging and total system vitalization plan. Within 6 to 7 days of precise cellular care under Dr. Yaroslav, I feel completely transformed. I am experiencing a massive surge in physical energy, youthful skin regeneration, and total systemic optimization. The clinical execution here is perfect.", author: "Anti-Aging Patient", location: "Turkey", Icon: Zap, color: "#0891B2" },
+  { badge: "AUTISM SPECTRUM COORDINATED RECOVERY", text: "The care and absolute clarity of the consultation process here is remarkable. From the moment we touched down at the airport, the coordination team handled every logistic with incredible support. This thorough care has given us immense hope and security regarding our young son's continuous cognitive and socialization tracking plans.", author: "Pediatric Care Parent", location: "United Arab Emirates", Icon: Baby, color: "#06B6D4" },
+  { badge: "NEUROLOGICAL STABILIZATION & RECOVERY", text: "I highly value the absolute therapeutic transparency and comprehensive approach provided by the medical staff. Every action, step, and diagnostic verification was detailed to me with total clarity. I felt notable structural benefits and an energetic surge within just 4 days of cellular care.", author: "Female Patient", location: "Eastern Europe", Icon: Activity, color: "#0D9488" },
+  { badge: "SPINAL DISC & NERVE MOBILE REHABILITATION", text: "I suffered from severe spinal disc herniation and localized radiating nerve pain that restricted my movement. The targeted cell and exosome therapy plan completely eliminated my localized joint inflammation and accelerated my recovery without any surgical risks. I have fully regained my physical mobility and comfort.", author: "Orthopedic Patient", location: "Gulf Region", Icon: Bone, color: "#312E81" },
+  { badge: "COMPLEX TISSUE & ORTHOPEDIC REPAIR", text: "The positive energy, attentiveness, and continuous support from the clinical coordinators made my treatment incredibly comforting. Every staff member is highly professional, ensuring a flawless therapeutic process that has completely revitalized my joint movement and general physical capacity.", author: "International Patient", location: "Middle East", Icon: Bone, color: "#1D4ED8" },
+  { badge: "METABOLIC COMPENSATION & VITALITY", text: "The dynamic bodily changes and energy optimization I experienced by Day 5 were incredible. This multi-potent embryonic cell protocol has completely restored my physical activity levels, balanced my metabolic metrics, and provided deep, restorative sleep quality that I haven't had in years.", author: "Healthcare Tourist", location: "Saudi Arabia", Icon: HeartPulse, color: "#0891B2" },
+  { badge: "POST-TRAUMATIC SYSTEMIC RENEWAL", text: "A highly sophisticated medical alliance. The combination of specialized embryonic Muse cells with target peptides completely eliminated my chronic pain, optimized my internal organ tracking metrics, and allowed me to transition toward a completely drug-independent lifestyle. I highly praise this team's work.", author: "Systemic Therapy Patient", location: "Iraq", Icon: Leaf, color: "#06B6D4" },
 ];
 
 function Reviews() {
+  const [index, setIndex] = useState(0);
+  const total = successStories.length;
+  const prev = () => setIndex((i) => (i - 1 + total) % total);
+  const next = () => setIndex((i) => (i + 1) % total);
+  const story = successStories[index];
+  const Icon = story.Icon;
+
   return (
-    <section id="reviews" className="py-28">
-      <div className="max-w-5xl mx-auto px-5">
+    <section id="reviews" className="py-20 sm:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Reviews</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
-              Loved by habit builders
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">Patient Outcomes</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900" style={{ lineHeight: "1.15" }}>
+              Clinical Success Stories
             </h2>
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+              Authentic recovery journeys from international patients treated at our Tbilisi clinic.
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 gap-5">
-          {reviews.map((r, i) => (
-            <ScrollReveal key={r.name} delay={i * 80}>
-              <div className="relative rounded-2xl border border-border/50 bg-card p-6 overflow-hidden">
-                {/* Decorative quote mark */}
-                <Quote className="absolute top-4 right-4 w-10 h-10 text-primary/[0.06] rotate-180" />
-
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: r.rating }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground leading-relaxed mb-5 relative">"{r.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <img src={r.avatar} alt={r.name} className="w-[4.5rem] h-[4.5rem] rounded-full object-cover" loading="lazy" />
-                  <div>
-                    <p className="text-sm font-medium text-foreground">{r.name}</p>
-                    <p className="text-xs text-muted-foreground">{r.role}</p>
-                  </div>
-                </div>
+        <ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
+            {/* Left: color-block icon card */}
+            <div
+              className="relative rounded-3xl overflow-hidden flex items-center justify-center min-h-[220px] md:min-h-[460px] transition-colors duration-500"
+              style={{ backgroundColor: story.color }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+              <Icon className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 text-white/95" strokeWidth={1.25} />
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white/80 text-xs font-medium">
+                <span>StemPlus Tbilisi</span>
+                <span>{String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
+            </div>
+
+            {/* Right: white quote card */}
+            <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col min-h-[220px] md:min-h-[460px]">
+              <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
+
+              <span className="inline-block self-start rounded-full bg-[#FDAA3E]/10 text-[#B86A12] border border-[#FDAA3E]/30 text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1.5 mb-5 sm:mb-6 max-w-full">
+                {story.badge}
+              </span>
+
+              <p className="relative text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed flex-1" style={{ textWrap: "pretty" }}>
+                "{story.text}"
+              </p>
+
+              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
+                <p className="text-sm sm:text-base font-semibold text-slate-900">{story.author}</p>
+                <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{story.location}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="mt-8 sm:mt-10 flex items-center justify-between gap-4">
+            <button
+              onClick={prev}
+              aria-label="Previous story"
+              className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FDAA3E] text-white hover:bg-[#fdb95e] active:scale-95 transition-all shadow-md shadow-[#FDAA3E]/30"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center">
+              {successStories.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Go to story ${i + 1}`}
+                  className={`transition-all rounded-full ${
+                    i === index
+                      ? "w-6 h-2 bg-[#FDAA3E]"
+                      : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={next}
+              aria-label="Next story"
+              className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FDAA3E] text-white hover:bg-[#fdb95e] active:scale-95 transition-all shadow-md shadow-[#FDAA3E]/30"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
