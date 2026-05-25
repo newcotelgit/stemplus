@@ -66,7 +66,7 @@ function LandingPage() {
       <Header />
       <Hero />
       <VideoTestimonial />
-      <Features />
+      <WhatWeTreatSection />
       <Reviews />
       <MedicalTeam />
       <Heritage />
