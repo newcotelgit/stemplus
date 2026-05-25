@@ -132,7 +132,7 @@ export default function BookingSection() {
   // Page 1
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [dialCode, setDialCode] = useState("+995");
+  const [dialCode, setDialCode] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
 
