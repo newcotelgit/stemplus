@@ -5,7 +5,7 @@ import {
   CheckCircle2, TrendingUp, Sparkles, ArrowRight, ArrowUpRight, Star, Quote,
   ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck, ShieldPlus,
   Brain, Heart, ShieldAlert, Baby, Bone, Droplet, Zap, Sparkle, Dna, Pill, HeartPulse, Leaf,
-  ChevronLeft, ChevronRight, Calendar,
+  ChevronLeft, ChevronRight, Calendar, RefreshCw,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
