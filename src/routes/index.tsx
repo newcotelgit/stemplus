@@ -620,10 +620,10 @@ const TEAM = [
   { img: doctor2, name: "Dr. Nini Kandelaki, PhD", role: "DERMATOLOGIST & SPECIALIST IN COSMETOLOGY", bio: "Leading advanced cellular skin rejuvenation treatments, aesthetic exosome therapies, and custom anti-aging dermal protocols." },
   { img: doctor3, name: "Dr. Mikhail Tsverava", role: "DIAGNOSTIC ULTRASOUND SPECIALIST", bio: "Providing precision high-resolution sonographic diagnostics and targeted ultrasound-guided localization for localized tissue infusions." },
   { img: doctor4, name: "Dr. Eleonora Fiodorova", role: "ENDOCRINOLOGIST & NUTRITIONIST", bio: "Specializing in comprehensive metabolic stabilization, weight optimization tracking, and advanced endocrine system compensation plans." },
-  { img: doctor5, name: "Lili Martashvili", role: "HEAD NURSE", bio: "Directing the clinical nursing department, patient intake procedures, and ensuring flawless medical compliance safety across all departments." },
-  { img: doctor6, name: "Mako Khachidze", role: "CLINICAL INFUSION NURSE", bio: "Managing therapeutic patient care monitoring, daily coordinate tracking, and professional execution of advanced cellular intravenous protocols." },
   { img: doctor7, name: "Dr. Natia Alania", role: "NEUROLOGIST", bio: "Specializing in neurodevelopmental tracking, localized cellular applications, and targeted recovery protocols for Autism and neurological cases." },
   { img: doctor8, name: "Dr. Giorgi Archaia", role: "NEUROSURGEON, NEUROLOGIST & VERTEBROLOGIST", bio: "Directing advanced clinical neuro-recovery pathways, complex spinal system diagnostics, and targeted neural regeneration protocols." },
+  { img: doctor5, name: "Lili Martashvili", role: "HEAD NURSE", bio: "Directing the clinical nursing department, patient intake procedures, and ensuring flawless medical compliance safety across all departments." },
+  { img: doctor6, name: "Mako Khachidze", role: "CLINICAL INFUSION NURSE", bio: "Managing therapeutic patient care monitoring, daily coordinate tracking, and professional execution of advanced cellular intravenous protocols." },
 ];
 
 function MedicalTeam() {
