@@ -688,11 +688,11 @@ function FinalCTA() {
 
       <div className="relative z-10 max-w-2xl mx-auto px-5 text-center">
         <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white" style={{ lineHeight: "1.15" }}>
-            Ready to build better habits?
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl" style={{ lineHeight: "1.15" }}>
+            Begin Your Cellular Recovery Protocol.
           </h2>
           <p className="mt-4 text-white max-w-md mx-auto" style={{ textWrap: "pretty" }}>
-            Join thousands of people using Continuum to build consistency, one day at a time.
+            Consult with our elite clinical faculty to design a targeted, personalized treatment plan.
           </p>
           <Link
             to="/login"
