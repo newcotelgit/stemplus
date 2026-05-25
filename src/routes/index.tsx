@@ -430,13 +430,7 @@ function HowItWorks() {
 
 /* ─── Clinical Success Stories Carousel ─── */
 const successStories = [
-  {
-    kind: "graphic" as const,
-    graphic: { bg: "#03045E", title: "-60%", subtitle: "Glucose Drop by Day 2", titleColor: "#FDAA3E" },
-    badge: "TYPE 2 DIABETES PROTOCOL",
-    text: "I struggled to control my Type 2 Diabetes with high doses of insulin and pills for 14 years. Following an intensive 5-day custom embryonic stem cell and exosome program under Dr. Yaroslav, my blood glucose levels dropped by a remarkable 60% by Day 2. By Day 5, my leg numbness and severe sciatic nerve pain were reduced by nearly 90%.",
-    author: "Fawaz", location: "Kuwait",
-  },
+  { kind: "image" as const, image: patient10, badge: "NEUROLOGICAL STABILIZATION & RECOVERY", text: "I highly value the absolute therapeutic transparency and comprehensive approach provided by the medical staff. Every action, step, and diagnostic verification was detailed to me with total clarity. I felt notable structural benefits and an energetic surge within just 4 days of cellular care.", author: "Female Patient", location: "Eastern Europe" },
   { kind: "image" as const, image: patient2, badge: "PEDIATRIC AUTISM NEUROREHABILITATION", text: "We traveled from Al Ain for my son Muhammad's Autism care. The clinic handled everything seamlessly, from airport arrival to daily transport. Over a targeted 3-day cellular infusion program, we witnessed immediate behavioral breakthroughs—Muhammad's severe sleep irregularity has completely resolved, and he is now sleeping deeply and calmly.", author: "Muhammad's Father", location: "United Arab Emirates" },
   { kind: "image" as const, image: patient3, badge: "POST-STROKE HEMIPLEGIA RECOVERY", text: "Three and a half years ago, a stroke left me with severe hemiplegia and motor paralysis across half of my body. After arriving at StemPlus Tbilisi, I received targeted intravenous, intrathecal, and endonasal embryonic stem cell and placental infusions. The clinical results have been profound—I am experiencing a step-by-step return of physical motor control and tactile sensation.", author: "Kamil Kamshad", location: "Iraq" },
   { kind: "image" as const, image: patient4, badge: "CHRONIC CROHN'S DISEASE PROTOCOL", text: "As a Crohn's disease patient for over 20 years, I spent the last five years in absolute agony, undergoing two unsuccessful operations. After a friend recommended this team, I traveled to the clinic for specialized stem cell therapy. Within just the first five days of my personalized biological care, my localized pain began to drastically subside and my baseline physical energy levels surged.", author: "Mustafa", location: "Chronic Crohn's Patient" },
@@ -445,7 +439,14 @@ const successStories = [
   { kind: "image" as const, image: patient7, badge: "CHRONIC ORGAN REPAIR & METABOLIC SYSTEMS", text: "The clinic's medical coordination work is beautiful and highly authoritative. I have been following this specific medical team since their initial practice back in Ukraine, and now in Tbilisi, their execution is flawless. For anyone looking for cutting-edge solutions for complex internal organs or advanced metabolic conditions, I can verify their protocols are elite.", author: "Verified Clinic Reviewer", location: "Gulf Region" },
   { kind: "image" as const, image: patient8, badge: "SYSTEMIC ANTI-AGING & CELL VITALIZATION", text: "I traveled from Mersin for a multi-day cellular anti-aging and total system vitalization plan. Within 6 to 7 days of precise cellular care under Dr. Yaroslav, I feel completely transformed. I am experiencing a massive surge in physical energy, youthful skin regeneration, and total systemic optimization. The clinical execution here is perfect.", author: "Anti-Aging Patient", location: "Turkey" },
   { kind: "image" as const, image: patient9, badge: "AUTISM SPECTRUM COORDINATED RECOVERY", text: "The care and absolute clarity of the consultation process here is remarkable. From the moment we touched down at the airport, the coordination team handled every logistic with incredible support. This thorough care has given us immense hope and security regarding our young son's continuous cognitive and socialization tracking plans.", author: "Pediatric Care Parent", location: "United Arab Emirates" },
-  { kind: "image" as const, image: patient10, badge: "NEUROLOGICAL STABILIZATION & RECOVERY", text: "I highly value the absolute therapeutic transparency and comprehensive approach provided by the medical staff. Every action, step, and diagnostic verification was detailed to me with total clarity. I felt notable structural benefits and an energetic surge within just 4 days of cellular care.", author: "Female Patient", location: "Eastern Europe" },
+  {
+    kind: "graphic" as const,
+    graphic: { bg: "#03045E", title: "-60%", subtitle: "Glucose Drop by Day 2", titleColor: "#FDAA3E" },
+    badge: "TYPE 2 DIABETES PROTOCOL",
+    text: "I struggled to control my Type 2 Diabetes with high doses of insulin and pills for 14 years. Following an intensive 5-day custom embryonic stem cell and exosome program under Dr. Yaroslav, my blood glucose levels dropped by a remarkable 60% by Day 2. By Day 5, my leg numbness and severe sciatic nerve pain were reduced by nearly 90%.",
+    author: "Fawaz", location: "Kuwait",
+  },
+
   {
     kind: "graphic" as const,
     graphic: { bg: "#02C39A", icon: Bone, label: "Mobility Restored" },
