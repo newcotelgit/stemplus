@@ -723,7 +723,7 @@ const TEAM = [
 
 function MedicalTeam() {
   return (
-    <section id="team" className="py-24 bg-secondary/30">
+    <section id="medical-team" className="py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-5">
         <div className="text-center mb-14 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
