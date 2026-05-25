@@ -583,7 +583,7 @@ function Reviews() {
   const story = successStories[index];
 
   return (
-    <section id="reviews" className="py-20 sm:py-28 bg-white">
+    <section id="testimonials" className="py-20 sm:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-16">
