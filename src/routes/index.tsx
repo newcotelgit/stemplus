@@ -367,7 +367,7 @@ const treatCards = [
 
 function Features() {
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="treatments" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         <ScrollReveal>
           <div className="mb-14 max-w-3xl">
