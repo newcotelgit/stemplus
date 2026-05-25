@@ -43,6 +43,7 @@ function LandingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
+      <Heritage />
       <VideoTestimonial />
       <Features />
       <Reviews />
