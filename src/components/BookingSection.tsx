@@ -143,6 +143,7 @@ export default function BookingSection() {
 
   // Page 3
   const [userTz, setUserTz] = useState<string>("Asia/Tbilisi");
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
   const [viewMonth, setViewMonth] = useState(() => {
     const n = new Date(); return { y: n.getFullYear(), m: n.getMonth() };
   });
