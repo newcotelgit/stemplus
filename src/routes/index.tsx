@@ -458,7 +458,7 @@ const treatmentDays = [
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-28 bg-white border-y border-border/30">
+    <section id="process" className="py-28 bg-white border-y border-border/30">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-16">
