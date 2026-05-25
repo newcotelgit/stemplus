@@ -134,7 +134,7 @@ function Heritage() {
         <div className="text-center lg:text-left mb-14">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">Our Heritage</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 max-w-3xl" style={{ lineHeight: "1.1" }}>
-            The StemPlus Legacy: Bridging Decades of Cellular Science
+            The StemPlus Legacy:<br />Bridging Decades of Cellular Science
           </h2>
         </div>
 
