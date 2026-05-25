@@ -2,10 +2,10 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Infinity as InfinityIcon, Flame, CalendarDays, Moon, Bell, BarChart3, CloudUpload,
-  CheckCircle2, TrendingUp, Sparkles, ArrowRight, Star, Quote,
+  CheckCircle2, TrendingUp, Sparkles, ArrowRight, ArrowUpRight, Star, Quote,
   ClipboardList, Syringe, Activity, Stethoscope, ShieldCheck, ShieldPlus,
   Brain, Heart, ShieldAlert, Baby, Bone, Droplet, Zap, Sparkle, Dna, Pill, HeartPulse, Leaf,
-  ChevronLeft, ChevronRight,
+  ChevronLeft, ChevronRight, Calendar,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
