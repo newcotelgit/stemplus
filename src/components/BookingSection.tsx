@@ -4,8 +4,8 @@ import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calen
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
 
-// Swap this for your real Calendly / Cal.com event link.
-const CALENDAR_URL = "https://calendly.com/your-placeholder-url";
+// Calendly event link, themed with brand colors.
+const CALENDAR_URL = "https://calendly.com/admin-newcotel/30min?text_color=03045e&primary_color=02c39a";
 
 const CONCERNS = [
   "Erectile Dysfunction & Urological Recovery",
@@ -152,6 +152,21 @@ export default function BookingSection() {
   const [showEmail, setShowEmail] = useState(false);
 
   useEffect(() => { setUserTz(detectTimezone()); }, []);
+
+  // Load Calendly inline-widget script once Step 3 is reached.
+  useEffect(() => {
+    if (step !== 3) return;
+    const SRC = "https://assets.calendly.com/assets/external/widget.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) {
+      setCalendarLoaded(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = SRC;
+    script.async = true;
+    script.onload = () => setCalendarLoaded(true);
+    document.body.appendChild(script);
+  }, [step]);
 
   const page1Valid = fullName.trim().length > 1 && /.+@.+\..+/.test(email) && phone.trim().length >= 4 && country;
   const page2Valid = concern && timeline && diagnosis;
@@ -450,13 +465,10 @@ export default function BookingSection() {
                     <p className="text-sm text-slate-500">Loading availability…</p>
                   </div>
                 )}
-                <iframe
-                  src={CALENDAR_URL}
-                  title="Schedule your consultation"
-                  className="w-full h-[650px] min-h-[600px] block"
-                  style={{ border: 0 }}
-                  scrolling="auto"
-                  onLoad={() => setCalendarLoaded(true)}
+                <div
+                  className="calendly-inline-widget w-full"
+                  data-url={CALENDAR_URL}
+                  style={{ minWidth: "320px", height: "700px" }}
                 />
               </div>
 
