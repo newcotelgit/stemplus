@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calendar as CalendarIcon, Clock } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ArrowRight, ArrowLeft, Check, ChevronLeft, ChevronRight, Mail, X, Calendar as CalendarIcon, Clock, Search, Globe } from "lucide-react";
 
 const INDIGO = "#03045E";
 const TEAL = "#02C39A";
