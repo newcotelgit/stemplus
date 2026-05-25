@@ -225,7 +225,7 @@ function Hero() {
 
 
         {/* Hero content — left aligned */}
-        <div className="relative z-10 max-w-5xl mx-auto px-5 pt-24 pb-12">
+        <div className="relative z-10 max-w-5xl mx-auto px-5 pt-[55vh] pb-12 sm:pt-24">
           <div className="max-w-xl">
             <ScrollReveal delay={80}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left" style={{ lineHeight: "1.08" }}>
@@ -234,13 +234,13 @@ function Hero() {
             </ScrollReveal>
 
             <ScrollReveal delay={160}>
-              <p className="mt-6 text-lg text-white text-left" style={{ textWrap: "pretty", lineHeight: "1.6" }}>
+              <p className="hidden sm:block mt-6 text-lg text-white text-left" style={{ textWrap: "pretty", lineHeight: "1.6" }}>
                 ​
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={240}>
-              <div className="mt-10 flex flex-col sm:flex-row items-start gap-3">
+              <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row items-start gap-3">
                 <Link
                   to="/login"
                   className="inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-7 py-3.5 text-sm font-bold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
