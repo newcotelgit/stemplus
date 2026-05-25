@@ -203,7 +203,7 @@ function Header() {
     >
       <nav className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <img src={logo} alt="Continuum" className="h-10 w-auto object-contain" />
+          <img src={logo} alt="Continuum" className="h-[52px] w-auto object-contain" />
         </Link>
 
         <div className="hidden md:flex items-center gap-9 text-sm font-semibold tracking-wide text-slate-200">
