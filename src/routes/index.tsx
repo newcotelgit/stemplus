@@ -784,17 +784,27 @@ function Reviews() {
 
 /* ─── Medical Team ─── */
 const TEAM = [
-  { img: doctor1, name: "Dr. Yaroslav Myroshnykov, MD", role: "CHIEF MEDICAL OFFICER & REGENERATIVE CELL THERAPIST", bio: "Pioneer in clinical cell transplantation, directing advanced embryonic cell protocols and customized bio-therapeutic pathways for complex international cases." },
-  { img: doctor2, name: "Dr. Nini Kandelaki, PhD", role: "DERMATOLOGIST & SPECIALIST IN COSMETOLOGY", bio: "Leading advanced cellular skin rejuvenation treatments, aesthetic exosome therapies, and custom anti-aging dermal protocols." },
-  { img: doctor3, name: "Dr. Mikhail Tsverava", role: "DIAGNOSTIC ULTRASOUND SPECIALIST", bio: "Providing precision high-resolution sonographic diagnostics and targeted ultrasound-guided localization for localized tissue infusions." },
-  { img: doctor4, name: "Dr. Eleonora Fiodorova", role: "ENDOCRINOLOGIST & NUTRITIONIST", bio: "Specializing in comprehensive metabolic stabilization, weight optimization tracking, and advanced endocrine system compensation plans." },
-  { img: doctor7, name: "Dr. Natia Alania", role: "NEUROLOGIST", bio: "Specializing in neurodevelopmental tracking, localized cellular applications, and targeted recovery protocols for Autism and neurological cases." },
-  { img: doctor8, name: "Dr. Giorgi Archaia", role: "NEUROSURGEON, NEUROLOGIST & VERTEBROLOGIST", bio: "Directing advanced clinical neuro-recovery pathways, complex spinal system diagnostics, and targeted neural regeneration protocols." },
-  { img: doctor5, name: "Lili Martashvili", role: "HEAD NURSE", bio: "Directing the clinical nursing department, patient intake procedures, and ensuring flawless medical compliance safety across all departments." },
-  { img: doctor6, name: "Mako Khachidze", role: "CLINICAL INFUSION NURSE", bio: "Managing therapeutic patient care monitoring, daily coordinate tracking, and professional execution of advanced cellular intravenous protocols." },
+  { img: doctor1, name: "Dr. Yaroslav Myroshnykov, MD, PhD", role: "Chief Physician | Andrologist & Urologist", bio: "Over 25 years of specialized clinical practice and stem cell research. Author of 50+ publications and holder of 7 invention patents in cellular rejuvenation and metabolic treatments." },
+  { img: doctor2, name: "Dr. Nini Kandelaki, PhD", role: "Dermatologist & Specialist in Cosmetology", bio: "Doctor of Philosophy (PhD) in Medicine and member of EADV. Expert in advanced aesthetic exome therapies, cellular skin rejuvenation, and anti-aging treatments." },
+  { img: doctor3, name: "Dr. Mikhail Tsverava, MD, PhD", role: "Senior Radiologist & Diagnostic Specialist", bio: "MD and PhD holder with extensive practice in functional diagnostic mapping and advanced ultrasound-guided precision cellular targeting." },
+  { img: doctor4, name: "Dr. Eleonora Fiodorova, MD", role: "Clinical Endocrinologist & Nutritionist", bio: "Specialist in advanced endocrine systems, hormonal balance alignment, and targeted metabolic stabilization for regenerative therapies." },
+  { img: doctor7, name: "Dr. Natia Alania, MD", role: "Clinical Neurologist & Neurodevelopmental Specialist", bio: "Expert in neuro-recovery pathways, functional brain mapping, and dedicated cellular protocols for Autism Spectrum Disorders." },
+  { img: doctor8, name: "Dr. Giorgi Archaia, MD", role: "Neurosurgeon, Neurologist & Vertebrologist", bio: "Triple-specialist managing complex neuro-recovery tracking, orthopedic spinal systems, and advanced joint regeneration." },
+  { img: doctor5, name: "Lili Martashvili", role: "Director of Clinical Nursing & Compliance", bio: "Commands the patient clinical safety apparatus, triage protocols, and strict execution of outpatient healthcare standards." },
+  { img: doctor6, name: "Mako Khachidze", role: "Clinical Infusion Nurse", bio: "Specialist in the precision execution, administration, and monitoring of advanced intravenous (IV) cellular protocols." },
 ];
 
 function MedicalTeam() {
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollByDir = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-team-card]");
+    const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
   return (
     <section id="medical-team" className="py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-5">
@@ -807,30 +817,81 @@ function MedicalTeam() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {TEAM.map((m) => (
-            <article
-              key={m.name}
-              className="group bg-white rounded-2xl border border-border/60 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6 flex flex-col gap-3 flex-1">
-                <span className="inline-block self-start text-[10px] font-semibold tracking-wider text-accent-foreground bg-accent/60 px-2.5 py-1 rounded-full uppercase leading-tight">
-                  {m.role}
-                </span>
-                <h3 className="text-lg font-bold text-foreground leading-snug">{m.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
-              </div>
-            </article>
-          ))}
+        <div className="relative">
+          {/* Desktop nav arrows */}
+          <button
+            type="button"
+            aria-label="Previous"
+            onClick={() => scrollByDir(-1)}
+            className="hidden md:flex absolute left-0 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-white border border-border shadow-md text-foreground hover:bg-accent transition"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next"
+            onClick={() => scrollByDir(1)}
+            className="hidden md:flex absolute right-0 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-white border border-border shadow-md text-foreground hover:bg-accent transition"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          <div
+            ref={scrollerRef}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 scroll-smooth"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            {TEAM.map((m) => (
+              <article
+                key={m.name}
+                data-team-card
+                className="snap-start shrink-0 basis-[85%] sm:basis-[60%] md:basis-[calc((100%-3rem)/3)] lg:basis-[calc((100%-4.5rem)/4)] bg-white rounded-2xl border border-border/60 shadow-sm overflow-hidden flex flex-col"
+              >
+                {/* Mobile: image with overlay text */}
+                <div className="relative aspect-[3/4] overflow-hidden bg-muted md:hidden">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent p-5 pt-16">
+                    <span className="inline-block text-[10px] font-semibold tracking-wider text-white/90 uppercase leading-tight">
+                      {m.role}
+                    </span>
+                    <h3 className="mt-1.5 text-lg font-bold text-white leading-snug">{m.name}</h3>
+                  </div>
+                </div>
+                {/* Mobile bio */}
+                <div className="p-5 md:hidden">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
+                </div>
+
+                {/* Desktop layout */}
+                <div className="hidden md:block aspect-[3/4] overflow-hidden bg-muted">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="hidden md:flex p-6 flex-col gap-3 flex-1">
+                  <span className="inline-block self-start text-[10px] font-semibold tracking-wider text-accent-foreground bg-accent/60 px-2.5 py-1 rounded-full uppercase leading-tight">
+                    {m.role}
+                  </span>
+                  <h3 className="text-lg font-bold text-foreground leading-snug">{m.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
