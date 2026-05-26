@@ -77,28 +77,199 @@ function LandingPage() {
   );
 }
 
-/* ─── Video Testimonial ─── */
+/* ─── Video Testimonial Hub ─── */
+type VideoItem = {
+  id: string;
+  src: string;
+  poster: string;
+  name: string;
+  treatment: string;
+  country: string;
+  flag: string;
+};
+
+const VIDEO_TESTIMONIALS: VideoItem[] = [
+  {
+    id: "v1",
+    src: testimonialVideo.url,
+    poster: testimonialPoster,
+    name: "Anna K.",
+    treatment: "Stem Cell Therapy",
+    country: "Germany",
+    flag: "🇩🇪",
+  },
+  {
+    id: "v2",
+    src: testimonialVideo.url,
+    poster: patient2,
+    name: "James R.",
+    treatment: "Joint Regeneration",
+    country: "United Kingdom",
+    flag: "🇬🇧",
+  },
+  {
+    id: "v3",
+    src: testimonialVideo.url,
+    poster: patient3,
+    name: "Sofia M.",
+    treatment: "Anti-Aging Protocol",
+    country: "Italy",
+    flag: "🇮🇹",
+  },
+  {
+    id: "v4",
+    src: testimonialVideo.url,
+    poster: patient4,
+    name: "David L.",
+    treatment: "Neurological Recovery",
+    country: "United States",
+    flag: "🇺🇸",
+  },
+];
+
+function VideoCard({ item, onPlay, className = "", isMain = false }: {
+  item: VideoItem;
+  onPlay: (v: VideoItem) => void;
+  className?: string;
+  isMain?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onPlay(item)}
+      className={`group relative block w-full overflow-hidden rounded-2xl bg-black border border-black/[0.06] shadow-lg text-left ${className}`}
+      aria-label={`Play video testimonial from ${item.name}`}
+    >
+      <img
+        src={item.poster}
+        alt={`${item.name} — ${item.treatment}`}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      {/* Play overlay */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span
+          className={`flex items-center justify-center rounded-full shadow-2xl shadow-black/40 ring-1 ring-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 ${isMain ? "w-20 h-20" : "w-12 h-12"}`}
+          style={{ backgroundColor: "#02C39A" }}
+        >
+          <svg viewBox="0 0 24 24" fill="white" className={isMain ? "w-8 h-8 ml-1" : "w-5 h-5 ml-0.5"}>
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+      </div>
+      {/* Bottom typography */}
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-4 sm:p-5">
+        <p className={`font-semibold text-white leading-tight ${isMain ? "text-lg sm:text-xl" : "text-sm sm:text-base"}`}>
+          {item.name}
+        </p>
+        <p className={`text-white/85 ${isMain ? "text-sm mt-1" : "text-xs mt-0.5"}`}>
+          {item.treatment}
+        </p>
+        <p className={`text-white/70 flex items-center gap-1.5 ${isMain ? "text-sm mt-1" : "text-xs mt-1"}`}>
+          <span aria-hidden>{item.flag}</span>
+          <span>{item.country}</span>
+        </p>
+      </div>
+    </button>
+  );
+}
+
 function VideoTestimonial() {
+  const [active, setActive] = useState<VideoItem | null>(null);
+  const [main, ...rest] = VIDEO_TESTIMONIALS;
+
+  useEffect(() => {
+    if (!active) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setActive(null); };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [active]);
+
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-5">
+      <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Testimonial</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Testimonials</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.15" }}>
             Hear it from our patients
           </h2>
         </div>
-        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-black/[0.06] bg-black aspect-video">
-          <video
-            className="w-full h-full object-cover"
-            src={testimonialVideo.url}
-            poster={testimonialPoster}
-            controls
-            playsInline
-            preload="metadata"
-          />
+
+        {/* Main showcase */}
+        <div className="aspect-video">
+          <VideoCard item={main} onPlay={setActive} isMain className="h-full" />
+        </div>
+
+        {/* Sub-grid: desktop row */}
+        <div className="hidden md:grid grid-cols-3 gap-5 mt-5">
+          {rest.map((v) => (
+            <div key={v.id} className="aspect-video">
+              <VideoCard item={v} onPlay={setActive} />
+            </div>
+          ))}
+        </div>
+
+        {/* Sub-grid: mobile peek-swipe */}
+        <div
+          className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory mt-5 px-1 -mx-1 pb-4 scroll-smooth"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+            scrollPaddingLeft: "0.25rem",
+          }}
+        >
+          {rest.map((v) => (
+            <div
+              key={v.id}
+              className="snap-start shrink-0 basis-[78%] aspect-video"
+            >
+              <VideoCard item={v} onPlay={setActive} />
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {active && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-200 p-4"
+          onClick={() => setActive(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setActive(null)}
+            className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+            aria-label="Close video"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+              <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
+            </svg>
+          </button>
+          <div
+            className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              key={active.id}
+              className="w-full h-full object-contain bg-black"
+              src={active.src}
+              poster={active.poster}
+              controls
+              autoPlay
+              playsInline
+              preload="metadata"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
