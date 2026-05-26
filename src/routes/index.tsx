@@ -575,6 +575,19 @@ const successStories = [
   },
 ];
 
+function locationFlag(loc: string): string {
+  const l = loc.toLowerCase();
+  if (l.includes("united arab") || l.includes("uae")) return "🇦🇪";
+  if (l.includes("saudi")) return "🇸🇦";
+  if (l.includes("iraq")) return "🇮🇶";
+  if (l.includes("turkey") || l.includes("türkiye")) return "🇹🇷";
+  if (l.includes("china")) return "🇨🇳";
+  if (l.includes("eastern europe")) return "🇪🇺";
+  if (l.includes("gulf")) return "🇦🇪";
+  if (l.includes("middle east")) return "🌍";
+  return "🌍";
+}
+
 function Reviews() {
   const [index, setIndex] = useState(0);
   const total = successStories.length;
@@ -598,107 +611,92 @@ function Reviews() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
-            {/* Left: image OR typographic data graphic */}
-            <div
-              className="relative rounded-3xl overflow-hidden flex items-center justify-center h-[360px] md:h-[500px] transition-colors duration-500"
-              style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
-            >
-              {/* Preload + stack all image slides so switching is instant (no re-fetch/decode) */}
-              {successStories.map((s, i) =>
-                s.kind === "image" ? (
-                  <img
-                    key={i}
-                    src={s.image}
-                    alt={s.author}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-                      i === index ? "opacity-100" : "opacity-0"
-                    }`}
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority={i === 0 ? "high" : "low"}
-                    aria-hidden={i !== index}
-                  />
-                ) : null
-              )}
+          <div className="relative">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
+              {/* Left: image OR typographic data graphic with overlayed metadata */}
+              <div
+                className="relative rounded-3xl overflow-hidden flex items-center justify-center h-[320px] sm:h-[380px] md:h-[460px] transition-colors duration-500"
+                style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
+              >
+                {successStories.map((s, i) =>
+                  s.kind === "image" ? (
+                    <img
+                      key={i}
+                      src={s.image}
+                      alt={s.author}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                        i === index ? "opacity-100" : "opacity-0"
+                      }`}
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority={i === 0 ? "high" : "low"}
+                      aria-hidden={i !== index}
+                    />
+                  ) : null
+                )}
 
-              {story.kind === "graphic" && ("title" in story.graphic ? (
-                <div className="relative px-8 text-center">
-                  <div
-                    className="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
-                    style={{ color: story.graphic.titleColor }}
-                  >
-                    {story.graphic.title}
+                {story.kind === "graphic" && ("title" in story.graphic ? (
+                  <div className="relative px-8 text-center">
+                    <div
+                      className="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
+                      style={{ color: story.graphic.titleColor }}
+                    >
+                      {story.graphic.title}
+                    </div>
+                    <div className="mt-4 text-white text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
+                      {story.graphic.subtitle}
+                    </div>
                   </div>
-                  <div className="mt-4 text-white text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
-                    {story.graphic.subtitle}
+                ) : (
+                  <div className="relative flex flex-col items-center text-center px-8">
+                    {(() => { const I = story.graphic.icon; return <I className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 text-white" strokeWidth={1.25} />; })()}
+                    <div className="mt-5 text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+                      {story.graphic.label}
+                    </div>
+                  </div>
+                ))}
+
+                {/* Overlay: Name, Treatment, Country */}
+                <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-5 sm:px-6 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent">
+                  <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#FDC987]/90 mb-1.5">
+                    {story.badge}
+                  </p>
+                  <div className="flex items-end justify-between gap-3">
+                    <p className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-tight leading-tight">
+                      {story.author}
+                    </p>
+                    <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-xs sm:text-sm font-medium">
+                      <span className="text-base sm:text-lg leading-none">{locationFlag(story.location)}</span>
+                      <span className="hidden sm:inline">{story.location}</span>
+                    </span>
                   </div>
                 </div>
-              ) : (
-                <div className="relative flex flex-col items-center text-center px-8">
-                  {(() => { const I = story.graphic.icon; return <I className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 text-white" strokeWidth={1.25} />; })()}
-                  <div className="mt-5 text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
-                    {story.graphic.label}
-                  </div>
-                </div>
-              ))}
+              </div>
 
-              {/* Bottom overlay strip — readable over both images and graphic blocks */}
-              <div className="absolute bottom-0 left-0 right-0 px-5 py-3 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-between text-white text-xs font-medium">
-                <span>StemPlus Tbilisi</span>
-                <span>{String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
+              {/* Right: white quote card */}
+              <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col justify-center min-h-[260px] md:min-h-[460px]">
+                <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
+                <p className="relative text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed" style={{ textWrap: "pretty" }}>
+                  "{story.text}"
+                </p>
+                <p className="relative mt-5 text-xs text-slate-400 font-medium">
+                  {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                </p>
               </div>
             </div>
 
-
-            {/* Right: white quote card */}
-            <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col h-[420px] md:h-[500px] overflow-y-auto">
-              <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
-
-              <span className="inline-block self-start rounded-full bg-[#FDAA3E]/10 text-[#B86A12] border border-[#FDAA3E]/30 text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1.5 mb-5 sm:mb-6 max-w-full">
-                {story.badge}
-              </span>
-
-              <p className="relative text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed flex-1" style={{ textWrap: "pretty" }}>
-                "{story.text}"
-              </p>
-
-              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
-                <p className="text-sm sm:text-base font-semibold text-slate-900">{story.author}</p>
-                <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{story.location}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Controls */}
-          <div className="mt-8 sm:mt-10 flex items-center justify-between gap-4">
+            {/* Absolute-positioned nav arrows on the carousel edges */}
             <button
               onClick={prev}
               aria-label="Previous story"
-              className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FDAA3E] text-white hover:bg-[#fdb95e] active:scale-95 transition-all shadow-md shadow-[#FDAA3E]/30"
+              className="absolute left-1 sm:-left-3 md:-left-5 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-950/40 hover:bg-slate-950/70 text-white backdrop-blur-sm opacity-70 hover:opacity-100 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-
-            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center">
-              {successStories.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIndex(i)}
-                  aria-label={`Go to story ${i + 1}`}
-                  className={`transition-all rounded-full ${
-                    i === index
-                      ? "w-6 h-2 bg-[#FDAA3E]"
-                      : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
-              ))}
-            </div>
-
             <button
               onClick={next}
               aria-label="Next story"
-              className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FDAA3E] text-white hover:bg-[#fdb95e] active:scale-95 transition-all shadow-md shadow-[#FDAA3E]/30"
+              className="absolute right-1 sm:-right-3 md:-right-5 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-950/40 hover:bg-slate-950/70 text-white backdrop-blur-sm opacity-70 hover:opacity-100 active:scale-95 transition-all"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
