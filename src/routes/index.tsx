@@ -838,7 +838,7 @@ function MedicalTeam() {
 
           <div
             ref={scrollerRef}
-            className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 md:px-5 scroll-smooth [scroll-padding-left:1.25rem] md:[scroll-padding-left:1.25rem]"
+            className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-6 md:px-5 scroll-smooth [scroll-padding-left:1.5rem] md:[scroll-padding-left:1.25rem]"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
