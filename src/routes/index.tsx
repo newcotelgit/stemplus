@@ -611,94 +611,84 @@ function Reviews() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="relative">
-            <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
-              {/* Left: image OR typographic data graphic with overlayed metadata */}
-              <div
-                className="relative rounded-3xl overflow-hidden flex items-center justify-center h-[320px] sm:h-[380px] md:h-[460px] transition-colors duration-500"
-                style={{ backgroundColor: story.kind === "graphic" ? story.graphic.bg : "#0f172a" }}
-              >
-                {successStories.map((s, i) =>
-                  s.kind === "image" ? (
-                    <img
-                      key={i}
-                      src={s.image}
-                      alt={s.author}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-                        i === index ? "opacity-100" : "opacity-0"
-                      }`}
-                      loading="eager"
-                      decoding="async"
-                      fetchPriority={i === 0 ? "high" : "low"}
-                      aria-hidden={i !== index}
-                    />
-                  ) : null
-                )}
-
-                {story.kind === "graphic" && ("title" in story.graphic ? (
-                  <div className="relative px-8 text-center">
+          {/* Mobile: native scroll-snap swipe carousel with peek */}
+          <div className="md:hidden -mx-5">
+            <div
+              className="flex overflow-x-auto pb-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              style={{ scrollPaddingLeft: "1.25rem", WebkitOverflowScrolling: "touch" }}
+            >
+              {successStories.map((s, i) => (
+                <div
+                  key={i}
+                  className="snap-start shrink-0 basis-[87%] pl-5 last:pr-5"
+                  style={{ transform: "translateZ(0)" }}
+                >
+                  <div className="rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)]">
                     <div
-                      className="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
-                      style={{ color: story.graphic.titleColor }}
+                      className="relative h-[300px] sm:h-[360px] flex items-center justify-center"
+                      style={{ backgroundColor: s.kind === "graphic" ? s.graphic.bg : "#0f172a" }}
                     >
-                      {story.graphic.title}
+                      {s.kind === "image" ? (
+                        <img
+                          src={s.image}
+                          alt={s.author}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : "title" in s.graphic ? (
+                        <div className="relative px-6 text-center">
+                          <div
+                            className="text-6xl sm:text-7xl font-extrabold tracking-tight leading-none"
+                            style={{ color: s.graphic.titleColor }}
+                          >
+                            {s.graphic.title}
+                          </div>
+                          <div className="mt-4 text-white text-base sm:text-lg font-semibold uppercase tracking-wider">
+                            {s.graphic.subtitle}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="relative flex flex-col items-center text-center px-6">
+                          {(() => { const I = s.graphic.icon; return <I className="w-24 h-24 sm:w-28 sm:h-28 text-white" strokeWidth={1.25} />; })()}
+                          <div className="mt-4 text-white text-xl sm:text-2xl font-bold tracking-tight">
+                            {s.graphic.label}
+                          </div>
+                        </div>
+                      )}
+                      <div className="absolute inset-x-0 bottom-0 pt-16 pb-4 px-5 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent">
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-[#FDC987]/90 mb-1.5">
+                          {s.badge}
+                        </p>
+                        <div className="flex items-end justify-between gap-3">
+                          <p className="text-white text-lg font-bold tracking-tight leading-tight">
+                            {s.author}
+                          </p>
+                          <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-xs font-medium">
+                            <span className="text-base leading-none">{locationFlag(s.location)}</span>
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-4 text-white text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
-                      {story.graphic.subtitle}
+                    <div className="relative p-6">
+                      <Quote className="absolute top-4 right-4 w-12 h-12 text-[#FDAA3E]/15" />
+                      <p className="relative text-slate-700 text-base leading-relaxed" style={{ textWrap: "pretty" }}>
+                        "{s.text}"
+                      </p>
+                      <p className="relative mt-4 text-xs text-slate-400 font-medium">
+                        {String(i + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                      </p>
                     </div>
-                  </div>
-                ) : (
-                  <div className="relative flex flex-col items-center text-center px-8">
-                    {(() => { const I = story.graphic.icon; return <I className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 text-white" strokeWidth={1.25} />; })()}
-                    <div className="mt-5 text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
-                      {story.graphic.label}
-                    </div>
-                  </div>
-                ))}
-
-                {/* Overlay: Name, Treatment, Country */}
-                <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-5 sm:px-6 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent">
-                  <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#FDC987]/90 mb-1.5">
-                    {story.badge}
-                  </p>
-                  <div className="flex items-end justify-between gap-3">
-                    <p className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-tight leading-tight">
-                      {story.author}
-                    </p>
-                    <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-xs sm:text-sm font-medium">
-                      <span className="text-base sm:text-lg leading-none">{locationFlag(story.location)}</span>
-                      <span className="hidden sm:inline">{story.location}</span>
-                    </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Right: white quote card */}
-              <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col justify-center min-h-[260px] md:min-h-[460px]">
-                <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
-                <p className="relative text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed" style={{ textWrap: "pretty" }}>
-                  "{story.text}"
-                </p>
-                <p className="relative mt-5 text-xs text-slate-400 font-medium">
-                  {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-                </p>
-              </div>
+              ))}
             </div>
+          </div>
 
-            {/* Absolute-positioned nav arrows on the carousel edges */}
-            <button
-              onClick={prev}
-              aria-label="Previous story"
-              className="absolute left-1 sm:-left-3 md:-left-5 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-950/40 hover:bg-slate-950/70 text-white backdrop-blur-sm opacity-70 hover:opacity-100 active:scale-95 transition-all"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={next}
-              aria-label="Next story"
-              className="absolute right-1 sm:-right-3 md:-right-5 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-950/40 hover:bg-slate-950/70 text-white backdrop-blur-sm opacity-70 hover:opacity-100 active:scale-95 transition-all"
-            >
-              <ChevronRight className="w-5 h-5" />
+          {/* Desktop / tablet: 2-card view with side arrows */}
+          <div className="relative hidden md:block">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-stretch">
+...
             </button>
           </div>
         </ScrollReveal>
