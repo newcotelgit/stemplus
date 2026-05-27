@@ -500,13 +500,13 @@ function Hero() {
 
             <ScrollReveal delay={240}>
               <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row items-start gap-3">
-                <Link
-                  to="/login"
+                <a
+                  href="#admissions"
                   className="inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-7 py-3.5 text-sm font-bold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
                 >
-                  Get started free
+                  Book consultation
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </ScrollReveal>
           </div>
@@ -1095,13 +1095,13 @@ function FinalCTA() {
           <p className="mt-4 text-white max-w-md mx-auto" style={{ textWrap: "pretty" }}>
             Consult with our elite clinical faculty to design a targeted, personalized treatment plan.
           </p>
-          <Link
-            to="/login"
+          <a
+            href="#admissions"
             className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-8 py-4 text-sm font-semibold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
           >
-            Get started free
+            Book consultation
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </ScrollReveal>
       </div>
     </section>
