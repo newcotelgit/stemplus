@@ -419,9 +419,10 @@ function Header() {
       >
         <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
         <div
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-slate-950/50 backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
+          style={{ backgroundColor: "rgba(2, 6, 23, 0.5)" }}
         >
           <div className="flex items-center justify-between h-16 px-5 border-b border-slate-800/60">
             <img src={logo} alt="Continuum" className="h-9 w-auto object-contain" />
