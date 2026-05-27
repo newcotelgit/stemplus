@@ -419,7 +419,7 @@ function Header() {
       >
         <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
         <div
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-slate-950/50 backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm bg-slate-950 border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
