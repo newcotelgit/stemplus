@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import {
   Infinity as InfinityIcon,
@@ -63,41 +63,7 @@ import doctor7 from "@/assets/doctor-7.jpg";
 import doctor8 from "@/assets/doctor-8.jpg";
 import BookingSection from "@/components/BookingSection";
 
-export const Route = createFileRoute("/")({
-  component: LandingPage,
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Continuum — The Future of Healing and Rejuvenation in Tbilisi, Georgia",
-      },
-      {
-        name: "description",
-        content:
-          "A calm, focused habit tracker. Track streaks, visualize progress, and build your daily ritual. Free, ad-free, distraction-free.",
-      },
-    ],
-  }),
-});
-
-function LandingPage() {
-  const navigate = useNavigate();
-  const [checked, setChecked] = useState(false);
-
-  useEffect(() => {
-    import("@/integrations/supabase/client")
-      .then(({ supabase }) => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-          if (session?.user) {
-            navigate({ to: "/app" });
-          } else {
-            setChecked(true);
-          }
-        });
-      })
-      .catch(() => setChecked(true));
-  }, [navigate]);
-
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

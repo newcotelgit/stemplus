@@ -1,18 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export const Route = createFileRoute("/terms")({
-  head: () => ({
-    meta: [
-      { title: "Terms of Service — Stem Plus LLC" },
-      { name: "description", content: "Terms of Service and Medical Disclaimer for Stem Plus LLC." },
-      { property: "og:title", content: "Terms of Service — Stem Plus LLC" },
-      { property: "og:description", content: "Terms of Service and Medical Disclaimer for Stem Plus LLC." },
-    ],
-  }),
-  component: TermsPage,
-});
-
-function TermsPage() {
+export default function TermsPage() {
+  useEffect(() => {
+    document.title = "Terms of Service — Stem Plus LLC";
+  }, []);
   return (
     <main className="min-h-screen bg-slate-950 text-slate-400">
       <div className="max-w-3xl mx-auto px-6 py-20 leading-relaxed tracking-wide text-[15px]">

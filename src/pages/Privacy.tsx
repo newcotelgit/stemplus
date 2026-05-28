@@ -1,18 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Stem Plus LLC" },
-      { name: "description", content: "Privacy Policy for Stem Plus LLC." },
-      { property: "og:title", content: "Privacy Policy — Stem Plus LLC" },
-      { property: "og:description", content: "Privacy Policy for Stem Plus LLC." },
-    ],
-  }),
-  component: PrivacyPage,
-});
-
-function PrivacyPage() {
+export default function PrivacyPage() {
+  useEffect(() => {
+    document.title = "Privacy Policy — Stem Plus LLC";
+  }, []);
   return (
     <main className="min-h-screen bg-slate-950 text-slate-400">
       <div className="max-w-3xl mx-auto px-6 py-20 leading-relaxed tracking-wide text-[15px]">
