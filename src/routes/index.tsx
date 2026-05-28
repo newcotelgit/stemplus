@@ -526,12 +526,7 @@ function Header() {
           }`}
           style={{ backgroundColor: "rgba(2, 6, 23, 0.92)" }}
         >
-          <div className="flex items-center justify-between h-16 px-5 border-b border-slate-800/60">
-            <img
-              src={logo}
-              alt="Continuum"
-              className="h-9 w-auto object-contain"
-            />
+          <div className="flex items-center justify-end h-16 px-5 border-b border-slate-800/60">
             <button
               type="button"
               aria-label="Close menu"
