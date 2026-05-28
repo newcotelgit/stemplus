@@ -1,0 +1,359 @@
+{
+  "/home/runner/work/stemplus/stemplus/src/styles.css": {
+    "file": "assets/styles-HU7G99IL.css",
+    "src": "/home/runner/work/stemplus/stemplus/src/styles.css"
+  },
+  "_chevron-right-BR6YlDTg.js": {
+    "file": "assets/chevron-right-BR6YlDTg.js",
+    "name": "chevron-right",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "_createLucideIcon-CtNVnmO7.js": {
+    "file": "assets/createLucideIcon-CtNVnmO7.js",
+    "name": "createLucideIcon",
+    "imports": [
+      "_worker-entry-CEjtRfNm.js"
+    ]
+  },
+  "_flame-Dn8UEWSy.js": {
+    "file": "assets/flame-Dn8UEWSy.js",
+    "name": "flame",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "_habits-cloud-BoASdhM-.js": {
+    "file": "assets/habits-cloud-BoASdhM-.js",
+    "name": "habits-cloud",
+    "dynamicImports": [
+      "src/integrations/supabase/client.ts"
+    ]
+  },
+  "_mail-DcCOKvd5.js": {
+    "file": "assets/mail-DcCOKvd5.js",
+    "name": "mail",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "_notifications-FdIQGryn.js": {
+    "file": "assets/notifications-FdIQGryn.js",
+    "name": "notifications",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "_router-BKHqUSMs.js": {
+    "file": "assets/router-BKHqUSMs.js",
+    "name": "router",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js"
+    ],
+    "dynamicImports": [
+      "src/routes/terms.tsx?tsr-split=component",
+      "src/routes/settings.tsx?tsr-split=component",
+      "src/routes/privacy.tsx?tsr-split=component",
+      "src/routes/login.tsx?tsr-split=component",
+      "src/routes/insights.tsx?tsr-split=component",
+      "src/routes/app.tsx?tsr-split=component",
+      "src/routes/index.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/styles-HU7G99IL.css"
+    ]
+  },
+  "_sparkles-CaIClNDW.js": {
+    "file": "assets/sparkles-CaIClNDW.js",
+    "name": "sparkles",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "_use-auth-DXYbUCVQ.js": {
+    "file": "assets/use-auth-DXYbUCVQ.js",
+    "name": "use-auth",
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js",
+      "_createLucideIcon-CtNVnmO7.js",
+      "_x-D2Mqqfik.js"
+    ],
+    "dynamicImports": [
+      "src/integrations/supabase/client.ts",
+      "src/integrations/supabase/client.ts"
+    ]
+  },
+  "_worker-entry-CEjtRfNm.js": {
+    "file": "assets/worker-entry-CEjtRfNm.js",
+    "name": "worker-entry",
+    "dynamicImports": [
+      "tanstack-start-manifest:v",
+      "_router-BKHqUSMs.js",
+      "node_modules/@tanstack/react-start/dist/plugin/default-entry/start.ts"
+    ]
+  },
+  "_x-D2Mqqfik.js": {
+    "file": "assets/x-D2Mqqfik.js",
+    "name": "x",
+    "imports": [
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "node_modules/@tanstack/react-start/dist/plugin/default-entry/start.ts": {
+    "file": "assets/start-HYkvq4Ni.js",
+    "name": "start",
+    "src": "node_modules/@tanstack/react-start/dist/plugin/default-entry/start.ts",
+    "isDynamicEntry": true
+  },
+  "src/assets/doctor-1.jpg": {
+    "file": "assets/doctor-1-DvMLKuCC.jpg",
+    "src": "src/assets/doctor-1.jpg"
+  },
+  "src/assets/doctor-2.jpg": {
+    "file": "assets/doctor-2-LmhcskLH.jpg",
+    "src": "src/assets/doctor-2.jpg"
+  },
+  "src/assets/doctor-3.jpg": {
+    "file": "assets/doctor-3-B99ynW-T.jpg",
+    "src": "src/assets/doctor-3.jpg"
+  },
+  "src/assets/doctor-4.jpg": {
+    "file": "assets/doctor-4-DinP7DOG.jpg",
+    "src": "src/assets/doctor-4.jpg"
+  },
+  "src/assets/doctor-5.jpg": {
+    "file": "assets/doctor-5-2J1p0DEL.jpg",
+    "src": "src/assets/doctor-5.jpg"
+  },
+  "src/assets/doctor-6.jpg": {
+    "file": "assets/doctor-6-DzYScJRc.jpg",
+    "src": "src/assets/doctor-6.jpg"
+  },
+  "src/assets/doctor-7.jpg": {
+    "file": "assets/doctor-7-DHyXdBnp.jpg",
+    "src": "src/assets/doctor-7.jpg"
+  },
+  "src/assets/doctor-8.jpg": {
+    "file": "assets/doctor-8-DPc62QmE.jpg",
+    "src": "src/assets/doctor-8.jpg"
+  },
+  "src/assets/hero-bg.jpg": {
+    "file": "assets/hero-bg-nHJ0Bmc4.jpg",
+    "src": "src/assets/hero-bg.jpg"
+  },
+  "src/assets/logo.png": {
+    "file": "assets/logo-CooJOcc2.png",
+    "src": "src/assets/logo.png"
+  },
+  "src/assets/patient-10.jpg": {
+    "file": "assets/patient-10-BUExytg2.jpg",
+    "src": "src/assets/patient-10.jpg"
+  },
+  "src/assets/patient-13.jpg": {
+    "file": "assets/patient-13-BS4jamgY.jpg",
+    "src": "src/assets/patient-13.jpg"
+  },
+  "src/assets/patient-2.jpg": {
+    "file": "assets/patient-2-D7-OPe1_.jpg",
+    "src": "src/assets/patient-2.jpg"
+  },
+  "src/assets/patient-3.jpg": {
+    "file": "assets/patient-3-8eb6dMwL.jpg",
+    "src": "src/assets/patient-3.jpg"
+  },
+  "src/assets/patient-4.jpg": {
+    "file": "assets/patient-4-BV12Ft0X.jpg",
+    "src": "src/assets/patient-4.jpg"
+  },
+  "src/assets/patient-5.jpg": {
+    "file": "assets/patient-5-BnXH10kA.jpg",
+    "src": "src/assets/patient-5.jpg"
+  },
+  "src/assets/patient-6.jpg": {
+    "file": "assets/patient-6-C48YQt0V.jpg",
+    "src": "src/assets/patient-6.jpg"
+  },
+  "src/assets/patient-7.jpg": {
+    "file": "assets/patient-7-BJUt-aTQ.jpg",
+    "src": "src/assets/patient-7.jpg"
+  },
+  "src/assets/patient-8.jpg": {
+    "file": "assets/patient-8-BiuRK2sq.jpg",
+    "src": "src/assets/patient-8.jpg"
+  },
+  "src/assets/patient-9.jpg": {
+    "file": "assets/patient-9-Cb5dH60d.jpg",
+    "src": "src/assets/patient-9.jpg"
+  },
+  "src/assets/shadow-bg.jpg": {
+    "file": "assets/shadow-bg-CdMACutT.jpg",
+    "src": "src/assets/shadow-bg.jpg"
+  },
+  "src/assets/testimonial-poster.jpg": {
+    "file": "assets/testimonial-poster-CWkDt0pO.jpg",
+    "src": "src/assets/testimonial-poster.jpg"
+  },
+  "src/integrations/lovable/index.ts": {
+    "file": "assets/index-Bmm-QdrG.js",
+    "name": "index",
+    "src": "src/integrations/lovable/index.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/integrations/supabase/client.ts"
+    ]
+  },
+  "src/integrations/supabase/client.ts": {
+    "file": "assets/client-CWeVlm3m.js",
+    "name": "client",
+    "src": "src/integrations/supabase/client.ts",
+    "isDynamicEntry": true
+  },
+  "src/routes/app.tsx?tsr-split=component": {
+    "file": "assets/app-JdB7d1hf.js",
+    "name": "app",
+    "src": "src/routes/app.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js",
+      "_use-auth-DXYbUCVQ.js",
+      "_sparkles-CaIClNDW.js",
+      "_x-D2Mqqfik.js",
+      "_notifications-FdIQGryn.js",
+      "_habits-cloud-BoASdhM-.js",
+      "_createLucideIcon-CtNVnmO7.js"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-BOksSflA.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js",
+      "_sparkles-CaIClNDW.js",
+      "_createLucideIcon-CtNVnmO7.js",
+      "_mail-DcCOKvd5.js",
+      "_x-D2Mqqfik.js",
+      "_chevron-right-BR6YlDTg.js",
+      "_flame-Dn8UEWSy.js"
+    ],
+    "dynamicImports": [
+      "src/integrations/supabase/client.ts"
+    ],
+    "assets": [
+      "assets/hero-bg-nHJ0Bmc4.jpg",
+      "assets/logo-CooJOcc2.png",
+      "assets/testimonial-poster-CWkDt0pO.jpg",
+      "assets/patient-2-D7-OPe1_.jpg",
+      "assets/patient-3-8eb6dMwL.jpg",
+      "assets/patient-4-BV12Ft0X.jpg",
+      "assets/patient-5-BnXH10kA.jpg",
+      "assets/patient-6-C48YQt0V.jpg",
+      "assets/patient-7-BJUt-aTQ.jpg",
+      "assets/patient-8-BiuRK2sq.jpg",
+      "assets/patient-9-Cb5dH60d.jpg",
+      "assets/patient-10-BUExytg2.jpg",
+      "assets/patient-13-BS4jamgY.jpg",
+      "assets/doctor-1-DvMLKuCC.jpg",
+      "assets/doctor-2-LmhcskLH.jpg",
+      "assets/doctor-3-B99ynW-T.jpg",
+      "assets/doctor-4-DinP7DOG.jpg",
+      "assets/doctor-5-2J1p0DEL.jpg",
+      "assets/doctor-6-DzYScJRc.jpg",
+      "assets/doctor-7-DHyXdBnp.jpg",
+      "assets/doctor-8-DPc62QmE.jpg"
+    ]
+  },
+  "src/routes/insights.tsx?tsr-split=component": {
+    "file": "assets/insights-BpYZMZjc.js",
+    "name": "insights",
+    "src": "src/routes/insights.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_use-auth-DXYbUCVQ.js",
+      "_habits-cloud-BoASdhM-.js",
+      "_createLucideIcon-CtNVnmO7.js",
+      "_flame-Dn8UEWSy.js",
+      "_router-BKHqUSMs.js",
+      "_x-D2Mqqfik.js"
+    ]
+  },
+  "src/routes/login.tsx?tsr-split=component": {
+    "file": "assets/login-CNPzVpTQ.js",
+    "name": "login",
+    "src": "src/routes/login.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js",
+      "_createLucideIcon-CtNVnmO7.js",
+      "_mail-DcCOKvd5.js"
+    ],
+    "dynamicImports": [
+      "src/integrations/supabase/client.ts",
+      "src/integrations/lovable/index.ts"
+    ],
+    "assets": [
+      "assets/shadow-bg-CdMACutT.jpg"
+    ]
+  },
+  "src/routes/privacy.tsx?tsr-split=component": {
+    "file": "assets/privacy-BpMhfRvJ.js",
+    "name": "privacy",
+    "src": "src/routes/privacy.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js"
+    ]
+  },
+  "src/routes/settings.tsx?tsr-split=component": {
+    "file": "assets/settings-Cmh7h_wC.js",
+    "name": "settings",
+    "src": "src/routes/settings.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js",
+      "_use-auth-DXYbUCVQ.js",
+      "_notifications-FdIQGryn.js",
+      "_createLucideIcon-CtNVnmO7.js",
+      "_chevron-right-BR6YlDTg.js",
+      "_x-D2Mqqfik.js"
+    ],
+    "dynamicImports": [
+      "src/integrations/supabase/client.ts"
+    ]
+  },
+  "src/routes/terms.tsx?tsr-split=component": {
+    "file": "assets/terms-BA1SIHRx.js",
+    "name": "terms",
+    "src": "src/routes/terms.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js",
+      "_router-BKHqUSMs.js"
+    ]
+  },
+  "tanstack-start-manifest:v": {
+    "file": "assets/_tanstack-start-manifest_v-BnyGQvUl.js",
+    "name": "_tanstack-start-manifest_v",
+    "src": "tanstack-start-manifest:v",
+    "isDynamicEntry": true
+  },
+  "virtual:cloudflare/worker-entry": {
+    "file": "index.js",
+    "name": "index",
+    "src": "virtual:cloudflare/worker-entry",
+    "isEntry": true,
+    "imports": [
+      "_worker-entry-CEjtRfNm.js"
+    ]
+  }
+}
