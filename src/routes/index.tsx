@@ -422,7 +422,7 @@ function Header() {
           className={`absolute top-0 right-0 h-full w-[82%] max-w-sm backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
-          style={{ backgroundColor: "rgba(2, 6, 23, 0.5)" }}
+          style={{ backgroundColor: "rgba(2, 6, 23, 0.92)" }}
         >
           <div className="flex items-center justify-between h-16 px-5 border-b border-slate-800/60">
             <img src={logo} alt="Continuum" className="h-9 w-auto object-contain" />
@@ -444,7 +444,7 @@ function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-2xl font-semibold tracking-tight text-slate-100 py-3 hover:text-[#00A896] transition-colors"
+                className="text-2xl font-semibold tracking-tight text-white py-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)] hover:text-[#00A896] transition-colors"
               >
                 {l.label}
               </a>
