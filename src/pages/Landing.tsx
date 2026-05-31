@@ -1281,49 +1281,49 @@ const TEAM = [
     img: doctor2,
     name: "Dr. Nino Kandelaki, MD, PhD",
     role: "Chief Cosmetic Dermatologist",
-    badges: ["PhD", "Postdoctoral", "17 Years Experience"],
+    badges: ["MD", "PhD", "Postdoctoral"],
     bio: "Dermatologist and venereologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum and former lead injector at City Luxe clinic. Advanced training in Berlin, the United States, and Czech Republic.",
   },
   {
     img: doctor3,
     name: "Dr. Mikhail Tsverava, MD, PhD",
     role: "Senior Radiologist & Diagnostic Specialist",
-    badges: ["MD", "PhD", "Diagnostic Imaging"],
+    badges: ["MD", "PhD"],
     bio: "Senior Radiologist with extensive practice in functional diagnostic mapping and advanced imaging. Expert in ultrasound-guided precision cellular targeting used to verify and document treatment outcomes. Provides evidence-based diagnostic support throughout every stage of the StemPlus protocol.",
   },
   {
     img: doctor4,
     name: "Dr. Eleonora Fiodorova, MD",
     role: "Clinical Endocrinologist & Nutritionist",
-    badges: ["MD", "Endocrinology", "Metabolic Medicine"],
+    badges: ["MD"],
     bio: "Clinical Endocrinologist specialising in advanced endocrine systems, hormonal balance, and metabolic stabilization. Plays a key role in designing and monitoring the hormonal and metabolic components of each patient's treatment plan. Expert in integrating nutritional protocols with regenerative cellular therapy for optimised outcomes.",
   },
   {
     img: doctor5,
     name: "Dr. Natia Alania, MD",
     role: "Clinical Neurologist & Neurodevelopmental Specialist",
-    badges: ["MD", "Neurology", "Autism Protocols"],
+    badges: ["MD"],
     bio: "Clinical Neurologist specialising in neuro-recovery pathways, functional brain mapping, and neurodevelopmental disorders. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions. Works closely with Dr. Archaia to deliver comprehensive neurological care within the StemPlus multidisciplinary team.",
   },
   {
     img: doctor6,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
-    badges: ["MD", "12 Years Experience", "Israel & Russia Trained"],
+    badges: ["MD"],
     bio: "Multidisciplinary neurological specialist with 12 years of experience trained at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Leads neurological assessment and rehabilitation protocols combining cellular therapy with chiropractic, acupuncture, and manual therapy. Expert in stroke rehabilitation, spinal conditions, and musculoskeletal disorders.",
   },
   {
     img: doctor7,
     name: "Lili Martashvili",
     role: "Director of Clinical Nursing & Compliance",
-    badges: ["Clinical Nursing", "Patient Safety", "Compliance"],
+    badges: [],
     bio: "Director of Clinical Nursing overseeing all patient safety protocols and clinical compliance standards at Leadermed Hospital. Commands the triage systems and outpatient healthcare standards that ensure every patient receives consistent, safe care throughout their 5-day protocol. The operational backbone of the StemPlus clinical team.",
   },
   {
     img: doctor8,
     name: "Mako Khachidze",
     role: "Clinical Infusion Nurse",
-    badges: ["IV Therapy", "Cellular Protocols", "Patient Care"],
+    badges: [],
     bio: "Clinical Infusion Nurse specialising in the precision administration and monitoring of advanced intravenous cellular protocols. Provides hands-on care throughout every stem cell infusion procedure ensuring accuracy, comfort, and safety. A trusted presence for every international patient throughout their treatment at StemPlus.",
   },
 ];
@@ -1385,33 +1385,40 @@ function MedicalTeam() {
               <article
                 key={m.name}
                 data-team-card
-                className="snap-start shrink-0 relative rounded-2xl overflow-hidden shadow-md basis-[85%] sm:basis-[60%] md:basis-[calc((100%-3rem)/3)] lg:basis-[calc((100%-4.5rem)/4)]"
-                style={{ height: "480px" }}
+                className="snap-start shrink-0 flex flex-col rounded-2xl overflow-hidden shadow-md bg-white basis-[85%] sm:basis-[60%] md:basis-[calc((100%-3rem)/3)] lg:basis-[calc((100%-4.5rem)/4)]"
               >
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(to bottom, transparent 35%, rgba(3,4,94,0.92) 100%)" }}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <p className="text-white font-bold text-base leading-tight">{m.name}</p>
-                  <span className="inline-block bg-[#02C39A] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1">
-                    {m.role}
-                  </span>
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {m.badges.map((b) => (
-                      <span key={b} className="bg-white/15 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                        {b}
-                      </span>
-                    ))}
+                {/* Photo section */}
+                <div className="relative h-[280px] shrink-0 bg-muted">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(to bottom, transparent 45%, rgba(3,4,94,0.85) 100%)" }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="text-white font-bold text-sm leading-tight">{m.name}</p>
+                    <span className="inline-block bg-[#02C39A] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1">
+                      {m.role}
+                    </span>
+                    {m.badges.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {m.badges.map((b) => (
+                          <span key={b} className="bg-white/20 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                            {b}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <p className="text-white/80 text-xs leading-relaxed mt-2">{m.bio}</p>
+                </div>
+                {/* Bio section */}
+                <div className="p-4 flex-1">
+                  <p className="text-slate-600 text-xs leading-relaxed">{m.bio}</p>
                 </div>
               </article>
             ))}
