@@ -1354,26 +1354,32 @@ function MedicalTeam() {
           </p>
         </div>
 
-        {/* Featured lead doctor — centered single card */}
-        <div className="flex justify-center mb-16">
-          {LEAD_DOCTORS.map((d) => (
-            <article
-              key={d.name}
-              className="bg-white rounded-2xl shadow-sm border border-border/60 p-6 flex flex-col w-full max-w-sm"
-            >
-              <div className="rounded-xl overflow-hidden aspect-[3/4] mb-5 bg-muted">
-                <img
-                  src={d.img}
-                  alt={d.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-[#03045E] leading-snug">{d.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-[#02C39A]">{d.title}</p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {d.badges.map((b) => (
+        {/* Featured lead doctor — full-width split layout */}
+        <div className="mb-16 w-full bg-white rounded-2xl shadow-sm overflow-hidden border border-border/60">
+          <div className="flex flex-col sm:flex-row">
+            {/* Image — full height on desktop, fixed 300px on mobile */}
+            <div className="sm:w-[40%] h-[300px] sm:h-auto shrink-0 bg-muted">
+              <img
+                src={doctor1}
+                alt="Dr. Yaroslav Myroshnykov"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            {/* Content */}
+            <div className="sm:w-[60%] p-8 sm:p-12 flex flex-col justify-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#02C39A]">
+                Lead Physician &amp; Co-Founder
+              </p>
+              <h3 className="mt-2 text-2xl font-bold text-[#03045E] leading-snug">
+                Dr. Yaroslav Myroshnykov, MD, PhD
+              </h3>
+              <p className="mt-1 text-sm font-semibold text-[#02C39A]">
+                Chief Physician &amp; Stem Cell Specialist
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["PhD", "50+ Publications", "7 Patents", "Int'l Medical License", "Co-Founder"].map((b) => (
                   <span
                     key={b}
                     className="text-xs font-semibold px-2 py-1 rounded-full"
@@ -1383,9 +1389,11 @@ function MedicalTeam() {
                   </span>
                 ))}
               </div>
-              <p className="mt-4 text-sm text-slate-600 leading-relaxed flex-1">{d.bio}</p>
-            </article>
-          ))}
+              <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+                Dr. Myroshnykov is the co-founder and Chief Physician of StemPlus, bringing decades of research and clinical practice in regenerative cellular medicine. He graduated from the National Medical University in Kyiv in 1996, completed his PhD in 2000, and was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine in 2001. He served as Chief Sexopathology Expert at the Kyiv City Health Department, Director of Research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine, and attending physician at Boao Life Care Center in Hainan, China — one of Asia's most advanced stem cell facilities. He is the author of over 50 published papers and holds 7 invention patents in cellular medicine. His specialisations include comprehensive anti-aging protocols, diabetes management, and sexual function rehabilitation.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Divider + subheading */}
