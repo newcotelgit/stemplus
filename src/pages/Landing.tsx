@@ -603,7 +603,6 @@ function Hero() {
               <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-7">
                 {[
                   "50+ years of cellular research",
-                  "50% medical · 50% rejuvenation patients",
                   "Free 30-min consultation",
                 ].map((item) => (
                   <span key={item} className="flex items-center gap-2 text-sm text-white/90 leading-none">
