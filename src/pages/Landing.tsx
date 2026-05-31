@@ -600,15 +600,15 @@ function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-5">
+              <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-7">
                 {[
                   "50+ years of cellular research",
                   "50% medical · 50% rejuvenation patients",
                   "Free 30-min consultation",
                 ].map((item) => (
-                  <span key={item} className="flex items-center gap-2 text-sm text-white/90">
+                  <span key={item} className="flex items-center gap-2 text-sm text-white/90 leading-none">
                     <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#02C39A" }} />
-                    {item}
+                    <span>{item}</span>
                   </span>
                 ))}
               </div>
