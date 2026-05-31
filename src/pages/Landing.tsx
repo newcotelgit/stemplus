@@ -1273,14 +1273,14 @@ const TEAM = [
   {
     img: doctor1,
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
-    role: "Chief Physician | Andrologist & Urologist",
-    bio: "Over 25 years of specialized clinical practice and stem cell research. Author of 50+ publications and holder of 7 invention patents in cellular rejuvenation and metabolic treatments.",
+    role: "Chief Physician & Stem Cell Specialist",
+    bio: "Founder and clinical director of StemPlus. Graduated from the National Medical University in Kyiv in 1996, completed his PhD in 2000, and was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine in 2001. Former Chief Sexopathology Expert at the Kyiv City Health Department, Director of Research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine, and attending physician at Boao Life Care Center in Hainan, China. Author of 50+ published papers and holder of 7 invention patents. Specialisations include anti-aging protocols, diabetes management, and sexual function rehabilitation. Holds an international medical practice license.",
   },
   {
     img: doctor2,
-    name: "Dr. Nini Kandelaki, PhD",
-    role: "Dermatologist & Specialist in Cosmetology",
-    bio: "Doctor of Philosophy (PhD) in Medicine and member of EADV. Expert in advanced aesthetic exome therapies, cellular skin rejuvenation, and anti-aging treatments.",
+    name: "Dr. Nino Kandelaki, MD, PhD",
+    role: "Chief Cosmetic Dermatologist",
+    bio: "Dermatologist and venereologist with over 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. Holds MD and PhD with postdoctoral training. Former lead injector at City Luxe clinic and international trainer for the Spanish brand PBSerum. Has participated in medical congresses and training in Berlin, the United States, and the Czech Republic. Focuses on cellular aesthetic medicine using stem cells, exosomes, and peptides for facial rejuvenation, skin regeneration, and hair restoration.",
   },
   {
     img: doctor3,
@@ -1304,7 +1304,7 @@ const TEAM = [
     img: doctor8,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
-    bio: "Triple-specialist managing complex neuro-recovery tracking, orthopedic spinal systems, and advanced joint regeneration.",
+    bio: "Multidisciplinary neurological specialist with over 12 years of clinical experience. Graduate of Tbilisi Teaching Medical University Hippocrates, with advanced training at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Expertise spans neurology, neurosurgery, chiropractic, acupuncture, manual therapy, physiotherapy, and pharmacopuncture. Leads neurological assessment and rehabilitation protocols at StemPlus, combining cellular therapy with multidisciplinary treatment for neurodegenerative conditions, stroke rehabilitation, and musculoskeletal disorders.",
   },
   {
     img: doctor5,
