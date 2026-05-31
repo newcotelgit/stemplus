@@ -577,7 +577,7 @@ function Hero() {
                 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left"
                 style={{ lineHeight: "1.08" }}
               >
-                The Future of Healing and Rejuvenation in Tbilisi, Georgia
+                Stem Cell Therapy That Actually Works
               </h1>
             </ScrollReveal>
 
@@ -586,7 +586,7 @@ function Hero() {
                 className="hidden sm:block mt-6 text-lg text-white text-left"
                 style={{ textWrap: "pretty", lineHeight: "1.6" }}
               >
-                ​
+                Clinically administered in Tbilisi, Georgia — combining 50 years of cellular science with elite medical care. For patients recovering from serious conditions, and those investing in long-term vitality.
               </p>
             </ScrollReveal>
 
@@ -599,6 +599,18 @@ function Hero() {
                   Book consultation
                   <ArrowRight className="w-4 h-4" />
                 </a>
+              </div>
+              <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-5">
+                {[
+                  "50+ years of cellular research",
+                  "50% medical · 50% rejuvenation patients",
+                  "Free 30-min consultation",
+                ].map((item) => (
+                  <span key={item} className="flex items-center gap-2 text-sm text-white/90">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#02C39A" }} />
+                    {item}
+                  </span>
+                ))}
               </div>
             </ScrollReveal>
           </div>
