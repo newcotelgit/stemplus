@@ -600,7 +600,7 @@ function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-7">
+              <div className="mt-5 flex flex-col gap-3">
                 {[
                   "50+ years of cellular research",
                   "Free 30-min consultation",
