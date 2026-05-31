@@ -571,7 +571,7 @@ function Hero() {
 
         {/* Hero content — left aligned */}
         <div className="relative z-10 max-w-5xl mx-auto px-5 pt-[55vh] pb-12 sm:pt-24">
-          <div className="max-w-xl">
+          <div className="w-full sm:max-w-[45%]">
             <ScrollReveal delay={80}>
               <h1
                 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left"
@@ -586,7 +586,7 @@ function Hero() {
                 className="hidden sm:block mt-6 text-lg text-white text-left"
                 style={{ textWrap: "pretty", lineHeight: "1.6" }}
               >
-                Clinically administered in Tbilisi, Georgia — combining 50 years of cellular science with elite medical care. For patients recovering from serious conditions, and those investing in long-term vitality.
+                Combining 50 years of cellular science with elite medical care — for serious conditions and long-term vitality.
               </p>
             </ScrollReveal>
 
