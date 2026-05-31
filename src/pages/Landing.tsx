@@ -1274,49 +1274,49 @@ const TEAM = [
     img: doctor1,
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
     role: "Chief Physician & Stem Cell Specialist",
-    bio: "Co-founder and Chief Physician with 50+ publications and 7 patents in cellular medicine.",
+    bio: "Co-founder and Chief Physician of StemPlus with decades of research in regenerative cellular medicine. Author of 50+ published papers and holder of 7 invention patents, with international clinical experience in Ukraine, China, and Georgia.",
   },
   {
     img: doctor2,
     name: "Dr. Nino Kandelaki, MD, PhD",
     role: "Chief Cosmetic Dermatologist",
-    bio: "Chief Cosmetic Dermatologist with 17 years experience and postdoctoral training in aesthetic medicine.",
+    bio: "Chief Cosmetic Dermatologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum with advanced training in Berlin, the United States, and Czech Republic.",
   },
   {
     img: doctor3,
     name: "Dr. Mikhail Tsverava, MD, PhD",
     role: "Senior Radiologist & Diagnostic Specialist",
-    bio: "MD and PhD holder with extensive practice in functional diagnostic mapping and advanced ultrasound-guided precision cellular targeting.",
+    bio: "Senior Radiologist and Diagnostic Specialist with extensive practice in functional diagnostic mapping. Expert in advanced ultrasound-guided precision cellular targeting and evidence-based outcome verification.",
   },
   {
     img: doctor4,
     name: "Dr. Eleonora Fiodorova, MD",
     role: "Clinical Endocrinologist & Nutritionist",
-    bio: "Specialist in advanced endocrine systems, hormonal balance alignment, and targeted metabolic stabilization for regenerative therapies.",
+    bio: "Clinical Endocrinologist and Nutritionist specialising in advanced endocrine systems and hormonal balance. Expert in targeted metabolic stabilization protocols for regenerative therapies.",
   },
   {
     img: doctor7,
     name: "Dr. Natia Alania, MD",
     role: "Clinical Neurologist & Neurodevelopmental Specialist",
-    bio: "Expert in neuro-recovery pathways, functional brain mapping, and dedicated cellular protocols for Autism Spectrum Disorders.",
+    bio: "Clinical Neurologist and Neurodevelopmental Specialist focusing on neuro-recovery pathways and functional brain mapping. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions.",
   },
   {
     img: doctor8,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
-    bio: "Neurosurgeon and Vertebrologist with 12 years experience, trained in Israel and Russia.",
+    bio: "Neurosurgeon, Neurologist and Vertebrologist with 12 years of experience, trained at Asutta Clinic in Israel and Sechenov Moscow Medical University. Leads neurological assessment and rehabilitation protocols combining cellular therapy with chiropractic and manual therapy.",
   },
   {
     img: doctor5,
     name: "Lili Martashvili",
     role: "Director of Clinical Nursing & Compliance",
-    bio: "Commands the patient clinical safety apparatus, triage protocols, and strict execution of outpatient healthcare standards.",
+    bio: "Director of Clinical Nursing and Compliance overseeing patient safety protocols and clinical standards at Leadermed Hospital. Ensures rigorous execution of outpatient healthcare and triage procedures throughout the 5-day treatment protocol.",
   },
   {
     img: doctor6,
     name: "Mako Khachidze",
     role: "Clinical Infusion Nurse",
-    bio: "Specialist in the precision execution, administration, and monitoring of advanced intravenous (IV) cellular protocols.",
+    bio: "Clinical Infusion Nurse specialising in the precision administration and monitoring of advanced intravenous cellular protocols. Provides hands-on care throughout every stem cell infusion procedure at StemPlus.",
   },
 ];
 
@@ -1327,20 +1327,6 @@ const LEAD_DOCTORS = [
     title: "Chief Physician & Stem Cell Specialist",
     badges: ["PhD", "50+ Publications", "7 Patents", "Int'l License"],
     bio: "Co-founder of StemPlus and lead clinical authority in regenerative cellular medicine. Awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine. Former Director of Research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine, and attending physician at Boao Life Care Center in Hainan, China. Specialises in anti-aging protocols, diabetes management, and sexual function rehabilitation.",
-  },
-  {
-    img: doctor2,
-    name: "Dr. Nino Kandelaki, MD, PhD",
-    title: "Chief Cosmetic Dermatologist",
-    badges: ["PhD", "Postdoctoral", "17 Years Experience"],
-    bio: "Dermatologist and venereologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum. Advanced training in Berlin, the United States, and Czech Republic. Leads all cellular aesthetic protocols at StemPlus including facial rejuvenation, skin regeneration, and hair restoration.",
-  },
-  {
-    img: doctor6,
-    name: "Dr. Giorgi Archaia, MD",
-    title: "Neurosurgeon, Neurologist & Vertebrologist",
-    badges: ["MD", "12 Years Experience", "Israel & Russia Trained"],
-    bio: "Multidisciplinary neurological specialist with 12 years of experience. Advanced training at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Leads neurological assessment and rehabilitation protocols at StemPlus, combining cellular therapy with chiropractic, acupuncture, and manual therapy.",
   },
 ];
 
@@ -1368,12 +1354,12 @@ function MedicalTeam() {
           </p>
         </div>
 
-        {/* Featured lead doctors — 3-column equal-height cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 items-stretch">
+        {/* Featured lead doctor — centered single card */}
+        <div className="flex justify-center mb-16">
           {LEAD_DOCTORS.map((d) => (
             <article
               key={d.name}
-              className="bg-white rounded-2xl shadow-sm border border-border/60 p-6 flex flex-col"
+              className="bg-white rounded-2xl shadow-sm border border-border/60 p-6 flex flex-col w-full max-w-sm"
             >
               <div className="rounded-xl overflow-hidden aspect-[3/4] mb-5 bg-muted">
                 <img
@@ -1481,13 +1467,16 @@ function MedicalTeam() {
                   />
                 </div>
                 <div className="hidden md:flex p-6 flex-col gap-3 flex-1">
-                  <span className="inline-block self-start text-[10px] font-semibold tracking-wider text-accent-foreground bg-accent/60 px-2.5 py-1 rounded-full uppercase leading-tight">
+                  <span
+                    className="inline-block self-start text-xs font-semibold px-2 py-1 rounded-full leading-tight"
+                    style={{ background: "rgba(3,4,94,0.08)", color: "#03045E" }}
+                  >
                     {m.role}
                   </span>
-                  <h3 className="text-lg font-bold text-foreground leading-snug">
+                  <h3 className="text-lg font-bold text-[#03045E] leading-snug">
                     {m.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
                     {m.bio}
                   </p>
                 </div>
