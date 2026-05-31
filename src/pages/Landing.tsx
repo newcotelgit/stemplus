@@ -37,6 +37,8 @@ import {
   ChevronRight,
   Calendar,
   RefreshCw,
+  Plus,
+  X,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
@@ -74,6 +76,7 @@ export default function LandingPage() {
       <MedicalTeam />
       <Heritage />
       <HowItWorks />
+      <FAQSection />
       <FinalCTA />
       <BookingSection />
       <Footer />
@@ -1583,6 +1586,152 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+/* ─── FAQ Section ─── */
+const FAQ_ITEMS = [
+  {
+    q: "What is stem cell therapy and how does it work?",
+    a: "Stem cell therapy is a regenerative medicine treatment that harnesses the body's natural repair mechanisms to address damaged tissue, chronic disease, and cellular decline. At StemPlus, we use a specific type of stem cell called Muse cells — multipotent mesenchymal stem cells sourced from GMP-certified laboratories with independently verified vitality scores above 98%. Unlike conventional stem cells, Muse cells remain active in the body for 6 months to 1 year, providing a continuous therapeutic effect with zero carcinogenic risk. These are combined with exosomes, peptides, and bioidentical implants into a personalised protocol designed around your specific diagnostic results — not a generic treatment plan.",
+  },
+  {
+    q: "What conditions do you treat?",
+    a: "StemPlus treats a broad range of conditions. Medical conditions include Type 1 and Type 2 diabetes, liver disease including fibrosis and cirrhosis, neurological and neurodegenerative diseases, stroke rehabilitation, autism spectrum disorder, autoimmune diseases, orthopedic conditions including arthritis and sports injuries, cardiac rehabilitation, erectile dysfunction and male infertility, female infertility and diminished ovarian reserve, retinopathy, and urological and gynecological conditions. On the rejuvenation side we offer comprehensive anti-aging protocols using embryonic stem cells, testosterone restoration and hormonal optimisation, and aesthetic cellular medicine including facial rejuvenation and hair restoration. Every patient is assessed individually by Dr. Yaroslav Myroshnykov before a protocol is recommended.",
+  },
+  {
+    q: "How many sessions will I need?",
+    a: "Most patients complete StemPlus's 5-day protocol at Leadermed Hospital in Tbilisi. Day 1 is a comprehensive diagnostic workup — blood panels, ultrasound, specialist consultations, and treatment plan development. Day 2 begins the primary infusion phase, a 3–4 hour intravenous procedure combined with peptides and biosimilar drugs. Day 3 includes a secondary infusion and optional cosmetic injectables. Day 4 is dynamic evaluation and treatment adjustment. Day 5 is discharge summary and follow-up milestone planning. After leaving Tbilisi, patients maintain ongoing contact with the clinical team to monitor treatment effectiveness.",
+  },
+  {
+    q: "Is stem cell therapy safe?",
+    a: "StemPlus uses only Muse cells sourced from GMP-certified laboratories, independently certified with vitality scores above 98% and tested negative for all viral and bacterial content. Every patient undergoes a full diagnostic workup before treatment begins. We physically bring your cells to you and show them before administration. Dr. Myroshnykov has over 50 published papers and 7 invention patents in cellular medicine, and our protocols are grounded in decades of peer-reviewed research originating from the Institute for Problems of Cryobiology in Kharkiv, Ukraine.",
+  },
+  {
+    q: "Is stem cell therapy experimental?",
+    a: "In some countries stem cell therapy is still classified as experimental, and we are transparent about this. At StemPlus, treatments are administered legally within Leadermed Hospital — a licensed, fully equipped multidisciplinary medical facility in Tbilisi, Georgia. The science underpinning our protocols traces back to 1972 and the Institute for Problems of Cryobiology in Kharkiv. Statistical analysis of our outcomes has demonstrated highly reliable results, including complete restoration of liver parenchyma in fibrosis and cirrhosis cases, and a 2–3 fold increase in insulin reserves in diabetic patients. We encourage all patients to consult their own physician before travelling.",
+  },
+  {
+    q: "Who are the doctors at StemPlus?",
+    a: "The StemPlus clinical team is led by three specialists. Dr. Yaroslav Myroshnykov is Chief Physician and stem cell specialist — PhD, author of over 50 published papers, holder of 7 invention patents, awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine in 2001, and holder of an international medical practice license with clinical experience in China. Dr. Nino Kandelaki is Chief Cosmetic Dermatologist with 17 years of experience, MD and PhD with postdoctoral training, and international trainer for the Spanish brand PBSerum. Dr. Giorgi Archaia is Neurosurgeon, Neurologist and Vertebrologist with 12 years of experience, trained at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia.",
+  },
+  {
+    q: "What makes StemPlus different from other clinics?",
+    a: "Three things set StemPlus apart. First, the cells: StemPlus uses Muse cells from GMP-certified laboratories with independently verified vitality scores above 98% — not all clinics can say the same. Second, the science: our protocols are built on over 50 years of cellular research with Dr. Myroshnykov's 50+ published papers and 7 patents underpinning every treatment decision. Third, the verification: StemPlus uses evidence-based methods to measure outcomes — tissue elastography, C-peptide assessment, Anti-Müllerian Hormone testing, and neuromyography — so results are documented, not assumed.",
+  },
+  {
+    q: "Do I need a visa to visit Georgia?",
+    a: "Citizens of over 90 countries can enter Georgia visa-free, including all EU member states, the United Kingdom, the United States, Canada, Australia, and most Middle Eastern countries. Georgia has one of the most open visa policies in the world. You can verify your country's requirements at the Georgian Ministry of Foreign Affairs website before booking.",
+  },
+  {
+    q: "How do I get to Tbilisi?",
+    a: "Tbilisi International Airport connects directly to most major European cities, the Middle East, and Central Asia. Typical flight times are 3–4 hours from Western Europe, around 5 hours from the UK, and 4–5 hours from the Gulf states. From the airport, Leadermed Hospital is approximately 20–25 minutes by taxi or rideshare. We recommend the Bolt app for reliable, fairly priced airport transfers.",
+  },
+  {
+    q: "Can I combine treatment with tourism?",
+    a: "Absolutely — and most of our patients do. The StemPlus 5-day protocol leaves your evenings free, and Tbilisi rewards exploration. The city has a remarkably preserved medieval old town, world-famous sulfur baths, exceptional Georgian cuisine, and a natural wine culture that draws visitors from across Europe. Most patients arrive a day early to settle in and extend their stay after treatment.",
+  },
+  {
+    q: "What language do the doctors speak?",
+    a: "Dr. Myroshnykov and the senior clinical team are fluent in English, Russian, and Ukrainian. All consultations for international patients are conducted in English. Our patient coordination team is available in English throughout your stay — from your initial video consultation through to your departure from Tbilisi.",
+  },
+  {
+    q: "How much does stem cell therapy cost at StemPlus?",
+    a: "Treatment costs depend on your condition and the protocol Dr. Myroshnykov recommends. Your free 30-minute consultation will include a complete cost breakdown before you commit to anything. As a general guide, patients typically invest between $3,000 and $12,000 for a full 5-day protocol at Leadermed Hospital — significantly less than equivalent treatments using GMP-certified Muse cells in Germany, Switzerland, or the United States, where costs can be three to five times higher.",
+  },
+  {
+    q: "What is included in the treatment package?",
+    a: "Your StemPlus treatment package includes your full diagnostic workup on arrival — blood panels, specialist consultations, ultrasound and elastography where required — all cellular therapy sessions as prescribed, daily clinical monitoring throughout your 5-day stay, a comprehensive discharge summary with follow-up recommendations, and ongoing remote support from the clinical team after you return home. Accommodation and flights are arranged independently.",
+  },
+  {
+    q: "How do I book a consultation?",
+    a: "Click the Book Consultation button on this page. You will be asked for your name and email address, then taken directly to our scheduling calendar to choose a time that suits you. The consultation is free, takes 30 minutes, and is conducted via video call with a member of Dr. Myroshnykov's clinical team. There is no obligation to proceed.",
+  },
+];
+
+function FAQSection() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
+  return (
+    <section aria-label="Frequently Asked Questions" className="py-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="text-center mb-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#02C39A] mb-3">
+            Frequently Asked Questions
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-[#03045E]"
+            style={{ lineHeight: "1.15" }}
+          >
+            Everything You Need to Know About Stem Cell Therapy at StemPlus
+          </h2>
+          <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
+            Answers to the most common questions from international patients considering treatment in Tbilisi, Georgia.
+          </p>
+        </div>
+
+        <div className="border-t border-slate-100">
+          {FAQ_ITEMS.map((item, i) => {
+            const isOpen = open === i;
+            const qId = `faq-q-${i}`;
+            const aId = `faq-a-${i}`;
+            return (
+              <div key={i} className="border-b border-slate-100">
+                <button
+                  id={qId}
+                  aria-expanded={isOpen}
+                  aria-controls={aId}
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 py-5 text-left"
+                >
+                  <span className="font-semibold text-base text-[#03045E]">{item.q}</span>
+                  {isOpen
+                    ? <X className="w-5 h-5 shrink-0" style={{ color: "#02C39A" }} />
+                    : <Plus className="w-5 h-5 shrink-0" style={{ color: "#02C39A" }} />
+                  }
+                </button>
+                <div
+                  id={aId}
+                  role="region"
+                  aria-labelledby={qId}
+                  style={{
+                    maxHeight: isOpen ? "800px" : "0px",
+                    overflow: "hidden",
+                    transition: "max-height 0.35s ease",
+                  }}
+                >
+                  <p className="text-slate-600 text-sm leading-relaxed pb-5">{item.a}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="#admissions"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#02C39A] text-white px-7 py-3.5 text-sm font-bold hover:bg-[#00A896] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#02C39A]/25"
+          >
+            Book Your Free Consultation
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
