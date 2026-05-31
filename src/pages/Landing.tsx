@@ -1274,13 +1274,13 @@ const TEAM = [
     img: doctor1,
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
     role: "Chief Physician & Stem Cell Specialist",
-    bio: "Founder and clinical director of StemPlus. Graduated from the National Medical University in Kyiv in 1996, completed his PhD in 2000, and was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine in 2001. Former Chief Sexopathology Expert at the Kyiv City Health Department, Director of Research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine, and attending physician at Boao Life Care Center in Hainan, China. Author of 50+ published papers and holder of 7 invention patents. Specialisations include anti-aging protocols, diabetes management, and sexual function rehabilitation. Holds an international medical practice license.",
+    bio: "Co-founder and Chief Physician with 50+ publications and 7 patents in cellular medicine.",
   },
   {
     img: doctor2,
     name: "Dr. Nino Kandelaki, MD, PhD",
     role: "Chief Cosmetic Dermatologist",
-    bio: "Dermatologist and venereologist with over 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. Holds MD and PhD with postdoctoral training. Former lead injector at City Luxe clinic and international trainer for the Spanish brand PBSerum. Has participated in medical congresses and training in Berlin, the United States, and the Czech Republic. Focuses on cellular aesthetic medicine using stem cells, exosomes, and peptides for facial rejuvenation, skin regeneration, and hair restoration.",
+    bio: "Chief Cosmetic Dermatologist with 17 years experience and postdoctoral training in aesthetic medicine.",
   },
   {
     img: doctor3,
@@ -1304,7 +1304,7 @@ const TEAM = [
     img: doctor8,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
-    bio: "Multidisciplinary neurological specialist with over 12 years of clinical experience. Graduate of Tbilisi Teaching Medical University Hippocrates, with advanced training at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Expertise spans neurology, neurosurgery, chiropractic, acupuncture, manual therapy, physiotherapy, and pharmacopuncture. Leads neurological assessment and rehabilitation protocols at StemPlus, combining cellular therapy with multidisciplinary treatment for neurodegenerative conditions, stroke rehabilitation, and musculoskeletal disorders.",
+    bio: "Neurosurgeon and Vertebrologist with 12 years experience, trained in Israel and Russia.",
   },
   {
     img: doctor5,
@@ -1317,6 +1317,30 @@ const TEAM = [
     name: "Mako Khachidze",
     role: "Clinical Infusion Nurse",
     bio: "Specialist in the precision execution, administration, and monitoring of advanced intravenous (IV) cellular protocols.",
+  },
+];
+
+const LEAD_DOCTORS = [
+  {
+    img: doctor1,
+    name: "Dr. Yaroslav Myroshnykov, MD, PhD",
+    title: "Chief Physician & Stem Cell Specialist",
+    badges: ["PhD", "50+ Publications", "7 Patents", "Int'l License"],
+    bio: "Co-founder of StemPlus and lead clinical authority in regenerative cellular medicine. Awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine. Former Director of Research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine, and attending physician at Boao Life Care Center in Hainan, China. Specialises in anti-aging protocols, diabetes management, and sexual function rehabilitation.",
+  },
+  {
+    img: doctor2,
+    name: "Dr. Nino Kandelaki, MD, PhD",
+    title: "Chief Cosmetic Dermatologist",
+    badges: ["PhD", "Postdoctoral", "17 Years Experience"],
+    bio: "Dermatologist and venereologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum. Advanced training in Berlin, the United States, and Czech Republic. Leads all cellular aesthetic protocols at StemPlus including facial rejuvenation, skin regeneration, and hair restoration.",
+  },
+  {
+    img: doctor6,
+    name: "Dr. Giorgi Archaia, MD",
+    title: "Neurosurgeon, Neurologist & Vertebrologist",
+    badges: ["MD", "12 Years Experience", "Israel & Russia Trained"],
+    bio: "Multidisciplinary neurological specialist with 12 years of experience. Advanced training at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Leads neurological assessment and rehabilitation protocols at StemPlus, combining cellular therapy with chiropractic, acupuncture, and manual therapy.",
   },
 ];
 
@@ -1344,8 +1368,51 @@ function MedicalTeam() {
           </p>
         </div>
 
+        {/* Featured lead doctors — 3-column equal-height cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 items-stretch">
+          {LEAD_DOCTORS.map((d) => (
+            <article
+              key={d.name}
+              className="bg-white rounded-2xl shadow-sm border border-border/60 p-6 flex flex-col"
+            >
+              <div className="rounded-xl overflow-hidden aspect-[3/4] mb-5 bg-muted">
+                <img
+                  src={d.img}
+                  alt={d.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-bold text-[#03045E] leading-snug">{d.name}</h3>
+              <p className="mt-1 text-sm font-semibold text-[#02C39A]">{d.title}</p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {d.badges.map((b) => (
+                  <span
+                    key={b}
+                    className="text-xs font-semibold px-2 py-1 rounded-full"
+                    style={{ background: "rgba(3,4,94,0.08)", color: "#03045E" }}
+                  >
+                    {b}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-slate-600 leading-relaxed flex-1">{d.bio}</p>
+            </article>
+          ))}
+        </div>
+
+        {/* Divider + subheading */}
+        <div className="flex items-center gap-4 mb-10">
+          <div className="flex-1 h-px bg-border/60" />
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-400 shrink-0">
+            Our Full Clinical Team
+          </h3>
+          <div className="flex-1 h-px bg-border/60" />
+        </div>
+
+        {/* Scrollable full team grid */}
         <div className="relative">
-          {/* Desktop nav arrows */}
           <button
             type="button"
             aria-label="Previous"
