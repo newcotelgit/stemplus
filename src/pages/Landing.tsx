@@ -1388,7 +1388,7 @@ function MedicalTeam() {
                 className="snap-start shrink-0 flex flex-col rounded-2xl overflow-hidden shadow-md bg-white basis-[85%] sm:basis-[60%] md:basis-[calc((100%-3rem)/3)] lg:basis-[calc((100%-4.5rem)/4)]"
               >
                 {/* Photo section */}
-                <div className="relative h-[280px] shrink-0 bg-muted">
+                <div className="relative h-[380px] shrink-0 bg-muted">
                   <img
                     src={m.img}
                     alt={m.name}
