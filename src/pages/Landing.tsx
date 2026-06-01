@@ -176,17 +176,17 @@ function VideoCard({
       {/* Bottom typography */}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-4 sm:p-5">
         <p
-          className={`font-semibold text-white leading-tight ${isMain ? "text-lg sm:text-xl" : "text-sm sm:text-base"}`}
+          className={`font-semibold text-white leading-tight ${isMain ? "text-lg sm:text-xl" : "text-base sm:text-lg"}`}
         >
           {item.name}
         </p>
         <p
-          className={`text-white/85 ${isMain ? "text-sm mt-1" : "text-xs mt-0.5"}`}
+          className={`text-white/85 ${isMain ? "text-base mt-1" : "text-sm mt-0.5"}`}
         >
           {item.treatment}
         </p>
         <p
-          className={`text-white/70 flex items-center gap-1.5 ${isMain ? "text-sm mt-1" : "text-xs mt-1"}`}
+          className={`text-white/70 flex items-center gap-1.5 ${isMain ? "text-base mt-1" : "text-sm mt-1"}`}
         >
           <span aria-hidden>{item.flag}</span>
           <span>{item.country}</span>
@@ -218,7 +218,7 @@ function VideoTestimonial() {
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
             Testimonials
           </p>
           <h2
@@ -338,7 +338,7 @@ function Heritage() {
     <section id="heritage" className="py-28 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center lg:text-left mb-14">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
             Our Heritage
           </p>
           <h2
@@ -367,7 +367,7 @@ function Heritage() {
                 </span>{" "}
                 in cryobiology and cellular medicine.
               </p>
-              <p className="mt-5 text-base text-slate-600 leading-relaxed lg:pl-6">
+              <p className="mt-5 text-lg text-slate-600 leading-relaxed lg:pl-6">
                 By combining historic Ukrainian scientific breakthroughs with a
                 state-of-the-art multidisciplinary hospital environment in
                 Tbilisi, Georgia, we provide patients with an unmatched gateway
@@ -385,7 +385,7 @@ function Heritage() {
                   <span className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-[#FDAA3E] ring-4 ring-white shadow-md shadow-[#FDAA3E]/30 flex items-center justify-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-white" />
                   </span>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#FDAA3E] mb-1">
+                  <p className="text-sm font-bold uppercase tracking-widest text-[#FDAA3E] mb-1">
                     {m.year}
                   </p>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2 leading-snug">
@@ -435,7 +435,7 @@ function Header() {
           />
         </Link>
 
-        <div className="hidden md:flex items-center gap-9 text-sm font-semibold tracking-wide text-slate-200">
+        <div className="hidden md:flex items-center gap-9 text-base font-semibold tracking-wide text-slate-200">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
@@ -450,7 +450,7 @@ function Header() {
         <div className="flex items-center gap-3">
           <a
             href="#admissions"
-            className="hidden sm:inline-flex items-center rounded-xl bg-[#02C39A] text-white px-5 py-2.5 text-sm font-semibold tracking-wide shadow-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#02C39A]/20 transition-all duration-200"
+            className="hidden sm:inline-flex items-center rounded-xl bg-[#02C39A] text-white px-5 py-2.5 text-base font-semibold tracking-wide shadow-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#02C39A]/20 transition-all duration-200"
           >
             Book consultation
           </a>
@@ -530,7 +530,7 @@ function Header() {
             <a
               href="#admissions"
               onClick={() => setOpen(false)}
-              className="mt-6 inline-flex items-center justify-center rounded-xl bg-[#02C39A] text-white px-6 py-4 text-base font-semibold tracking-wide hover:bg-[#02C39A]/90 transition-colors"
+              className="mt-6 inline-flex items-center justify-center rounded-xl bg-[#02C39A] text-white px-6 py-4 text-lg font-semibold tracking-wide hover:bg-[#02C39A]/90 transition-colors"
             >
               Book consultation
             </a>
@@ -597,7 +597,7 @@ function Hero() {
               <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row items-start gap-3">
                 <a
                   href="#admissions"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-7 py-3.5 text-sm font-bold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-7 py-3.5 text-base font-bold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
                 >
                   Book consultation
                   <ArrowRight className="w-4 h-4" />
@@ -608,7 +608,7 @@ function Hero() {
                   "50+ years of cellular research",
                   "Free 30-min consultation",
                 ].map((item) => (
-                  <span key={item} className="flex items-center gap-2 text-sm text-white/90 leading-none">
+                  <span key={item} className="flex items-center gap-2 text-base text-white/90 leading-none">
                     <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#02C39A" }} />
                     <span>{item}</span>
                   </span>
@@ -730,10 +730,10 @@ function Features() {
                 <h3 className="text-lg font-semibold text-[#03045E] tracking-tight mb-2">
                   {c.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-base text-slate-600 leading-relaxed">
                   {c.desc}
                 </p>
-                <span className="absolute bottom-5 right-6 text-xs font-medium text-slate-400 transition-all duration-300 group-hover:text-[#02C39A] group-hover:translate-x-1">
+                <span className="absolute bottom-5 right-6 text-sm font-medium text-slate-400 transition-all duration-300 group-hover:text-[#02C39A] group-hover:translate-x-1">
                   Learn more →
                 </span>
               </div>
@@ -805,7 +805,7 @@ function HowItWorks() {
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
               Treatment Process
             </p>
             <h2
@@ -814,7 +814,7 @@ function HowItWorks() {
             >
               Five Steps to Your Recovery
             </h2>
-            <p className="mt-4 text-base text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
               A precision-guided 5-day clinical protocol — engineered for
               measurable regeneration and lasting recovery.
             </p>
@@ -837,7 +837,7 @@ function HowItWorks() {
                     <p className="text-[11px] font-bold uppercase tracking-widest text-[#FDAA3E] mb-1.5">
                       {d.day}
                     </p>
-                    <h3 className="font-semibold text-slate-900 text-base mb-3 leading-snug">
+                    <h3 className="font-semibold text-slate-900 text-lg mb-3 leading-snug">
                       {d.title}
                     </h3>
                     <ul className="space-y-2">
@@ -871,7 +871,7 @@ function HowItWorks() {
                   <p className="text-[11px] font-bold uppercase tracking-widest text-[#FDAA3E] mb-1.5">
                     {d.day}
                   </p>
-                  <h3 className="font-semibold text-slate-900 text-base mb-3 leading-snug">
+                  <h3 className="font-semibold text-slate-900 text-lg mb-3 leading-snug">
                     {d.title}
                   </h3>
                   <ul className="space-y-2">
@@ -1042,7 +1042,7 @@ function Reviews() {
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
               Patient Outcomes
             </p>
             <h2
@@ -1051,7 +1051,7 @@ function Reviews() {
             >
               Clinical Success Stories
             </h2>
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
               Authentic recovery journeys from international patients treated at
               our Tbilisi clinic.
             </p>
@@ -1098,7 +1098,7 @@ function Reviews() {
                           >
                             {s.graphic.title}
                           </div>
-                          <div className="mt-4 text-white text-base sm:text-lg font-semibold uppercase tracking-wider">
+                          <div className="mt-4 text-white text-lg sm:text-lg font-semibold uppercase tracking-wider">
                             {s.graphic.subtitle}
                           </div>
                         </div>
@@ -1126,8 +1126,8 @@ function Reviews() {
                           <p className="text-white text-lg font-bold tracking-tight leading-tight">
                             {s.author}
                           </p>
-                          <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-xs font-medium">
-                            <span className="text-base leading-none">
+                          <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-sm font-medium">
+                            <span className="text-lg leading-none">
                               {locationFlag(s.location)}
                             </span>
                           </span>
@@ -1137,12 +1137,12 @@ function Reviews() {
                     <div className="relative p-6">
                       <Quote className="absolute top-4 right-4 w-12 h-12 text-[#FDAA3E]/15" />
                       <p
-                        className="relative text-slate-700 text-base leading-relaxed"
+                        className="relative text-slate-700 text-lg leading-relaxed"
                         style={{ textWrap: "pretty" }}
                       >
                         "{s.text}"
                       </p>
-                      <p className="relative mt-4 text-xs text-slate-400 font-medium">
+                      <p className="relative mt-4 text-sm text-slate-400 font-medium">
                         {String(i + 1).padStart(2, "0")} /{" "}
                         {String(total).padStart(2, "0")}
                       </p>
@@ -1190,7 +1190,7 @@ function Reviews() {
                       >
                         {story.graphic.title}
                       </div>
-                      <div className="mt-4 text-white text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
+                      <div className="mt-4 text-white text-lg sm:text-lg md:text-xl font-semibold uppercase tracking-wider">
                         {story.graphic.subtitle}
                       </div>
                     </div>
@@ -1213,15 +1213,15 @@ function Reviews() {
 
                 {/* Overlay: Name, Treatment, Country */}
                 <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-5 sm:px-6 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent">
-                  <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#FDC987]/90 mb-1.5">
+                  <p className="text-[10px] sm:text-sm font-semibold uppercase tracking-wider text-[#FDC987]/90 mb-1.5">
                     {story.badge}
                   </p>
                   <div className="flex items-end justify-between gap-3">
                     <p className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-tight leading-tight">
                       {story.author}
                     </p>
-                    <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-xs sm:text-sm font-medium">
-                      <span className="text-base sm:text-lg leading-none">
+                    <span className="shrink-0 inline-flex items-center gap-1.5 text-white/90 text-sm sm:text-base font-medium">
+                      <span className="text-lg sm:text-lg leading-none">
                         {locationFlag(story.location)}
                       </span>
                       <span className="hidden sm:inline">{story.location}</span>
@@ -1234,12 +1234,12 @@ function Reviews() {
               <div className="relative rounded-3xl bg-white border border-slate-200/80 shadow-[0_10px_40px_-15px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10 flex flex-col justify-center min-h-[260px] md:min-h-[460px]">
                 <Quote className="absolute top-6 right-6 w-14 h-14 sm:w-20 sm:h-20 text-[#FDAA3E]/15" />
                 <p
-                  className="relative text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed"
+                  className="relative text-slate-700 text-lg sm:text-lg md:text-xl leading-relaxed"
                   style={{ textWrap: "pretty" }}
                 >
                   "{story.text}"
                 </p>
-                <p className="relative mt-5 text-xs text-slate-400 font-medium">
+                <p className="relative mt-5 text-sm text-slate-400 font-medium">
                   {String(index + 1).padStart(2, "0")} /{" "}
                   {String(total).padStart(2, "0")}
                 </p>
@@ -1347,7 +1347,7 @@ function MedicalTeam() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
             The Minds Behind the Medicine
           </h2>
-          <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-lg md:text-lg text-muted-foreground leading-relaxed">
             Meet the elite clinical faculty and cellular bio-therapeutic
             pioneers directing your recovery protocols at StemPlus Tbilisi.
           </p>
@@ -1401,7 +1401,7 @@ function MedicalTeam() {
                     style={{ background: "linear-gradient(to bottom, transparent 45%, rgba(3,4,94,0.85) 100%)" }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white font-bold text-sm leading-tight">{m.name}</p>
+                    <p className="text-white font-bold text-base leading-tight">{m.name}</p>
                     <span className="inline-block bg-[#02C39A] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1">
                       {m.role}
                     </span>
@@ -1418,7 +1418,7 @@ function MedicalTeam() {
                 </div>
                 {/* Bio section */}
                 <div className="p-4 flex-1">
-                  <p className="text-slate-600 text-xs leading-relaxed">{m.bio}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{m.bio}</p>
                 </div>
               </article>
             ))}
@@ -1465,7 +1465,7 @@ function FinalCTA() {
           </p>
           <a
             href="#admissions"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-8 py-4 text-sm font-semibold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-8 py-4 text-base font-semibold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
           >
             Book consultation
             <ArrowRight className="w-4 h-4" />
@@ -1488,10 +1488,10 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: HQ */}
           <div>
-            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+            <span className="text-sm uppercase tracking-wider text-slate-500 mb-3 block">
               Corporate Headquarters
             </span>
-            <address className="not-italic text-sm leading-relaxed tracking-wide">
+            <address className="not-italic text-base leading-relaxed tracking-wide">
               <div className="font-semibold text-slate-100">Stem Plus LLC</div>
               <div>21 Nodar Bokhua I Ln</div>
               <div>Tbilisi, 0159</div>
@@ -1501,7 +1501,7 @@ function Footer() {
 
           {/* Column 2: Map */}
           <div>
-            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+            <span className="text-sm uppercase tracking-wider text-slate-500 mb-3 block">
               Spatial Location
             </span>
             <div
@@ -1522,10 +1522,10 @@ function Footer() {
 
           {/* Column 3: Contacts */}
           <div>
-            <span className="text-xs uppercase tracking-wider text-slate-500 mb-3 block">
+            <span className="text-sm uppercase tracking-wider text-slate-500 mb-3 block">
               Clinical Contacts
             </span>
-            <ul className="text-sm space-y-2">
+            <ul className="text-base space-y-2">
               <li>
                 <span className="text-slate-100 font-medium">GE:</span> +995
                 [Click to add number]
@@ -1556,25 +1556,25 @@ function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-slate-900/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
+          <p className="text-sm text-slate-500">
             © 2026 Stem Plus LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               to="/privacy"
-              className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
+              className="text-sm text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
             >
               Privacy Policy
             </Link>
             <Link
               to="/terms"
-              className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
+              className="text-sm text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
             >
               Terms of Service
             </Link>
             <Link
               to="/terms"
-              className="text-xs text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
+              className="text-sm text-slate-400 transition-colors duration-200 hover:text-[#02C39A]"
             >
               Medical Disclaimer
             </Link>
@@ -1666,7 +1666,7 @@ function FAQSection() {
       />
       <div className="max-w-5xl mx-auto px-5">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#02C39A] mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#02C39A] mb-3">
             Frequently Asked Questions
           </p>
           <h2
@@ -1720,7 +1720,7 @@ function FAQSection() {
         <div className="mt-12 text-center">
           <a
             href="#admissions"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#02C39A] text-white px-7 py-3.5 text-sm font-bold hover:bg-[#00A896] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#02C39A]/25"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#02C39A] text-white px-7 py-3.5 text-base font-bold hover:bg-[#00A896] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#02C39A]/25"
           >
             Book Your Free Consultation
             <ArrowRight className="w-4 h-4" />
