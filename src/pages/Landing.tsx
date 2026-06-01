@@ -55,14 +55,14 @@ import patient8 from "@/assets/patient-8.jpg";
 import patient9 from "@/assets/patient-9.jpg";
 import patient10 from "@/assets/patient-10.jpg";
 import patient13 from "@/assets/patient-13.jpg";
-import doctor1 from "@/assets/doctor-1.jpg";
-import doctor2 from "@/assets/doctor-2.jpg";
-import doctor3 from "@/assets/doctor-3.jpg";
-import doctor4 from "@/assets/doctor-4.jpg";
-import doctor5 from "@/assets/doctor-5.jpg";
-import doctor6 from "@/assets/doctor-6.jpg";
-import doctor7 from "@/assets/doctor-7.jpg";
-import doctor8 from "@/assets/doctor-8.jpg";
+import yaroslav from "@/assets/doctor_image/Yaroslav Myroshnykov.jpg";
+import nino from "@/assets/doctor_image/Nino Kandelaki.jpg";
+import mikhail from "@/assets/doctor_image/Mikhail Tsverava.jpg";
+import eleonora from "@/assets/doctor_image/leonora Fiodorova.jpg";
+import natia from "@/assets/doctor_image/Natia Alania.jpg";
+import giorgi from "@/assets/doctor_image/Giorgi Archaia.jpg";
+import lili from "@/assets/doctor_image/Lili Martashvili.jpg";
+import mako from "@/assets/doctor_image/Mako Khachidze.jpg";
 import BookingSection from "@/components/BookingSection";
 
 export default function LandingPage() {
@@ -1271,56 +1271,56 @@ function Reviews() {
 /* ─── Medical Team ─── */
 const TEAM = [
   {
-    img: doctor1,
+    img: yaroslav,
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
     role: "Chief Physician & Co-Founder",
     badges: ["PhD", "50+ Publications", "7 Patents", "Int'l License"],
     bio: "Co-founder of StemPlus and lead authority in regenerative cellular medicine. Awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine and former Director of Research at the Ukrainian Scientific Center for Cryobiology. Clinical experience spans Ukraine, China, and Georgia with specialisations in anti-aging, diabetes, and sexual function rehabilitation.",
   },
   {
-    img: doctor2,
+    img: nino,
     name: "Dr. Nino Kandelaki, MD, PhD",
     role: "Chief Cosmetic Dermatologist",
     badges: ["MD", "PhD", "Postdoctoral"],
     bio: "Dermatologist and venereologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum and former lead injector at City Luxe clinic. Advanced training in Berlin, the United States, and Czech Republic.",
   },
   {
-    img: doctor3,
+    img: mikhail,
     name: "Dr. Mikhail Tsverava, MD, PhD",
     role: "Senior Radiologist & Diagnostic Specialist",
     badges: ["MD", "PhD"],
     bio: "Senior Radiologist with extensive practice in functional diagnostic mapping and advanced imaging. Expert in ultrasound-guided precision cellular targeting used to verify and document treatment outcomes. Provides evidence-based diagnostic support throughout every stage of the StemPlus protocol.",
   },
   {
-    img: doctor4,
+    img: eleonora,
     name: "Dr. Eleonora Fiodorova, MD",
     role: "Clinical Endocrinologist & Nutritionist",
     badges: ["MD"],
     bio: "Clinical Endocrinologist specialising in advanced endocrine systems, hormonal balance, and metabolic stabilization. Plays a key role in designing and monitoring the hormonal and metabolic components of each patient's treatment plan. Expert in integrating nutritional protocols with regenerative cellular therapy for optimised outcomes.",
   },
   {
-    img: doctor5,
+    img: natia,
     name: "Dr. Natia Alania, MD",
     role: "Clinical Neurologist & Neurodevelopmental Specialist",
     badges: ["MD"],
     bio: "Clinical Neurologist specialising in neuro-recovery pathways, functional brain mapping, and neurodevelopmental disorders. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions. Works closely with Dr. Archaia to deliver comprehensive neurological care within the StemPlus multidisciplinary team.",
   },
   {
-    img: doctor6,
+    img: giorgi,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
     badges: ["MD"],
     bio: "Multidisciplinary neurological specialist with 12 years of experience trained at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Leads neurological assessment and rehabilitation protocols combining cellular therapy with chiropractic, acupuncture, and manual therapy. Expert in stroke rehabilitation, spinal conditions, and musculoskeletal disorders.",
   },
   {
-    img: doctor7,
+    img: lili,
     name: "Lili Martashvili",
     role: "Director of Clinical Nursing & Compliance",
     badges: [],
     bio: "Director of Clinical Nursing overseeing all patient safety protocols and clinical compliance standards at Leadermed Hospital. Commands the triage systems and outpatient healthcare standards that ensure every patient receives consistent, safe care throughout their 5-day protocol. The operational backbone of the StemPlus clinical team.",
   },
   {
-    img: doctor8,
+    img: mako,
     name: "Mako Khachidze",
     role: "Clinical Infusion Nurse",
     badges: [],
