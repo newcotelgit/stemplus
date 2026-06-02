@@ -41,6 +41,7 @@ import {
   X,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
@@ -549,13 +550,21 @@ function Hero() {
         className="relative pb-24 pt-0 lg:pb-32 lg:pt-8 xl:pb-40 xl:pt-12"
         style={{ background: "#050d0a" }}
       >
-        {/* Background image — weighted to the right */}
+        {/* Background images — desktop and mobile */}
         <img
           src={heroBg}
           alt=""
           width={1920}
           height={1080}
-          className="absolute inset-0 w-full h-full object-cover object-[78%_center] sm:object-right pointer-events-none select-none"
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-right pointer-events-none select-none"
+          aria-hidden="true"
+        />
+        <img
+          src={heroBgMobile}
+          alt=""
+          width={1080}
+          height={1920}
+          className="block sm:hidden absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
           aria-hidden="true"
         />
         {/* Left-side gradient for text legibility */}
