@@ -57,16 +57,14 @@ export default function BookingSection() {
           elementOrSelector: "#cal-booking-embed",
           calLink: `justin-malka-5e6dx5/30-minute-medical-consultation?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`,
           config: {
-            layout: "column_view",
-            useSlotsViewOnSmallScreen: "true",
+            layout: "month_view",
             name,
             email,
           },
         });
         win.Cal.ns["30-minute-medical-consultation"]("ui", {
           hideEventTypeDetails: false,
-          layout: "column_view",
-          useSlotsViewOnSmallScreen: "true",
+          layout: "month_view",
         });
       } catch (e) {
         console.error("Cal.com embed error:", e);
@@ -161,7 +159,7 @@ export default function BookingSection() {
         </div>
 
         {/* Card */}
-        <div className={`rounded-2xl border border-slate-200 shadow-sm ${step === 2 ? "p-4 sm:p-8 overflow-visible" : "p-8"}`}>
+        <div className={`rounded-2xl border border-slate-200 shadow-sm overflow-visible ${step === 2 ? "p-0" : "p-8"}`}>
           {/* STEP 1 */}
           {step === 1 && (
             <div>
@@ -220,9 +218,13 @@ export default function BookingSection() {
 
           {/* STEP 2 */}
           {step === 2 && (
-            <div>
-              <div id="cal-booking-embed" className="w-full min-h-[850px] sm:min-h-[750px]" />
-              <div className="mt-6">
+            <div className="overflow-visible">
+              <div
+                id="cal-booking-embed"
+                className="w-full"
+                style={{ minHeight: "750px", position: "relative", zIndex: 0 }}
+              />
+              <div className="px-4 pb-4 pt-2 sm:px-8 sm:pb-6">
                 <button
                   onClick={() => setStep(1)}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition"
