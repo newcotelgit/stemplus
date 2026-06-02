@@ -483,65 +483,48 @@ function Header() {
         </div>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile full-screen overlay menu */}
       <div
-        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
-          open
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+        className={`md:hidden fixed inset-0 z-[60] flex flex-col items-center justify-center transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        style={{ backgroundColor: "rgba(3,4,94,0.98)" }}
       >
-        <div
-          className="absolute inset-0 bg-black/60"
+        {/* Close button */}
+        <button
+          type="button"
+          aria-label="Close menu"
           onClick={() => setOpen(false)}
-        />
-        <div
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm shadow-xl transition-transform duration-300 ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
-          style={{ backgroundColor: "#03045E" }}
+          className="absolute top-5 right-5 inline-flex items-center justify-center w-11 h-11 rounded-full text-white hover:bg-white/10 transition-colors"
         >
-          <div className="flex items-center justify-end h-16 px-5 border-b border-white/10">
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <line x1="6" y1="6" x2="18" y2="18" />
-                <line x1="6" y1="18" x2="18" y2="6" />
-              </svg>
-            </button>
-          </div>
-          <nav className="flex flex-col px-6 py-4 divide-y divide-white/10">
-            {NAV_LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-lg font-semibold text-white py-4 hover:text-[#02C39A] transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+
+        {/* Nav items */}
+        <nav className="w-full max-w-xs flex flex-col items-center divide-y divide-white/10">
+          {NAV_LINKS.map((l) => (
             <a
-              href="#admissions"
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="mt-6 inline-flex items-center justify-center rounded-xl bg-[#02C39A] text-white px-6 py-4 text-lg font-semibold tracking-wide hover:bg-[#02C39A]/90 transition-colors"
+              className="w-full text-center text-white font-semibold text-2xl py-5 hover:text-[#02C39A] transition-colors"
             >
-              Book consultation
+              {l.label}
             </a>
-          </nav>
-        </div>
+          ))}
+        </nav>
+
+        {/* CTA */}
+        <a
+          href="#admissions"
+          onClick={() => setOpen(false)}
+          className="mt-8 inline-flex items-center justify-center rounded-xl bg-[#02C39A] text-white px-8 py-4 text-lg font-semibold tracking-wide hover:bg-[#02C39A]/90 transition-colors"
+        >
+          Book Consultation
+        </a>
       </div>
     </header>
   );
