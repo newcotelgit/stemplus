@@ -180,25 +180,21 @@ function VideoCard({
           </svg>
         </span>
       </div>
-      {/* Bottom typography */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-4 sm:p-5">
-        <p
-          className={`font-semibold text-white leading-tight ${isMain ? "text-lg sm:text-xl" : "text-base sm:text-lg"}`}
-        >
-          {item.name}
-        </p>
-        <p
-          className={`text-white/85 ${isMain ? "text-base mt-1" : "text-sm mt-0.5"}`}
-        >
-          {item.treatment}
-        </p>
-        <p
-          className={`text-white/70 flex items-center gap-1.5 ${isMain ? "text-base mt-1" : "text-sm mt-1"}`}
-        >
-          <span aria-hidden>{item.flag}</span>
-          <span>{item.country}</span>
-        </p>
-      </div>
+      {/* Bottom typography — hidden on main card, shown on smaller cards */}
+      {!isMain && (
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-4 sm:p-5">
+          <p className="font-semibold text-white leading-tight text-base sm:text-lg">
+            {item.name}
+          </p>
+          <p className="text-white/85 text-sm mt-0.5">
+            {item.treatment}
+          </p>
+          <p className="text-white/70 flex items-center gap-1.5 text-sm mt-1">
+            <span aria-hidden>{item.flag}</span>
+            <span>{item.country}</span>
+          </p>
+        </div>
+      )}
     </button>
   );
 }
