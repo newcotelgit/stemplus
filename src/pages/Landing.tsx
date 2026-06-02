@@ -104,12 +104,12 @@ type VideoItem = {
 const VIDEO_TESTIMONIALS: VideoItem[] = [
   {
     id: "v1",
-    src: testimonialVideo.url,
+    src: "https://player.vimeo.com/video/1197591172",
     poster: testimonialPoster,
-    name: "Anna K.",
+    name: "Mark Latta",
     treatment: "Stem Cell Therapy",
-    country: "Germany",
-    flag: "🇩🇪",
+    country: "Sarasota, Florida, USA",
+    flag: "🇺🇸",
   },
   {
     id: "v2",
@@ -298,16 +298,26 @@ function VideoTestimonial() {
             className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
             onClick={(e) => e.stopPropagation()}
           >
-            <video
-              key={active.id}
-              className="w-full h-full object-contain bg-black"
-              src={active.src}
-              poster={active.poster}
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-            />
+            {active.src.includes("vimeo.com") ? (
+              <iframe
+                key={active.id}
+                src={`${active.src}?autoplay=1`}
+                className="w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <video
+                key={active.id}
+                className="w-full h-full object-contain bg-black"
+                src={active.src}
+                poster={active.poster}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+              />
+            )}
           </div>
         </div>
       )}
