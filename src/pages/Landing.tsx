@@ -1809,12 +1809,9 @@ function WhyTbilisi() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div
-                className="absolute inset-x-0 bottom-0 p-5"
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)" }}
-              >
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent pt-12 p-5">
                 <p className="text-white font-bold text-lg leading-snug">{card.title}</p>
-                <p className="text-white/80 text-base leading-relaxed mt-1">{card.desc}</p>
+                <p className="text-white/90 text-base leading-relaxed mt-1">{card.desc}</p>
               </div>
             </div>
           ))}
