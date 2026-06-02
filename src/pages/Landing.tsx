@@ -412,10 +412,10 @@ function Heritage() {
 
 const NAV_LINKS = [
   { label: "Treatments", href: "#treatments" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Medical Team", href: "#medical-team" },
-  { label: "Our Heritage", href: "#heritage" },
+  { label: "Why Tbilisi", href: "#why-tbilisi" },
   { label: "Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 function Header() {
@@ -1679,7 +1679,7 @@ function FAQSection() {
   };
 
   return (
-    <section aria-label="Frequently Asked Questions" className="py-24 bg-white">
+    <section id="faq" aria-label="Frequently Asked Questions" className="py-24 bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -1777,7 +1777,7 @@ const TBILISI_CARDS = [
 
 function WhyTbilisi() {
   return (
-    <section className="py-24" style={{ background: "#03045E" }}>
+    <section id="why-tbilisi" className="py-24" style={{ background: "#03045E" }}>
       <div className="max-w-5xl mx-auto px-5">
         <div className="text-center mb-12">
           <p className="text-base font-semibold uppercase tracking-widest text-[#02C39A] mb-3">
