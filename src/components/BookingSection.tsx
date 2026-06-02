@@ -55,14 +55,12 @@ export default function BookingSection() {
         win.Cal("init", "30-minute-medical-consultation", { origin: "https://cal.com" });
         win.Cal.ns["30-minute-medical-consultation"]("inline", {
           elementOrSelector: "#cal-booking-embed",
-          calLink: "justin-malka-5e6dx5/30-minute-medical-consultation",
+          calLink: `justin-malka-5e6dx5/30-minute-medical-consultation?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`,
           config: {
             layout: "column_view",
             useSlotsViewOnSmallScreen: "true",
-            prefill: {
-              name,
-              email,
-            },
+            name,
+            email,
           },
         });
         win.Cal.ns["30-minute-medical-consultation"]("ui", {
