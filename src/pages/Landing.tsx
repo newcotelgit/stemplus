@@ -496,12 +496,12 @@ function Header() {
           onClick={() => setOpen(false)}
         />
         <div
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-sm shadow-xl transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
-          style={{ backgroundColor: "rgba(2, 6, 23, 0.92)" }}
+          style={{ backgroundColor: "#03045E" }}
         >
-          <div className="flex items-center justify-end h-16 px-5 border-b border-slate-800/60">
+          <div className="flex items-center justify-end h-16 px-5 border-b border-white/10">
             <button
               type="button"
               aria-label="Close menu"
@@ -522,13 +522,13 @@ function Header() {
               </svg>
             </button>
           </div>
-          <nav className="flex flex-col px-6 py-8 gap-2">
+          <nav className="flex flex-col px-6 py-4 divide-y divide-white/10">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-2xl font-semibold tracking-tight text-white py-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)] hover:text-[#00A896] transition-colors"
+                className="text-lg font-semibold text-white py-4 hover:text-[#02C39A] transition-colors"
               >
                 {l.label}
               </a>
