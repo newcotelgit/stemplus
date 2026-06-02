@@ -64,6 +64,10 @@ import natia from "@/assets/doctor_image/Natia Alania.jpg";
 import giorgi from "@/assets/doctor_image/Giorgi Archaia.jpg";
 import lili from "@/assets/doctor_image/Lili Martashvili.jpg";
 import mako from "@/assets/doctor_image/Mako Khachidze.jpg";
+import tbilisiClinic from "@/assets/tbilisi-clinic.jpg";
+import tbilisiCity from "@/assets/tbilisi-city.jpg";
+import tbilisiFood from "@/assets/tbilisi-food.jpg";
+import tbilisiAirport from "@/assets/tbilisi-airport.jpg";
 import BookingSection from "@/components/BookingSection";
 
 export default function LandingPage() {
@@ -76,6 +80,7 @@ export default function LandingPage() {
       <Reviews />
       <MedicalTeam />
       <Heritage />
+      <WhyTbilisi />
       <HowItWorks />
       <FAQSection />
       <FinalCTA />
@@ -1741,6 +1746,83 @@ function FAQSection() {
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Why Tbilisi ─── */
+const TBILISI_CARDS = [
+  {
+    img: tbilisiClinic,
+    title: "World-Class Medical Infrastructure",
+    desc: "StemPlus operates exclusively within Leadermed Hospital — a modern, fully equipped multidisciplinary facility. This is not a back-street clinic.",
+  },
+  {
+    img: tbilisiCity,
+    title: "One of Europe's Most Beautiful Cities",
+    desc: "Medieval fortresses, ornate balconies, sulfur baths, and some of the warmest hospitality you'll find anywhere. Most patients extend their stay.",
+  },
+  {
+    img: tbilisiFood,
+    title: "Extraordinary Food & Culture",
+    desc: "Georgia is considered one of the world's great food cultures. Khinkali, khachapuri, natural wine — your evenings during treatment will be anything but boring.",
+  },
+  {
+    img: tbilisiAirport,
+    title: "Easier to Reach Than You Think",
+    desc: "Direct flights from most major European cities, the Middle East, and Central Asia. 3–5 hours from most of our patients' home cities.",
+  },
+];
+
+function WhyTbilisi() {
+  return (
+    <section className="py-24" style={{ background: "#03045E" }}>
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="text-center mb-12">
+          <p className="text-base font-semibold uppercase tracking-widest text-[#02C39A] mb-3">
+            Why Tbilisi, Georgia?
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-white"
+            style={{ lineHeight: "1.15" }}
+          >
+            If Georgia Isn't on Your Radar Yet, It Should Be.
+          </h2>
+          <p className="mt-4 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Most patients tell us the same thing when they arrive: 'I didn't expect it to be like this.' We take that as a compliment.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+          {TBILISI_CARDS.map((card) => (
+            <div
+              key={card.title}
+              className="relative rounded-2xl overflow-hidden group"
+            >
+              <div className="h-[260px] overflow-hidden">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div
+                className="absolute inset-x-0 bottom-0 p-5"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)" }}
+              >
+                <p className="text-white font-bold text-lg leading-snug">{card.title}</p>
+                <p className="text-white/80 text-base leading-relaxed mt-1">{card.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-10 text-white/80 text-base italic text-center">
+          Visa-free entry for citizens of 90+ countries including the US, UK, EU, Canada, and Australia.
+        </p>
       </div>
     </section>
   );
