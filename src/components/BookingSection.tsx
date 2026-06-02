@@ -161,7 +161,7 @@ export default function BookingSection() {
         </div>
 
         {/* Card */}
-        <div className="rounded-2xl border border-slate-200 shadow-sm p-8">
+        <div className={`rounded-2xl border border-slate-200 shadow-sm ${step === 2 ? "p-4 sm:p-8 overflow-visible" : "p-8"}`}>
           {/* STEP 1 */}
           {step === 1 && (
             <div>
@@ -221,7 +221,7 @@ export default function BookingSection() {
           {/* STEP 2 */}
           {step === 2 && (
             <div>
-              <div id="cal-booking-embed" className="w-full min-h-[600px]" />
+              <div id="cal-booking-embed" className="w-full min-h-[850px] sm:min-h-[750px]" />
               <div className="mt-6">
                 <button
                   onClick={() => setStep(1)}
