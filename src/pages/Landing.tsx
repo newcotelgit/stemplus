@@ -584,16 +584,17 @@ function Hero() {
         {/* Hero content — left aligned */}
         <div className="relative z-10 max-w-5xl mx-auto px-5 pt-8 sm:pt-24 pb-12 flex flex-col sm:block min-h-[85vh] sm:min-h-0">
           <div className="w-full sm:max-w-[45%] flex flex-col flex-1 sm:block">
-            <ScrollReveal delay={80}>
-              <h1
-                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left"
-                style={{ lineHeight: "1.08" }}
-              >
-                Stem Cell Therapy That Actually Works
-              </h1>
-            </ScrollReveal>
+            {/* H1 + subheadline — always together at top */}
+            <div>
+              <ScrollReveal delay={80}>
+                <h1
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white text-left"
+                  style={{ lineHeight: "1.08" }}
+                >
+                  Stem Cell Therapy<br className="block sm:hidden" /> That Actually Works
+                </h1>
+              </ScrollReveal>
 
-            <div className="mt-auto sm:mt-0">
               <ScrollReveal delay={160}>
                 <p
                   className="mt-6 text-lg text-white text-left"
@@ -602,9 +603,12 @@ function Hero() {
                   Combining 50 years of cellular science with elite medical care — for serious conditions and long-term vitality.
                 </p>
               </ScrollReveal>
+            </div>
 
+            {/* CTA + trust strip — pushed to bottom on mobile */}
+            <div className="mt-auto sm:mt-10">
               <ScrollReveal delay={240}>
-                <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row items-start gap-3">
+                <div className="flex flex-col sm:flex-row items-start gap-3">
                   <a
                     href="#admissions"
                     className="inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-7 py-3.5 text-base font-bold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
