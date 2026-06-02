@@ -45,6 +45,7 @@ import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
+import markLattaThumbnail from "@/assets/mark-latta-thumbnail.jpg";
 import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
 import patient2 from "@/assets/patient-2.jpg";
 import patient3 from "@/assets/patient-3.jpg";
@@ -105,7 +106,7 @@ const VIDEO_TESTIMONIALS: VideoItem[] = [
   {
     id: "v1",
     src: "https://player.vimeo.com/video/1197591172",
-    poster: testimonialPoster,
+    poster: markLattaThumbnail,
     name: "Mark Latta",
     treatment: "Stem Cell Therapy",
     country: "Sarasota, Florida, USA",
