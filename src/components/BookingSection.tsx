@@ -158,85 +158,67 @@ export default function BookingSection() {
           })}
         </div>
 
-        {/* Card */}
-        <div className={`rounded-2xl border border-slate-200 shadow-sm overflow-visible ${step === 2 ? "p-0" : "p-8"}`}>
-          {/* STEP 1 */}
-          {step === 1 && (
-            <div>
-              <div className="space-y-5">
-                <div>
-                  <label className={labelClass}>Full Name</label>
-                  <input
-                    type="text"
-                    className={inputClass}
-                    placeholder="Jane Doe"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
+        {/* Step 1 & 3 — inside styled card */}
+        {step !== 2 && (
+          <div className="rounded-2xl border border-slate-200 shadow-sm p-8">
+            {/* STEP 1 */}
+            {step === 1 && (
+              <div>
+                <div className="space-y-5">
+                  <div>
+                    <label className={labelClass}>Full Name</label>
+                    <input
+                      type="text"
+                      className={inputClass}
+                      placeholder="Jane Doe"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Email Address</label>
+                    <input
+                      type="email"
+                      className={inputClass}
+                      placeholder="you@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Primary Area of Concern</label>
+                    <select
+                      className={inputClass}
+                      value={concern}
+                      onChange={(e) => setConcern(e.target.value)}
+                    >
+                      <option value="">Select your primary concern</option>
+                      {CONCERNS.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label className={labelClass}>Email Address</label>
-                  <input
-                    type="email"
-                    className={inputClass}
-                    placeholder="you@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label className={labelClass}>Primary Area of Concern</label>
-                  <select
-                    className={inputClass}
-                    value={concern}
-                    onChange={(e) => setConcern(e.target.value)}
+
+                <div className="mt-8 flex justify-end">
+                  <button
+                    disabled={!step1Valid}
+                    onClick={() => setStep(2)}
+                    className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all duration-200 active:scale-[0.97] shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
+                    style={{
+                      background: TEAL,
+                      boxShadow: step1Valid ? `0 10px 25px -10px ${TEAL}` : undefined,
+                    }}
                   >
-                    <option value="">Select your primary concern</option>
-                    {CONCERNS.map((c) => (
-                      <option key={c} value={c}>{c}</option>
-                    ))}
-                  </select>
+                    Check Availability
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
+            )}
 
-              <div className="mt-8 flex justify-end">
-                <button
-                  disabled={!step1Valid}
-                  onClick={() => setStep(2)}
-                  className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all duration-200 active:scale-[0.97] shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
-                  style={{
-                    background: TEAL,
-                    boxShadow: step1Valid ? `0 10px 25px -10px ${TEAL}` : undefined,
-                  }}
-                >
-                  Check Availability
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* STEP 2 */}
-          {step === 2 && (
-            <div className="overflow-visible">
-              <div
-                id="cal-booking-embed"
-                className="w-full"
-                style={{ minHeight: "750px", position: "relative", zIndex: 0 }}
-              />
-              <div className="px-4 pb-4 pt-2 sm:px-8 sm:pb-6">
-                <button
-                  onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition"
-                >
-                  <ArrowLeft className="w-4 h-4" /> Back
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* STEP 3 */}
-          {step === 3 && (
+            {/* STEP 3 */}
+            {step === 3 && (
             <div className="text-center py-6">
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -260,7 +242,23 @@ export default function BookingSection() {
               </p>
             </div>
           )}
-        </div>
+          </div>
+        )}
+
+        {/* STEP 2 — rendered outside the card, no overflow/border-radius constraints */}
+        {step === 2 && (
+          <div>
+            <div id="cal-booking-embed" style={{ width: "100%", minHeight: "750px" }} />
+            <div className="mt-4">
+              <button
+                onClick={() => setStep(1)}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition"
+              >
+                <ArrowLeft className="w-4 h-4" /> Back
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
