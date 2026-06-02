@@ -485,7 +485,7 @@ function Header() {
 
       {/* Mobile frosted glass dropdown */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-200 ${
+        className={`md:hidden absolute top-full left-0 right-0 z-50 bg-[#03045E] bg-white/10 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-200 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
