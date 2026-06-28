@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.HOSTINGER_FTP_USER }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/en/
+          server-dir: /domains/stemplusclinic.com/public_html/en/
           protocol: ftps
           port: 21
           exclude: |
