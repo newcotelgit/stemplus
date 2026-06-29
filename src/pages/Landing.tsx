@@ -246,43 +246,21 @@ function VideoTestimonial() {
         </div>
 
         {/* Carousel */}
-        <div className="relative group/carousel">
-          {/* Left arrow */}
-          <button
-            type="button"
-            onClick={prev}
-            disabled={index === 0}
-            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition disabled:opacity-30 disabled:pointer-events-none opacity-0 group-hover/carousel:opacity-100"
-            aria-label="Previous video"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
+        <div className="relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
           >
             {VIDEO_TESTIMONIALS.map((v) => (
               <div
                 key={v.id}
-                className="snap-start shrink-0 w-full aspect-video"
+                className="snap-start shrink-0 w-[90%] aspect-video"
               >
                 <VideoCard item={v} onPlay={setActive} isMain className="h-full" />
               </div>
             ))}
           </div>
-
-          {/* Right arrow */}
-          <button
-            type="button"
-            onClick={next}
-            disabled={index === VIDEO_TESTIMONIALS.length - 1}
-            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition disabled:opacity-30 disabled:pointer-events-none opacity-0 group-hover/carousel:opacity-100"
-            aria-label="Next video"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
         </div>
 
         {/* Dot indicators */}
