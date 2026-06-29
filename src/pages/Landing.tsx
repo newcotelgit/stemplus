@@ -1483,10 +1483,10 @@ function FinalCTA() {
         width={1920}
         height={1080}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-30 pointer-events-none select-none"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050d0a] via-transparent to-[#050d0a] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050d0a] via-[#050d0a]/40 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto px-5 text-center">
         <ScrollReveal>
