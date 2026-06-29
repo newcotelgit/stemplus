@@ -1,4 +1,4 @@
-name: Build and Deploy to Hostinger
+name: Build and Deploy
 
 on:
   push:
@@ -24,6 +24,14 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Deploy to GitHub Pages (deploy branch)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: deploy
+          commit_message: 'Deploy ${{ github.sha }} from main'
 
       - name: Deploy to Hostinger via SSH
         uses: appleboy/scp-action@v0.1.7
