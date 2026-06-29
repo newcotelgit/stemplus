@@ -1473,8 +1473,8 @@ function MedicalTeam() {
 function FinalCTA() {
   return (
     <section
-      className="relative overflow-hidden py-28"
-      style={{ background: "#050d0a" }}
+      className="relative overflow-hidden flex flex-col justify-end"
+      style={{ background: "#050d0a", minHeight: "480px" }}
     >
       {/* Desktop image */}
       <img
@@ -1483,7 +1483,7 @@ function FinalCTA() {
         width={1920}
         height={1080}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-[70%_center] opacity-30 pointer-events-none select-none hidden sm:block"
+        className="absolute inset-0 w-full h-full object-cover object-[70%_top] opacity-40 pointer-events-none select-none hidden sm:block"
         aria-hidden="true"
       />
       {/* Mobile image */}
@@ -1491,12 +1491,13 @@ function FinalCTA() {
         src={heroBgMobile}
         alt=""
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 pointer-events-none select-none sm:hidden"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-40 pointer-events-none select-none sm:hidden"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050d0a] via-[#050d0a]/40 to-transparent pointer-events-none" />
+      {/* Gradient only at bottom so faces are clear */}
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#050d0a] via-[#050d0a]/70 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 max-w-2xl mx-auto px-5 text-center">
+      <div className="relative z-10 max-w-2xl mx-auto px-5 text-center pb-14 pt-64">
         <ScrollReveal>
           <h2
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
