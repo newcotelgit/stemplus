@@ -231,7 +231,7 @@ function VideoTestimonial() {
   const next = () => goTo(Math.min(VIDEO_TESTIMONIALS.length - 1, index + 1));
 
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-24 pb-4 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-10">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
@@ -743,7 +743,7 @@ const treatCards = [
 
 function Features() {
   return (
-    <section id="treatments" className="py-24 bg-white">
+    <section id="treatments" className="pt-12 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         <ScrollReveal>
           <div className="mb-14 max-w-3xl">
