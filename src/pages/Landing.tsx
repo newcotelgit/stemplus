@@ -77,6 +77,7 @@ export default function LandingPage() {
       <Header />
       <Hero />
       <VideoTestimonial />
+      <MensVitality />
       <Features />
       <Reviews />
       <MedicalTeam />
@@ -88,6 +89,74 @@ export default function LandingPage() {
       <BookingSection />
       <Footer />
     </div>
+  );
+}
+
+/* ─── Men's Vitality Section ─── */
+function MensVitality() {
+  return (
+    <section className="py-24 bg-[#03045E]">
+      <div className="max-w-5xl mx-auto px-5 text-center">
+        <ScrollReveal>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#02C39A] mb-4">
+            Men's Performance & Rejuvenation
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-white"
+            style={{ lineHeight: "1.15" }}
+          >
+            For Men Who Want to Feel Like Themselves Again.
+          </h2>
+          <p className="mt-5 text-lg text-slate-300 max-w-3xl mx-auto" style={{ textWrap: "pretty" }}>
+            Beyond treating illness — StemPlus works with men seeking testosterone optimisation, facial rejuvenation, increased energy, and sexual health. The same world-class cellular science, applied to how you look, feel, and perform.
+          </p>
+        </ScrollReveal>
+
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {[
+            {
+              icon: Zap,
+              title: "Testosterone Optimisation",
+              desc: "Restore hormonal balance and reclaim peak physical energy through targeted cellular protocols.",
+            },
+            {
+              icon: Sparkle,
+              title: "Facial Rejuvenation & Anti-Aging",
+              desc: "Cellular and exosome therapies that visibly regenerate skin, reduce aging, and restore a youthful appearance.",
+            },
+            {
+              icon: HeartPulse,
+              title: "Sexual Health & Vitality",
+              desc: "Evidence-based regenerative treatments to improve sexual function, confidence, and overall vitality.",
+            },
+          ].map((card, i) => (
+            <ScrollReveal key={card.title} delay={i * 80}>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 text-left hover:bg-white/10 transition-colors duration-300">
+                <div className="w-11 h-11 rounded-xl bg-[#02C39A]/15 flex items-center justify-center mb-5">
+                  <card.icon className="w-5 h-5 text-[#02C39A]" />
+                </div>
+                <h3 className="text-lg font-semibold text-white tracking-tight mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal delay={240}>
+          <a
+            href="#admissions"
+            className="mt-12 inline-flex items-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-8 py-4 text-base font-semibold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97] shadow-lg shadow-[#FDAA3E]/25"
+          >
+            Book your free consultation
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </ScrollReveal>
+      </div>
+    </section>
   );
 }
 
