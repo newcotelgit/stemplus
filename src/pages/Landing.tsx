@@ -360,7 +360,7 @@ const milestones = [
 
 function Heritage() {
   return (
-    <section id="heritage" className="py-28 bg-white">
+    <section id="heritage" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center lg:text-left mb-14">
           <p className="text-sm font-semibold uppercase tracking-widest text-[#FDAA3E] mb-3">
@@ -841,7 +841,7 @@ const treatmentDays = [
 
 function HowItWorks() {
   return (
-    <section id="process" className="py-28 bg-white border-y border-border/30">
+    <section id="process" className="py-24 bg-white border-y border-border/30">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -1078,7 +1078,7 @@ function Reviews() {
   const story = successStories[index];
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-white">
+    <section id="testimonials" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-16">
