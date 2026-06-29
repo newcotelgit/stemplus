@@ -1476,14 +1476,22 @@ function FinalCTA() {
       className="relative overflow-hidden py-28"
       style={{ background: "#050d0a" }}
     >
-      {/* Reuse hero bg for visual cohesion */}
+      {/* Desktop image */}
       <img
         src={heroBg}
         alt=""
         width={1920}
         height={1080}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-30 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-cover object-[70%_center] opacity-30 pointer-events-none select-none hidden sm:block"
+        aria-hidden="true"
+      />
+      {/* Mobile image */}
+      <img
+        src={heroBgMobile}
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 pointer-events-none select-none sm:hidden"
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#050d0a] via-[#050d0a]/40 to-transparent pointer-events-none" />
