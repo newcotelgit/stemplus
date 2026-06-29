@@ -1491,7 +1491,7 @@ function FinalCTA() {
         src={heroBgMobile}
         alt=""
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-40 pointer-events-none select-none sm:hidden"
+        className="absolute inset-0 w-full h-full object-cover object-[center_20%] opacity-40 pointer-events-none select-none sm:hidden"
         aria-hidden="true"
       />
       {/* Gradient only at bottom so faces are clear */}
