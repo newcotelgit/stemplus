@@ -202,6 +202,7 @@ function VideoCard({
 function VideoTestimonial() {
   const [active, setActive] = useState<VideoItem | null>(null);
   const [main, ...rest] = VIDEO_TESTIMONIALS;
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!active) return;
@@ -216,6 +217,15 @@ function VideoTestimonial() {
       window.removeEventListener("keydown", onKey);
     };
   }, [active]);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild
+      ? (el.firstElementChild as HTMLElement).offsetWidth + 20
+      : 300;
+    el.scrollBy({ left: dir === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
+  };
 
   return (
     <section className="py-24 bg-white">
@@ -237,34 +247,45 @@ function VideoTestimonial() {
           <VideoCard item={main} onPlay={setActive} isMain className="h-full" />
         </div>
 
-        {/* Sub-grid: desktop row */}
-        <div className="hidden md:grid grid-cols-3 gap-5 mt-5">
-          {rest.map((v) => (
-            <div key={v.id} className="aspect-video">
-              <VideoCard item={v} onPlay={setActive} />
-            </div>
-          ))}
-        </div>
-
-        {/* Sub-grid: mobile peek-swipe */}
-        <div
-          className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory mt-5 px-1 -mx-1 pb-4 scroll-smooth"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            WebkitOverflowScrolling: "touch",
-            scrollPaddingLeft: "0.25rem",
-          }}
-        >
-          {rest.map((v) => (
-            <div
-              key={v.id}
-              className="snap-start shrink-0 basis-[78%] aspect-video"
+        {/* Carousel — swipeable on mobile, arrow-navigable on desktop */}
+        {rest.length > 0 && (
+          <div className="relative mt-5 group/carousel">
+            {/* Left arrow */}
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition opacity-0 group-hover/carousel:opacity-100"
+              aria-label="Scroll left"
             >
-              <VideoCard item={v} onPlay={setActive} />
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div
+              ref={scrollRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+            >
+              {rest.map((v) => (
+                <div
+                  key={v.id}
+                  className="snap-start shrink-0 w-[78%] sm:w-[45%] md:w-[31%] aspect-video"
+                >
+                  <VideoCard item={v} onPlay={setActive} className="h-full" />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+
+            {/* Right arrow */}
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition opacity-0 group-hover/carousel:opacity-100"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Modal */}
