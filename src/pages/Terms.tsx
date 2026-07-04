@@ -76,8 +76,8 @@ export default function TermsPage() {
           <h2 className="text-slate-100 text-xl font-semibold mt-8">8. Contact</h2>
           <p>
             Stem Plus LLC, 21 Nodar Bokhua I Ln, Tbilisi 0159, Georgia.{" "}
-            <a href="mailto:stemcellplus@gmail.com" className="text-slate-300 hover:text-[#02C39A] transition-colors">
-              stemcellplus@gmail.com
+            <a href="mailto:stemplusclinic@gmail.com" className="text-slate-300 hover:text-[#02C39A] transition-colors">
+              stemplusclinic@gmail.com
             </a>
           </p>
         </section>
