@@ -46,7 +46,7 @@ import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
 import markLattaThumbnail from "@/assets/mark-latta-thumbnail.jpg";
-import testimonialVideo from "@/assets/testimonial.mp4.asset.json";
+import aliceThumbnail from "@/assets/alice-thumbnail.png";
 import patient2 from "@/assets/patient-2.jpg";
 import patient3 from "@/assets/patient-3.jpg";
 import patient4 from "@/assets/patient-4.jpg";
@@ -174,7 +174,7 @@ type VideoItem = {
 const VIDEO_TESTIMONIALS: VideoItem[] = [
   {
     id: "v1",
-    src: "https://player.vimeo.com/video/1197591172",
+    src: "https://player.vimeo.com/video/1206930951",
     poster: markLattaThumbnail,
     name: "Mark Latta",
     treatment: "Stem Cell Therapy",
@@ -183,30 +183,12 @@ const VIDEO_TESTIMONIALS: VideoItem[] = [
   },
   {
     id: "v2",
-    src: testimonialVideo.url,
-    poster: patient2,
-    name: "James R.",
-    treatment: "Joint Regeneration",
-    country: "United Kingdom",
+    src: "https://player.vimeo.com/video/1206931316",
+    poster: aliceThumbnail,
+    name: "Alice",
+    treatment: "Stem Cell Therapy",
+    country: "Bournemouth, UK",
     flag: "🇬🇧",
-  },
-  {
-    id: "v3",
-    src: testimonialVideo.url,
-    poster: patient3,
-    name: "Sofia M.",
-    treatment: "Anti-Aging Protocol",
-    country: "Italy",
-    flag: "🇮🇹",
-  },
-  {
-    id: "v4",
-    src: testimonialVideo.url,
-    poster: patient4,
-    name: "David L.",
-    treatment: "Neurological Recovery",
-    country: "United States",
-    flag: "🇺🇸",
   },
 ];
 
