@@ -1392,62 +1392,112 @@ const TEAM = [
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
     role: "Chief Physician & Co-Founder",
     badges: ["PhD", "50+ Publications", "7 Patents", "Int'l License"],
-    bio: "Co-founder of StemPlus and lead authority in regenerative cellular medicine. Awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine and former Director of Research at the Ukrainian Scientific Center for Cryobiology. Clinical experience spans Ukraine, China, and Georgia with specialisations in anti-aging, diabetes, and sexual function rehabilitation.",
+    bio: [
+      "Co-founder of StemPlus and a globally recognised authority in stem cell medicine, Dr. Yaroslav Myroshnykov has spent nearly three decades pioneering regenerative treatments across Ukraine, China, and now Georgia. He is the author of 50+ publications, holder of 7 invention patents, and was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine.",
+      "Dr. Myroshnykov graduated with honors from the National Medical University named after Academician O.O. Bogomolets in Kyiv in 1996, before spending almost a decade (1996–2005) at the Institute of Urology of the Academy of Medical Sciences of Ukraine, specialising in general medicine and sexopathology.",
+      "In 2001 he was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine, following his Candidate of Medical Sciences dissertation on the diagnosis and treatment of vascular-origin erectile dysfunction. He went on to serve as Chief Sexopathology Expert for the Kyiv City Health Department (2006–2011), organising seven scientific and practical conferences, while simultaneously directing research at the Ukrainian Scientific Center for Cryobiology and Cryomedicine (2006–2013). From 2009 to 2013 he founded and led the Institute of Stem Cell Medicine PLUS, and from 2010 he served as a leading researcher at the Ministry of Health of Ukraine's Center for Stem Cell Therapy.",
+      "Between 2017 and 2019, Dr. Myroshnykov practiced at the Boao Life Care Center in Hainan, China, specialising in stem cell therapy and sexual function optimisation under an international medical practice license. Since Russia's invasion of Ukraine, he has continued his clinical work abroad — first at the Revival Technologies Clinic in Batumi (2022), then Phoenix Clinic in Plovdiv, Bulgaria (2023–2024) — before joining StemPlus in Tbilisi in May 2024, where he now leads the clinic's cellular medicine programs in anti-aging, diabetes management, and sexual function rehabilitation.",
+    ],
+    credentials: [
+      "MD, National Medical University named after O.O. Bogomolets, Kyiv (1996, with honors)",
+      "Candidate of Medical Sciences (Urology) — Institute of Urology and Nephrology, Academy of Medical Sciences of Ukraine",
+      "Higher Qualification Category in Urology — Ministry of Health of Ukraine (awarded 2019)",
+      "Specialist Qualification in Healthcare Organization & Management — Ministry of Health of Ukraine (awarded 2021)",
+      "International medical practice license (China)",
+      "Young Scientist Prize, Academy of Medical Sciences of Ukraine (2001)",
+    ],
   },
   {
     img: nino,
     name: "Dr. Nino Kandelaki, MD, PhD",
     role: "Chief Cosmetic Dermatologist",
     badges: ["MD", "PhD", "Postdoctoral"],
-    bio: "Dermatologist and venereologist with 17 years of clinical experience in dermatology, trichology, and aesthetic medicine. International trainer for Spanish brand PBSerum and former lead injector at City Luxe clinic. Advanced training in Berlin, the United States, and Czech Republic.",
+    bio: [
+      "Chief Cosmetic Dermatologist at StemPlus, Dr. Nino Kandelaki brings over 17 years of clinical dermatology and aesthetic medicine experience, with advanced international training spanning Korea, Georgia, and beyond.",
+      "Dr. Kandelaki is a dermatologist and venereologist with more than seventeen years of clinical experience in dermatology, trichology, and aesthetic medicine. She previously served as lead injector at the City Luxe clinic and worked as an international trainer for the Spanish skincare brand PBSerum.",
+      "Her ongoing training reflects a deep specialisation in regenerative and minimally invasive aesthetic techniques: she completed a course on placental extract in therapeutic and aesthetic practice under Dr. Dong-Hwan Kim, Director of the Korean Academy of Anti-Aging Medicine (Baku, 2018); an Excellence Training in Aptos thread-lifting methods under the technique's Georgian originators, Dr. G., M., and C. Sulamanidze; and the e.p.t.q. Hyaluronic Acid Filler Master Course for Experts, certified by JETEMA. She has also participated in international congresses and refresher courses in Berlin, the United States, and the Czech Republic.",
+    ],
+    credentials: [
+      "MD, PhD, Postdoctoral — Dermatology & Venereology",
+      "Placental Extract in Therapeutic Practice & Aesthetic Medicine — Korean Academy of Anti-Aging Medicine (Baku, 2018)",
+      "Aptos Thread Lifting Methods, Excellence Training",
+      "e.p.t.q. Hyaluronic Acid Filler Master Course — JETEMA",
+    ],
   },
   {
     img: mikhail,
     name: "Dr. Mikhail Tsverava, MD, PhD",
     role: "Senior Radiologist & Diagnostic Specialist",
     badges: ["MD", "PhD"],
-    bio: "Senior Radiologist with extensive practice in functional diagnostic mapping and advanced imaging. Expert in ultrasound-guided precision cellular targeting used to verify and document treatment outcomes. Provides evidence-based diagnostic support throughout every stage of the StemPlus protocol.",
+    bio: [
+      "Senior Radiologist with extensive practice in functional diagnostic mapping and advanced imaging. Expert in ultrasound-guided precision cellular targeting used to verify and document treatment outcomes. Provides evidence-based diagnostic support throughout every stage of the StemPlus protocol.",
+    ],
+    credentials: [],
   },
   {
     img: eleonora,
     name: "Dr. Eleonora Fiodorova, MD",
     role: "Clinical Endocrinologist & Nutritionist",
     badges: ["MD"],
-    bio: "Clinical Endocrinologist specialising in advanced endocrine systems, hormonal balance, and metabolic stabilization. Plays a key role in designing and monitoring the hormonal and metabolic components of each patient's treatment plan. Expert in integrating nutritional protocols with regenerative cellular therapy for optimised outcomes.",
+    bio: [
+      "Clinical Endocrinologist specialising in advanced endocrine systems, hormonal balance, and metabolic stabilization. Plays a key role in designing and monitoring the hormonal and metabolic components of each patient's treatment plan. Expert in integrating nutritional protocols with regenerative cellular therapy for optimised outcomes.",
+    ],
+    credentials: [],
   },
   {
     img: natia,
     name: "Dr. Natia Alania, MD",
     role: "Clinical Neurologist & Neurodevelopmental Specialist",
     badges: ["MD"],
-    bio: "Clinical Neurologist specialising in neuro-recovery pathways, functional brain mapping, and neurodevelopmental disorders. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions. Works closely with Dr. Archaia to deliver comprehensive neurological care within the StemPlus multidisciplinary team.",
+    bio: [
+      "Clinical Neurologist specialising in neuro-recovery pathways, functional brain mapping, and neurodevelopmental disorders. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions. Works closely with Dr. Archaia to deliver comprehensive neurological care within the StemPlus multidisciplinary team.",
+    ],
+    credentials: [
+      "Category I Qualification Certificate in Neurology — Georgian state medical certification commission (No. 022439, Aug 2025)",
+    ],
   },
   {
     img: giorgi,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
     badges: ["MD"],
-    bio: "Multidisciplinary neurological specialist with 12 years of experience trained at Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia. Leads neurological assessment and rehabilitation protocols combining cellular therapy with chiropractic, acupuncture, and manual therapy. Expert in stroke rehabilitation, spinal conditions, and musculoskeletal disorders.",
+    bio: [
+      "A multidisciplinary neurologist, chiropractor, and rehabilitation specialist, Dr. Giorgi Archaia blends over 12 years of neurological expertise with hands-on manual therapy techniques trained across Georgia, Israel, and Russia.",
+      "Dr. Archaia is a neurologist, chiropractor, acupuncturist, and rehabilitation specialist with over 12 years of experience treating neurological and musculoskeletal conditions. A graduate of Tbilisi Teaching Medical University \"Hippocrates,\" he trained further at leading institutions abroad, including Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia.",
+      "His multidisciplinary approach spans neurology, chiropractic, acupuncture, and modern rehabilitation methods. He is skilled in acupressure, manual therapy, physiotherapy, therapeutic exercise, medication and pharmacopuncture blockades, and visceral massage — combining these techniques to deliver comprehensive, patient-centered care within the StemPlus multidisciplinary team.",
+    ],
+    credentials: [
+      "Graduate, Tbilisi Teaching Medical University \"Hippocrates\"",
+      "Clinical training, Asutta Clinic (Israel)",
+      "Clinical training, Sechenov Moscow Medical University (Russia)",
+    ],
   },
   {
     img: lili,
     name: "Lili Martashvili",
     role: "Director of Clinical Nursing & Compliance",
     badges: [],
-    bio: "Director of Clinical Nursing overseeing all patient safety protocols and clinical compliance standards at Leadermed Hospital. Commands the triage systems and outpatient healthcare standards that ensure every patient receives consistent, safe care throughout their 5-day protocol. The operational backbone of the StemPlus clinical team.",
+    bio: [
+      "Director of Clinical Nursing overseeing all patient safety protocols and clinical compliance standards at Leadermed Hospital. Commands the triage systems and outpatient healthcare standards that ensure every patient receives consistent, safe care throughout their 5-day protocol. The operational backbone of the StemPlus clinical team.",
+    ],
+    credentials: [],
   },
   {
     img: mako,
     name: "Mako Khachidze",
     role: "Clinical Infusion Nurse",
     badges: [],
-    bio: "Clinical Infusion Nurse specialising in the precision administration and monitoring of advanced intravenous cellular protocols. Provides hands-on care throughout every stem cell infusion procedure ensuring accuracy, comfort, and safety. A trusted presence for every international patient throughout their treatment at StemPlus.",
+    bio: [
+      "Clinical Infusion Nurse specialising in the precision administration and monitoring of advanced intravenous cellular protocols. Provides hands-on care throughout every stem cell infusion procedure ensuring accuracy, comfort, and safety. A trusted presence for every international patient throughout their treatment at StemPlus.",
+    ],
+    credentials: [],
   },
 ];
 
 
 function MedicalTeam() {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = useState<(typeof TEAM)[number] | null>(null);
 
   const scrollByDir = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -1456,6 +1506,20 @@ function MedicalTeam() {
     const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (!active) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [active]);
 
   return (
     <section id="medical-team" className="py-24 bg-secondary/30">
@@ -1534,14 +1598,86 @@ function MedicalTeam() {
                   </div>
                 </div>
                 {/* Bio section */}
-                <div className="p-4 flex-1">
-                  <p className="text-slate-600 text-sm leading-relaxed">{m.bio}</p>
+                <div className="p-4 flex-1 flex flex-col">
+                  <p className="text-slate-600 text-sm leading-relaxed">{m.bio[0]}</p>
+                  {(m.bio.length > 1 || m.credentials.length > 0) && (
+                    <button
+                      type="button"
+                      onClick={() => setActive(m)}
+                      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#02C39A] hover:text-[#029a7a] transition-colors self-start"
+                    >
+                      Read more
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </article>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Full bio modal */}
+      {active && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+          onClick={() => setActive(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActive(null)}
+              aria-label="Close"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-4 p-6 border-b border-slate-100">
+              <img
+                src={active.img}
+                alt={active.name}
+                className="w-16 h-16 rounded-full object-cover object-top shrink-0"
+              />
+              <div>
+                <p className="font-bold text-lg text-[#03045E] leading-tight">{active.name}</p>
+                <span className="inline-block bg-[#02C39A] text-white text-xs font-semibold px-2 py-0.5 rounded-full mt-1">
+                  {active.role}
+                </span>
+              </div>
+            </div>
+
+            <div className="p-6 space-y-4">
+              {active.bio.map((paragraph, i) => (
+                <p key={i} className="text-slate-600 text-sm leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+
+              {active.credentials.length > 0 && (
+                <div className="pt-2">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Credentials & Training
+                  </p>
+                  <ul className="space-y-1.5">
+                    {active.credentials.map((c, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-[#02C39A] shrink-0 mt-0.5" />
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
