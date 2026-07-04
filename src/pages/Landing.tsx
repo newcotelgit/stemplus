@@ -1391,7 +1391,7 @@ const TEAM = [
     img: yaroslav,
     name: "Dr. Yaroslav Myroshnykov, MD, PhD",
     role: "Chief Physician & Co-Founder",
-    badges: ["PhD", "50+ Publications", "7 Patents", "Int'l License"],
+    badges: ["50+ Publications", "7 Patents", "Int'l License"],
     bio: [
       "Co-founder of StemPlus and a globally recognised authority in stem cell medicine, Dr. Yaroslav Myroshnykov has spent nearly three decades pioneering regenerative treatments across Ukraine, China, and now Georgia. He is the author of 50+ publications, holder of 7 invention patents, and was awarded the Young Scientist Prize by the Academy of Medical Sciences of Ukraine.",
       "Dr. Myroshnykov graduated with honors from the National Medical University named after Academician O.O. Bogomolets in Kyiv in 1996, before spending almost a decade (1996–2005) at the Institute of Urology of the Academy of Medical Sciences of Ukraine, specialising in general medicine and sexopathology.",
@@ -1409,9 +1409,9 @@ const TEAM = [
   },
   {
     img: nino,
-    name: "Dr. Nino Kandelaki, MD, PhD",
+    name: "Dr. Nino Kandelaki, MD, PhD, Postdoctoral",
     role: "Chief Cosmetic Dermatologist",
-    badges: ["MD", "PhD", "Postdoctoral"],
+    badges: [],
     bio: [
       "Chief Cosmetic Dermatologist at StemPlus, Dr. Nino Kandelaki brings over 17 years of clinical dermatology and aesthetic medicine experience, with advanced international training spanning Korea, Georgia, and beyond.",
       "Dr. Kandelaki is a dermatologist and venereologist with more than seventeen years of clinical experience in dermatology, trichology, and aesthetic medicine. She previously served as lead injector at the City Luxe clinic and worked as an international trainer for the Spanish skincare brand PBSerum.",
@@ -1428,7 +1428,7 @@ const TEAM = [
     img: mikhail,
     name: "Dr. Mikhail Tsverava, MD, PhD",
     role: "Senior Radiologist & Diagnostic Specialist",
-    badges: ["MD", "PhD"],
+    badges: [],
     bio: [
       "Senior Radiologist with extensive practice in functional diagnostic mapping and advanced imaging. Expert in ultrasound-guided precision cellular targeting used to verify and document treatment outcomes. Provides evidence-based diagnostic support throughout every stage of the StemPlus protocol.",
     ],
@@ -1438,7 +1438,7 @@ const TEAM = [
     img: eleonora,
     name: "Dr. Eleonora Fiodorova, MD",
     role: "Clinical Endocrinologist & Nutritionist",
-    badges: ["MD"],
+    badges: [],
     bio: [
       "Clinical Endocrinologist specialising in advanced endocrine systems, hormonal balance, and metabolic stabilization. Plays a key role in designing and monitoring the hormonal and metabolic components of each patient's treatment plan. Expert in integrating nutritional protocols with regenerative cellular therapy for optimised outcomes.",
     ],
@@ -1448,7 +1448,7 @@ const TEAM = [
     img: natia,
     name: "Dr. Natia Alania, MD",
     role: "Clinical Neurologist & Neurodevelopmental Specialist",
-    badges: ["MD"],
+    badges: [],
     bio: [
       "Clinical Neurologist specialising in neuro-recovery pathways, functional brain mapping, and neurodevelopmental disorders. Dedicated expert in cellular protocols for Autism Spectrum Disorders and neurodegenerative conditions. Works closely with Dr. Archaia to deliver comprehensive neurological care within the StemPlus multidisciplinary team.",
     ],
@@ -1460,7 +1460,7 @@ const TEAM = [
     img: giorgi,
     name: "Dr. Giorgi Archaia, MD",
     role: "Neurosurgeon, Neurologist & Vertebrologist",
-    badges: ["MD"],
+    badges: [],
     bio: [
       "A multidisciplinary neurologist, chiropractor, and rehabilitation specialist, Dr. Giorgi Archaia blends over 12 years of neurological expertise with hands-on manual therapy techniques trained across Georgia, Israel, and Russia.",
       "Dr. Archaia is a neurologist, chiropractor, acupuncturist, and rehabilitation specialist with over 12 years of experience treating neurological and musculoskeletal conditions. A graduate of Tbilisi Teaching Medical University \"Hippocrates,\" he trained further at leading institutions abroad, including Asutta Clinic in Israel and Sechenov Moscow Medical University in Russia.",
