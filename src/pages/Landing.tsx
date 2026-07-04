@@ -95,7 +95,7 @@ export default function LandingPage() {
 /* ─── Men's Vitality Section ─── */
 function MensVitality() {
   return (
-    <section className="py-24 bg-[#03045E]">
+    <section id="mens-vitality" className="py-24 bg-[#03045E]">
       <div className="max-w-5xl mx-auto px-5 text-center">
         <ScrollReveal>
           <p className="text-sm font-semibold uppercase tracking-widest text-[#02C39A] mb-4">
@@ -300,7 +300,7 @@ function VideoTestimonial() {
   const next = () => goTo(Math.min(VIDEO_TESTIMONIALS.length - 1, index + 1));
 
   return (
-    <section className="pt-24 pb-4 bg-white">
+    <section id="video-testimonials" className="pt-24 pb-4 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-10">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
@@ -499,16 +499,17 @@ function Heritage() {
 }
 
 const NAV_LINKS = [
+  { label: "Testimonials", href: "#video-testimonials" },
+  { label: "Men's Vitality", href: "#mens-vitality" },
   { label: "Treatments", href: "#treatments" },
   { label: "Medical Team", href: "#medical-team" },
-  { label: "Why Tbilisi", href: "#why-tbilisi" },
-  { label: "Process", href: "#process" },
   { label: "FAQ", href: "#faq" },
 ];
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -518,7 +519,29 @@ function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = NAV_LINKS.map((l) =>
+      document.querySelector(l.href)
+    ).filter((el): el is Element => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveHref(`#${visible[0].target.id}`);
+        }
+      },
+      { rootMargin: "-96px 0px -70% 0px", threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
+    <>
     <header className="sticky top-0 left-0 right-0 z-50 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/40">
       <nav className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
@@ -534,7 +557,9 @@ function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="transition-colors duration-200 hover:text-[#00A896]"
+              className={`transition-colors duration-200 hover:text-[#00A896] ${
+                activeHref === l.href ? "text-[#00A896]" : ""
+              }`}
             >
               {l.label}
             </a>
@@ -570,24 +595,25 @@ function Header() {
           </button>
         </div>
       </nav>
+    </header>
 
-      {/* Mobile drawer */}
-      <div
-        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
-          open
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      >
+    {/* Mobile drawer */}
+    <div
+      className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
+        open
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      }`}
+    >
         <div
-          className="absolute inset-0 bg-black/60"
+          className="absolute inset-0 bg-black/75"
           onClick={() => setOpen(false)}
         />
         <div
           className={`absolute top-0 right-0 h-full w-[82%] max-w-sm backdrop-blur-md border-l border-slate-800/60 shadow-2xl transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
-          style={{ backgroundColor: "rgba(2, 6, 23, 0.92)" }}
+          style={{ backgroundColor: "rgba(2, 6, 23, 0.5)" }}
         >
           <div className="flex items-center justify-end h-16 px-5 border-b border-slate-800/60">
             <button
@@ -632,7 +658,7 @@ function Header() {
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }
 
