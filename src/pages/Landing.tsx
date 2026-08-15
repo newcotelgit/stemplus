@@ -173,15 +173,6 @@ type VideoItem = {
 
 const VIDEO_TESTIMONIALS: VideoItem[] = [
   {
-    id: "v1",
-    src: "https://player.vimeo.com/video/1206930951",
-    poster: markLattaThumbnail,
-    name: "Mark Latta",
-    treatment: "Stem Cell Therapy",
-    country: "Sarasota, Florida, USA",
-    flag: "🇺🇸",
-  },
-  {
     id: "v2",
     src: "https://player.vimeo.com/video/1206931316",
     poster: aliceThumbnail,
