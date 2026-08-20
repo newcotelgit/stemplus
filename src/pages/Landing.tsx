@@ -1909,7 +1909,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does stem cell therapy cost at StemPlus?",
-    a: "Treatment costs depend on your condition and the protocol Dr. Myroshnykov recommends. Your free 30-minute consultation will include a complete cost breakdown before you commit to anything. As a general guide, patients typically invest between $3,000 and $12,000 for a full 5-day protocol at Leadermed Hospital — significantly less than equivalent treatments using GMP-certified Muse cells in Germany, Switzerland, or the United States, where costs can be three to five times higher.",
+    a: "Treatment costs depend on your condition and the protocol Dr. Myroshnykov recommends. Your free 30-minute consultation will include a complete cost breakdown before you commit to anything. Our pricing for a full 5-day protocol at Leadermed Hospital is significantly less than equivalent treatments using GMP-certified Muse cells in Germany, Switzerland, or the United States, where costs can be three to five times higher.",
   },
   {
     q: "What is included in the treatment package?",
