@@ -44,6 +44,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
+import ceoThumbnail from "@/assets/ceo-thumbnail.jpg";
 import testimonialPoster from "@/assets/testimonial-poster.jpg";
 import markLattaThumbnail from "@/assets/mark-latta-thumbnail.jpg";
 import aliceThumbnail from "@/assets/alice-thumbnail.png";
@@ -76,6 +77,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
+      <CeoMessage />
       <VideoTestimonial />
       <MensVitality />
       <Features />
@@ -155,6 +157,68 @@ function MensVitality() {
             <ArrowRight className="w-4 h-4" />
           </a>
         </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ─── CEO Message ─── */
+function CeoMessage() {
+  const [playing, setPlaying] = useState(false);
+  return (
+    <section id="about" className="pt-24 pb-4 bg-white">
+      <div className="max-w-4xl mx-auto px-5">
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+            About the clinic
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground"
+            style={{ lineHeight: "1.15" }}
+          >
+            A Message from Our CEO
+          </h2>
+          <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
+            Hear directly from our CEO about the story behind StemPlus, our approach to regenerative
+            medicine, and the treatments we offer at Leadermed Hospital in Tbilisi. Filmed in Georgian,
+            with English subtitles.
+          </p>
+        </div>
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
+          {playing ? (
+            <iframe
+              src="https://player.vimeo.com/video/1242558468?dnt=1&title=0&byline=0&portrait=0&autoplay=1"
+              title="A message from our CEO"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setPlaying(true)}
+              className="group absolute inset-0 w-full h-full"
+              aria-label="Play video: A message from our CEO"
+            >
+              <img
+                src={ceoThumbnail}
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span
+                  className="flex items-center justify-center w-20 h-20 rounded-full shadow-2xl shadow-black/40 ring-1 ring-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: "#02C39A" }}
+                >
+                  <svg viewBox="0 0 24 24" fill="white" className="w-8 h-8 ml-1">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -472,6 +536,7 @@ function Heritage() {
 }
 
 const NAV_LINKS = [
+  { label: "About", href: "#about" },
   { label: "Testimonials", href: "#video-testimonials" },
   { label: "Men's Vitality", href: "#mens-vitality" },
   { label: "Treatments", href: "#treatments" },
