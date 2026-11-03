@@ -180,8 +180,7 @@ function CeoMessage() {
           </h2>
           <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
             Hear directly from our CEO about the story behind StemPlus, our approach to regenerative
-            medicine, and the treatments we offer at Leadermed Hospital in Tbilisi. Filmed in Georgian,
-            with English subtitles.
+            medicine, and the treatments we offer at Leadermed Hospital in Tbilisi.
           </p>
         </div>
         <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
